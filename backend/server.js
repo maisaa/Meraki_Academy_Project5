@@ -5,6 +5,7 @@ const db = require("./db/db");
 
 const loginRouter = require("./routers/routes/auth/login");
 const registerRouter = require("./routers/routes/auth/signUp");
+const sportRouter = require("./routers/routes/sport");
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.use(cors());
 //app routers
 app.use(loginRouter);
 app.use(registerRouter);
+app.use(sportRouter);
 
 const PORT = process.env.PORT || 5000;
 
