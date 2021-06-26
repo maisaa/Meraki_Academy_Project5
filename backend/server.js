@@ -9,7 +9,11 @@ const sportRouter = require("./routers/routes/sport");
 
 const app = express();
 
-//built-in middle wares
+
+//routers
+
+
+const profileRouter = require('./routers/routes/profile');
 app.use(express.json());
 
 //third-party middleware
@@ -20,6 +24,7 @@ app.use(loginRouter);
 app.use(registerRouter);
 app.use(sportRouter);
 
+app.use(profileRouter)
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
