@@ -8,7 +8,12 @@ const app = express();
 
 //routers
 
-//built-in middle wares
+
+const profileRouter = require('./routers/routes/profile');
+//built-in middlewares
+
+
+
 app.use(express.json());
 
 //third-party middleware
@@ -18,6 +23,7 @@ app.use(cors());
 app.use(loginRouter);
 app.use(registerRouter);
 
+app.use(profileRouter)
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
