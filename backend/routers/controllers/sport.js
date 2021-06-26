@@ -27,7 +27,16 @@ const deleteSport = async (req, res) => {
   res.status(200).json(SportDeleted[0]);
 };
 
+const getAllSports = async (req, res) => {
+  const query = `SELECT * FROM sports`;
+  connection.query(query, (err, results) => {
+    if (err) return res.status(404).json(err);
+    return res.json(results);
+  });
+};
+
 module.exports = {
   addSport,
   deleteSport,
+  getAllSports,
 };
