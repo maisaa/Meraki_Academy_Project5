@@ -1,7 +1,8 @@
-const express = require('express');
-const cors = require('cors');
-const db = require('./db/db');
-const loginRouter = require('./routers/routes/auth/login');
+const express = require("express");
+const cors = require("cors");
+const db = require("./db/db");
+const loginRouter = require("./routers/routes/auth/login");
+const registerRouter = require("./routers/routes/auth/signUp");
 
 const app = express();
 
@@ -14,10 +15,11 @@ app.use(express.json());
 app.use(cors());
 
 //app routers
-app.use(loginRouter)
+app.use(loginRouter);
+app.use(registerRouter);
 
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-	console.log(`Server On ${PORT}`);
+  console.log(`Server On ${PORT}`);
 });
