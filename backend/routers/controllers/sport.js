@@ -1,5 +1,6 @@
 const connection = require("./../../db/db");
 
+// the below fun add sport that selected to sport table in DB
 const addSport = async (req, res) => {
   const { type, description, photo, video } = req.body;
   const query = `INSERT INTO sports (type,description,photo,video) VALUES (?,?,?,?) `;
@@ -13,6 +14,7 @@ const addSport = async (req, res) => {
   res.status(200).json(SportAdded[0]);
 };
 
+// the below fun delete sport that selected from DB (soft delete)
 const deleteSport = async (req, res) => {
   const sportID = req.params.id;
   console.log("sportId", sportID);
@@ -24,14 +26,15 @@ const deleteSport = async (req, res) => {
   const query_select = `select * from sports where sport_id= ?`;
   const data_select = [sportID];
   const SportDeleted = await connection.promise().query(query_select, data_select);
-  res.status(200).json(SportDeleted[0]);
+  res.status(202).json(SportDeleted[0]);
 };
 
-const getAllSports = async (req, res) => {
+// the below fun return all sports from sports table
+const getAllSports = (req, res) => {
   const query = `SELECT * FROM sports`;
   connection.query(query, (err, results) => {
     if (err) return res.status(404).json(err);
-    return res.json(results);
+    return res.status(200).json(results);
   });
 };
 
