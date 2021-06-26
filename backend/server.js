@@ -1,12 +1,12 @@
 const express = require("express");
 const cors = require("cors");
 const db = require("./db/db");
+//routers
+
 const loginRouter = require("./routers/routes/auth/login");
 const registerRouter = require("./routers/routes/auth/signUp");
 
 const app = express();
-
-//routers
 
 //built-in middle wares
 app.use(express.json());
