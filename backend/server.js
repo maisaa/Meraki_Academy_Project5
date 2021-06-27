@@ -3,11 +3,12 @@ const cors = require("cors");
 const db = require("./db/db");
 
 //routers
-const loginRouter = require("./routers/routes/auth/login");
 const registerRouter = require("./routers/routes/auth/signUp");
-const sportRouter = require("./routers/routes/sport");
-const profileRouter = require('./routers/routes/profile');
+const loginRouter = require("./routers/routes/auth/login");
+const favoriteRouter = require("./routers/routes/favarite");
+const profileRouter = require("./routers/routes/profile");
 const commentRouter = require("./routers/routes/comment");
+const sportRouter = require("./routers/routes/sport");
 
 const app = express();
 
@@ -16,9 +17,10 @@ app.use(express.json());
 app.use(cors());
 
 //app routers
-app.use(loginRouter);
 app.use(registerRouter);
+app.use(loginRouter);
 app.use(sportRouter);
+app.use(favoriteRouter);
 app.use(commentRouter)
 app.use(profileRouter)
 
