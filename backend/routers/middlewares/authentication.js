@@ -13,7 +13,7 @@ const authentication = (req, res, next) => {
 
 		next();
         
-        const pa
+        
     } catch (error) {
         res.status(403).json({ message: 'forbidden' });
     }
