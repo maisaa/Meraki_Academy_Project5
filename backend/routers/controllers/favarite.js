@@ -14,10 +14,12 @@ const addToFavorite = async (req, res) => {
 };
 
 const getFavorite = (req, res) => {
-  const userId = req.params.id;
-  const query = `SELECT posts.post AS 'post',users.firstName AS 'name' FROM users, posts, users_posts WHERE users_posts.user_id = ? AND posts.post_id = users_posts.post_id`;
+  const id = req.params.id;
+  const query = `select firstName,post,photo,video from users inner join users_posts ON users.user_id = users_posts.user_id AND users_posts.user_id =? inner join posts on users_posts.post_id = posts.post_id`;
+  const data = [id];
   connection.query(query, data, (err, results) => {
-    console.log(results);
+    if (err) return res.json(err);
+    res.json(results);
   });
 };
 
