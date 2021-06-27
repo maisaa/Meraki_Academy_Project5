@@ -20,8 +20,8 @@ const getFavorite = (req, res) => {
   INNER JOIN posts ON users_posts.post_id = posts.post_id AND posts.is_deleted=0`;
   const data = [id];
   connection.query(query, data, (err, results) => {
-    if (err) return res.json(err);
-    res.json(results);
+    if (err) return res.status(404).json(err);
+    res.status(200).json(results);
   });
 };
 
@@ -31,7 +31,7 @@ const deleteFavorite = (req, res) => {
   const data = [postID];
   connection.query(query, data, (err, results) => {
     if (err) return res.json(err);
-    res.json(results);
+    res.status(202).json("deleted successfully");
   });
 };
 
