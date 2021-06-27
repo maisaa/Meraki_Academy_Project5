@@ -6,7 +6,7 @@ import App from './App';
 // import provider
 import { Provider } from "react-redux";
 // import store
-import store from "./reducers";
+import store from "./reducers/index";
 
 ReactDOM.render(
   // The provider will enable the child components to access the store
