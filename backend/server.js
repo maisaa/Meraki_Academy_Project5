@@ -9,6 +9,7 @@ const favoriteRouter = require("./routers/routes/favorite");
 const profileRouter = require("./routers/routes/profile");
 const commentRouter = require("./routers/routes/comment");
 const sportRouter = require("./routers/routes/sport");
+const imageRouter=require("./routers/routes/Image");
 
 const app = express();
 
@@ -23,7 +24,7 @@ app.use(sportRouter);
 app.use(favoriteRouter);
 app.use(commentRouter)
 app.use(profileRouter)
-
+app.use(imageRouter)
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
