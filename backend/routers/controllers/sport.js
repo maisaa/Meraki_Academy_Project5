@@ -8,7 +8,7 @@ const addSport = async (req, res) => {
   connection.query(query, data, (err, results) => {
     if (err) return res.status(404).json(err);
   });
-  const query_select = `select * from sports where type= ? && description = ?`;
+  const query_select = `SELECT * FROM sports WHERE type= ? && description = ?`;
   const data_select = [type, description];
   const SportAdded = await connection.promise().query(query_select, data_select);
   res.status(200).json(SportAdded[0]);
@@ -17,13 +17,12 @@ const addSport = async (req, res) => {
 // the below fun delete sport that selected from DB (soft delete)
 const deleteSport = async (req, res) => {
   const sportID = req.params.id;
-  console.log("sportId", sportID);
-  const query = `UPDATE sports SET is_deleted =1 where sport_id= ?`;
+  const query = `UPDATE sports SET is_deleted =1 WHERE sport_id= ?`;
   const data = [sportID];
   connection.query(query, data, (err, results) => {
     if (err) return res.status(404).json(err);
   });
-  const query_select = `select * from sports where sport_id= ?`;
+  const query_select = `select * from sports WHERE sport_id= ?`;
   const data_select = [sportID];
   const SportDeleted = await connection.promise().query(query_select, data_select);
   res.status(202).json(SportDeleted[0]);
