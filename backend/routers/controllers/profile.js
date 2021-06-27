@@ -2,14 +2,11 @@ const db = require("./../../db/db");
 
 const getAllUsers = (req, res) => {
 
-    const command = `SELECT * FROM users`;
-
+  const command = `SELECT * FROM users`;
   db.query(command, (err, result) => {
     if (err) return res.status(204);
-    
     res.status(204);
     res.json(result);
-    
   });
   };
 
@@ -23,7 +20,6 @@ const getAllUsers = (req, res) => {
     const arr = [req.params.id];
     db.query(command, arr, (err, result) => {
       if (err) return res.status(404);
-      
       res.json(result);
       res.status(200);
     });
@@ -31,7 +27,7 @@ const getAllUsers = (req, res) => {
   
   
   
-  const updatProfile = (req, res) => {
+  const updateProfile = (req, res) => {
     const ProfileObj = {
       firstName: req.body.firstName,
       lastName : req.body.lastName,
@@ -44,7 +40,7 @@ const getAllUsers = (req, res) => {
     const command = `
     UPDATE users
      SET firstName='?', lastName='?',image='?',phone='?',age='?', email='?', password='?'
-    WHERE id=?;
+    WHERE user_id=?;
     `;
     const arr = [req.params.id];
     const data = [ProfileObj.firstName,ProfileObj.lastName,ProfileObj.image,ProfileObj.phone,ProfileObj.age,ProfileObj.email,ProfileObj.password];
@@ -61,7 +57,7 @@ const getAllUsers = (req, res) => {
   const deleteProfile = (req, res) => {
     const command = `
     DELETE FROM users
-    WHERE id = ? AND is_deleted=0;
+    WHERE user_id= ? AND is_deleted=0;
     `;
   
     const arr = [req.params.id];
@@ -81,6 +77,6 @@ const getAllUsers = (req, res) => {
   module.exports = {
     getAllUsers,
     getProfileById,
-    updatProfile,
+    updateProfile,
     deleteProfile
 }
