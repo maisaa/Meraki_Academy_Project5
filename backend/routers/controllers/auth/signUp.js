@@ -14,7 +14,7 @@ const createNewUser = async (req, res) => {
   const data_insert = [firstName, lastName, phone, age, emailAfterLowercase, hashPassword, role_id];
   await connection.promise().query(query_insert, data_insert);
   //find user which added
-  const query_select = `select * from users where email= ? && password = ?`;
+  const query_select = `SELECT * FROM users WHERE email= ? && password = ?`;
   const data_select = [emailAfterLowercase, hashPassword];
   const userAdded = await connection.promise().query(query_select, data_select);
   res.status(201).json(userAdded[0]);

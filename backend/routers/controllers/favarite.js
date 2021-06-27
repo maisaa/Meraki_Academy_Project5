@@ -15,7 +15,9 @@ const addToFavorite = async (req, res) => {
 
 const getFavorite = (req, res) => {
   const id = req.params.id;
-  const query = `select firstName,post,photo,video from users inner join users_posts ON users.user_id = users_posts.user_id AND users_posts.user_id =? inner join posts on users_posts.post_id = posts.post_id`;
+  const query = `SELECT firstName,post,photo,video FROM users
+  INNER JOIN users_posts ON users.user_id = users_posts.user_id AND users_posts.user_id =? 
+  INNER JOIN posts ON users_posts.post_id = posts.post_id AND posts.is_deleted=0`;
   const data = [id];
   connection.query(query, data, (err, results) => {
     if (err) return res.json(err);
@@ -23,9 +25,18 @@ const getFavorite = (req, res) => {
   });
 };
 
-const deleteFavorite = (req, res) => {};
+const deleteFavorite = (req, res) => {
+  const postID = req.params.postID;
+  const query = `UPDATE posts SET is_deleted = 1 WHERE post_id =? `;
+  const data = [postID];
+  connection.query(query, data, (err, results) => {
+    if (err) return res.json(err);
+    res.json(results);
+  });
+};
 
 module.exports = {
   addToFavorite,
   getFavorite,
+  deleteFavorite,
 };
