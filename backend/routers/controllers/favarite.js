@@ -13,19 +13,19 @@ const addToFavorite = (req, res) => {
   res.status(200).json(favorite[0]);
 };
 
-const getFavorite = (req, res) => {
-  const userId = req.params.id;
-  const query = `SELECT
-  hero.name AS 'hero',
-  power.name AS 'power'
-  FROM
-  hero, power, hero_power
- WHERE
-  hero.heroID = hero_power.heroID
- AND
-  power.powerID = hero_power.powerID; `;
-};
-const deleteFavorite = (req, res) => {};
+// const getFavorite = (req, res) => {
+//   const userId = req.params.id;
+//   const query = `SELECT
+//   hero.name AS 'hero',
+//   power.name AS 'power'
+//   FROM
+//   hero, power, hero_power
+//  WHERE
+//   hero.heroID = hero_power.heroID
+//  AND
+//   power.powerID = hero_power.powerID; `;
+// };
+// const deleteFavorite = (req, res) => {};
 
 module.exports = {
   addToFavorite,
