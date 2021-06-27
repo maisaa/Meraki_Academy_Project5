@@ -2,7 +2,7 @@ const express = require("express");
 
 //controllers
 
-const { addToFavorite, getFavorite, deleteFavorite } = require("../controllers/favarite");
+const { addToFavorite, getFavorite, deleteFavorite } = require("../controllers/favorite");
 
 const favoriteRouter = express.Router();
 

@@ -5,7 +5,7 @@ const db = require("./db/db");
 //routers
 const registerRouter = require("./routers/routes/auth/signUp");
 const loginRouter = require("./routers/routes/auth/login");
-const favoriteRouter = require("./routers/routes/favarite");
+const favoriteRouter = require("./routers/routes/favorite");
 const profileRouter = require("./routers/routes/profile");
 const commentRouter = require("./routers/routes/comment");
 const sportRouter = require("./routers/routes/sport");

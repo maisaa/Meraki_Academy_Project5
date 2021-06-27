@@ -1,4 +1,4 @@
-const connection = require("./../../db/db");
+const connection = require("../../db/db");
 
 const addToFavorite = async (req, res) => {
   const { userID, postID } = req.body;
