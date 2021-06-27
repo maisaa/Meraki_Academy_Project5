@@ -9,7 +9,7 @@ const addComment = (req, res) => {
     db.query(command, data, (err, result) => {
         if (err) return res.status(404).json(err);
 
-        res.status(200).message('comment added successfully').json(result);
+        res.status(200).json(result);
     });
 }
 
@@ -25,13 +25,21 @@ const getCommentsByPostId = (req, res) => {
         res.status(200).json(result);
     })
 }
-
+//delete comment by commenter_id
 const deleteCommentById = (req, res) => {
-    
+    const userId = req.params.id;
+    const command = `UPDATE comments SET is_deleted = 1 WHERE commenter_id = ?;`;
+    const data = [userId];
+    db.query(command, data, (err, result) => {
+        if(err) return res.status(404).json(err);
+
+        res.status(201).json('comment deleted successfully');
+    })
 }
 
 module.exports = {
     addComment,
     getCommentsByPostId,
+    deleteCommentById,
 
 }
