@@ -4,9 +4,9 @@ const jwt = require("jsonwebtoken");
 const salt = 10;
 
 const createNewUser = async (req, res) => {
-  const { firstName, lastName, phone, age, email, password, role_id } = req.body;
-
+  const { firstName, lastName, phone, age, email, password, role_id, sport_id } = req.body;
   // hash Pass && convert email to lowercase
+  console.log("sport_id", sport_id);
   const hashPassword = await bcrypt.hash(password, 10);
   const emailAfterLowercase = email.toLowerCase();
   // insert user to DB
