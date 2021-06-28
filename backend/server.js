@@ -11,7 +11,7 @@ const profileRouter = require("./routers/routes/profile");
 const postRouter = require("./routers/routes/post");
 const commentRouter = require("./routers/routes/comment");
 const sportRouter = require("./routers/routes/sport");
-const imageRouter=require("./routers/routes/Image");
+const imageRouter = require("./routers/routes/Image");
 
 const app = express();
 
@@ -28,8 +28,9 @@ app.use(commentRouter);
 app.use(imageRouter);
 app.use(profileRouter);
 app.use(postRouter);
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-	console.log(`Server On ${PORT}`);
+  console.log(`Server On ${PORT}`);
 });
