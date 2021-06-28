@@ -29,7 +29,7 @@ export const setComment = (comments) => {
 };
 
 export const AddComment = (comments) => {
-  // comments here represents just for comment that add .
+  // comments here represents just for comment that added .
   return { type: "ADD_COMMENT", payload: comments };
 };
 
