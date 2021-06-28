@@ -5,6 +5,8 @@ import { Route, Switch } from "react-router-dom";
 import SignUp from "./components/auth/signUp";
 import BeforeSignUp from "./components/auth/signUp/signUp";
 import Login from './components/auth/login/index';
+import Post from './components/post/post';
+
 
 const App = () => {
   return (
@@ -12,6 +14,7 @@ const App = () => {
       <Route exact path="/register" component={BeforeSignUp} />
       <Route path="/register/:id" component={SignUp} />
       <Route exact path="/login" component={Login} />
+      <Route exact path="/posts" component={Post} />
     </div>
   );
 };
