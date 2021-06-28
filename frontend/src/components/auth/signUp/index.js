@@ -30,7 +30,7 @@ const SignUp = ({ id }) => {
           if (response) {
             setMessage("The user has been created successfully ");
             setTimeout(function () {
-              history.push("/Login");
+              history.push("/login");
             }, 2000);
           } else {
             setMessage("Error happened while register, please try again");
