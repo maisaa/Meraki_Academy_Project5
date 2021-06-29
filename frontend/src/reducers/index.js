@@ -5,6 +5,7 @@ import loginReducer from './login';
 import profileReducers from './profile';
 import MembersReducer from "./members";
 import sportReducer from './sports';
+import postsReducer from './post';
 
 const reducers = combineReducers({
     // add reducers here
@@ -12,6 +13,7 @@ const reducers = combineReducers({
     profileReducers,
     MembersReducer,
     sportReducer,
+    postsReducer,
 });
 
 const store = createStore(reducers);
