@@ -17,12 +17,19 @@ const Members = () => {
 
   const getAllMember = async () => {
     const allUsers = await axios.get("http://localhost:5000/usersPost");
-    console.log("allUsers", allUsers.data[0]);
+    console.log("allUsers", allUsers.data);
     dispatch(setMembers(allUsers.data));
   };
   const getToken = async () => {
     const user = await decode(localStorage.getItem("token"));
-    dispatch(setUserId(user.userId));
+    console.log("user", user);
+    dispatch(setUserId({ userId: user.userId, role: user.roleId }));
+  };
+  const deleteMembers = async () => {
+    await axios.delete(`http://localhost:5000/usersPost`, {
+      userId: state.id.userId,
+      postId: "postId",
+    });
   };
   useEffect(() => {
     getToken();
@@ -30,20 +37,40 @@ const Members = () => {
   }, []);
 
   return (
-    <div className="allmembers">
-      {state.members.map((ele) => {
-        if (state.id) {
-          return (
-            <div className="">
-              <button>{ele.firstName}</button>
-              <button>video</button>
-              <button>chat</button>
-              <button>delete</button>
-            </div>
-          );
-        }
-      })}
-    </div>
+    <>
+      {state.id.role == 3 ? (
+        <div className="allmembers">
+          {state.members.map((ele) => {
+            if (state.id.userId === ele.poster_id) {
+              return (
+                <div className="">
+                  <button>{ele.firstName}</button>
+                  <button>chat</button>
+                  <button onClick={deleteMembers}>delete</button>
+                </div>
+              );
+            }
+          })}
+        </div>
+      ) : state.id.role == 4 ? (
+        <div className="allmembers">
+          {state.members.map((ele) => {
+            if (state.id.userId === ele.poster_id) {
+              return (
+                <div className="">
+                  <button>{ele.firstName}</button>
+                  <button>video</button>
+                  <button>chat</button>
+                  <button>delete</button>
+                </div>
+              );
+            }
+          })}
+        </div>
+      ) : (
+        <div></div>
+      )}
+    </>
   );
 };
 

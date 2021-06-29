@@ -12,7 +12,7 @@ const getAllUsers = (req, res) => {
 const getAllUsersPost = (req, res) => {
   const command = `SELECT users_posts.user_id , users_posts.post_id 
   , posts.poster_id , users.firstName From users_posts
-  INNER JOIN posts ON users_posts.post_id = posts.post_id
+  INNER JOIN posts ON users_posts.post_id = posts.post_id AND users_posts.is_deleted =0
   INNER JOIN users ON users.user_id = users_posts.user_id`;
 
   db.query(command, (err, result) => {
@@ -21,6 +21,7 @@ const getAllUsersPost = (req, res) => {
     res.json(result);
   });
 };
+
 const getProfileById = (req, res) => {
   const command = `
     SELECT * FROM users 
@@ -79,10 +80,21 @@ const deleteProfile = (req, res) => {
   });
 };
 
+const deleteFromUserPosts = (req, res) => {
+  const { userId, postId } = req.body;
+  const command = `UPDATE users_posts SET is_deleted =1 where user_id =? AND post_id = ?`;
+  data = [userId, postId];
+  db.query(command, data, (err, result) => {
+    if (err) return res.status(404);
+    res.status(200);
+    res.json(result);
+  });
+};
 module.exports = {
   getAllUsers,
   getProfileById,
   updateProfile,
   deleteProfile,
   getAllUsersPost,
+  deleteFromUserPosts,
 };

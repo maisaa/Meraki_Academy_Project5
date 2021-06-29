@@ -1,7 +1,7 @@
 const initialState = {
   members: [],
   typeMembers: "",
-  id: 1,
+  id: { userId: "", role: "" },
 };
 
 const MembersReducer = (state = initialState, { type, payload }) => {

@@ -16,4 +16,6 @@ profileRouter.get("/usersPost", getAllUsersPost);
 profileRouter.get("/users/:id", getProfileById);
 profileRouter.put("/users/:id", updateProfile);
 profileRouter.delete("/users/:id", authentication, authorization("Admin"), deleteProfile);
+profileRouter.delete("/usersPost", authentication, authorization("Admin"), deleteProfile);
+
 module.exports = profileRouter;
