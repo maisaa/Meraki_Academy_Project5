@@ -65,7 +65,16 @@ const Members = () => {
                   <button>{ele.firstName}</button>
                   <button>video</button>
                   <button>chat</button>
-                  <button>delete</button>
+                  <button
+                    onClick={async (e) => {
+                      await axios.delete(`http://localhost:5000/usersPost`, {
+                        userId: ele.user_Id,
+                        postId: ele.post_id,
+                      });
+                    }}
+                  >
+                    delete
+                  </button>{" "}
                 </div>
               );
             }
