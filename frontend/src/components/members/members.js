@@ -25,12 +25,7 @@ const Members = () => {
     console.log("user", user);
     dispatch(setUserId({ userId: user.userId, role: user.roleId }));
   };
-  const deleteMembers = async () => {
-    await axios.delete(`http://localhost:5000/usersPost`, {
-      userId: state.id.userId,
-      postId: "postId",
-    });
-  };
+
   useEffect(() => {
     getToken();
     getAllMember();
@@ -46,7 +41,16 @@ const Members = () => {
                 <div className="">
                   <button>{ele.firstName}</button>
                   <button>chat</button>
-                  <button onClick={deleteMembers}>delete</button>
+                  <button
+                    onClick={async (e) => {
+                      await axios.delete(`http://localhost:5000/usersPost`, {
+                        userId: ele.user_Id,
+                        postId: ele.post_id,
+                      });
+                    }}
+                  >
+                    delete
+                  </button>
                 </div>
               );
             }
