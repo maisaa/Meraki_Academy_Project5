@@ -19,6 +19,7 @@ const dispatch = useDispatch();
   });
 
 
+
   useEffect(() => {
     getProfile();
     deleteprofile();
@@ -26,9 +27,13 @@ const dispatch = useDispatch();
   }, []);
 
   
+
+
+
+
+
   const getProfile = () => {
-    const user = decode(localStorage.getItem("token"));
-    console.log(localStorage.getItem("token"));
+
     axios
       .get(`http://localhost:5000/users/${id}`)
       .then((res) => {
@@ -48,22 +53,8 @@ const dispatch = useDispatch();
       })
       .catch((err) => {
         console.log(err);
-      });
+      })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
   };
 
 
