@@ -4,9 +4,11 @@ import { Route, Switch } from "react-router-dom";
 //component
 import SignUp from "./components/auth/signUp";
 import BeforeSignUp from "./components/auth/signUp/signUp";
+
 import Login from './components/auth/login/index';
 import Navigation from './components/navigation/index';
 import Dashboard from './components/dashboard/index';
+import Members from "./components/members/members";
 
 const App = () => {
 
@@ -17,6 +19,7 @@ const App = () => {
 			<Route path="/register/:id" component={SignUp} />
 			<Route exact path="/login" component={Login} />
 			<Route exact path="/dashboard" component={Dashboard} />
+      <Route exact path="/allMembers" component={Members} />
 		</div>
 	);
 };
