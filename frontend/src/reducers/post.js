@@ -25,17 +25,21 @@ const postsReducer = (state = initialState, { type, payload }) => {
 export default postsReducer;
 
 export const setPost = (posts) => {
-  return { type: "SET_COMMENT", payload: posts };
+  return { type: "SET_POST", payload: posts };
+};
+
+export const getPost = (posts) => {
+  return { type: "GET_POST", payload: posts };
 };
 
 export const AddPost = (newPosts) => {
-  // comments here represents just for comment that added .
-  return { type: "ADD_COMMENT", payload: newPosts };
+  return { type: "ADD_POST", payload: newPosts };
 };
 
 export const editPost = (updatePosts) => {
-  return { type: "UPDATE_COMMENT", payload: updatePosts };
+  return { type: "UPDATE_POST", payload: updatePosts };
 };
+
 export const deletePost = (deletePosts) => {
-  return { type: "DELETE_COMMENT", payload: deletePosts };
+  return { type: "DELETE_POST", payload: deletePosts };
 };
