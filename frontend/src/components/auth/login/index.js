@@ -9,7 +9,7 @@ const Login = () => {
     const history = useHistory();
     const dispatch = useDispatch();
 
-    // const state = useSelector((state) => { return { token: state.loginReducer.token } });
+    const state = useSelector((state) => { return { token: state.loginReducer.token } });
     useEffect(() => {
         saveToken(localStorage.getItem('token'));
     }, []);
@@ -31,7 +31,7 @@ const Login = () => {
                 }
             })
             .catch((err) => {
-                setMessage(err.response.data);
+                setMessage(err.response);
             })
     }
     //this function to logout user and clear the localStorage
