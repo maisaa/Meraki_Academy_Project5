@@ -6,15 +6,7 @@ const commentsReducer = (state = initialState, { type, payload }) => {
       return { comments: payload };
     case "ADD_COMMENT":
       return { comments: [...state.comments, payload] };
-    // case "UPDATE_COMMENT":
-    //   return state.comments.map((elem) => {
-    //     if (elem.id === payload.id) {
-    //       return payload;
-    //     }
-    //     return elem;
-    //   });
-    // case "DELETE_COMMENT":
-    //   return state.comments.filter((elem) => elem.id !== payload.id);
+    
     default:
       return state;
   }

@@ -17,4 +17,4 @@ export default loginReducer;
 //Action
 export const setToken = (newToken) => {
     return { type: 'SET_TOKEN', payload: newToken };
-}
+};
