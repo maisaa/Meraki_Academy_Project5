@@ -53,6 +53,7 @@ PRIMARY KEY (post_id)
 CREATE TABLE users_sports (
 user_id INT NOT NULL,
 sport_id INT NOT NULL,
+is_deleted TINYINT DEFAULT 0,
 FOREIGN KEY (user_id) REFERENCES users (user_id) ON DELETE RESTRICT ON UPDATE CASCADE,
 FOREIGN KEY (sport_id) REFERENCES sports (sport_id) ON DELETE RESTRICT ON UPDATE CASCADE,
 PRIMARY KEY (user_id, sport_id)
@@ -62,6 +63,7 @@ PRIMARY KEY (user_id, sport_id)
 CREATE TABLE users_posts (
 user_id INT NOT NULL,
 post_id INT NOT NULL,
+is_deleted TINYINT DEFAULT 0,
 FOREIGN KEY (user_id) REFERENCES users (user_id) ON DELETE RESTRICT ON UPDATE CASCADE,
 FOREIGN KEY (post_id) REFERENCES posts (post_id) ON DELETE RESTRICT ON UPDATE CASCADE,
 PRIMARY KEY (user_id, post_id)
