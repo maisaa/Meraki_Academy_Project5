@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router';
-import { useDispatch, useSelector } from 'react-redux';
-import jwt from 'jsonwebtoken';
-import axios from 'axios';
-import { setToken } from '../../../reducers/login';
+import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
+import jwt from "jsonwebtoken";
+import axios from "axios";
+import { setToken } from "../../../reducers/login";
 
 const Login = () => {
     const history = useHistory();
     const dispatch = useDispatch();
-
     // const state = useSelector((state) => { return { token: state.loginReducer.token } });
     useEffect(() => {
         saveToken(localStorage.getItem('token'));
@@ -18,7 +17,6 @@ const Login = () => {
     const [message, setMessage] = useState('');
     const [userId, setUserId] = useState('');
     const [loggedIn, setLoggedIn] = useState(false);
-
     //this function to handle the submitted form
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -47,6 +45,23 @@ const Login = () => {
             setUserId(user.userId);
             localStorage.setItem('token', token)
         }
+      })
+      .catch((err) => {
+        setMessage(err.response.data);
+      });
+  };
+  //this function to logout user and clear the localStorage
+  function logout() {
+    setLoggedIn(false);
+    localStorage.clear();
+  }
+  //this function to save the token in the localStorage
+  function saveToken(token) {
+    const user = jwt.decode(token);
+    if (user) {
+      dispatch(setToken(token));
+      setUserId(user.userId);
+      localStorage.setItem("token", token);
     }
     return (
         <>
@@ -77,5 +92,5 @@ const Login = () => {
     );
 }
 
-export default Login;
 
+export default Login;
