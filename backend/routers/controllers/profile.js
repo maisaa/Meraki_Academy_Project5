@@ -9,6 +9,18 @@ const getAllUsers = (req, res) => {
   });
 };
 
+const getAllUsersPost = (req, res) => {
+  const command = `SELECT users_posts.user_id , users_posts.post_id 
+  , posts.poster_id , users.firstName From users_posts
+  INNER JOIN posts ON users_posts.post_id = posts.post_id
+  INNER JOIN users ON users.user_id = users_posts.user_id`;
+
+  db.query(command, (err, result) => {
+    if (err) return res.status(404);
+    res.status(200);
+    res.json(result);
+  });
+};
 const getProfileById = (req, res) => {
   const command = `
     SELECT * FROM users 
@@ -36,7 +48,15 @@ const updateProfile = (req, res) => {
     SET firstName='?', lastName='?',image='?',phone='?',age='?', email='?', password='?'
     WHERE user_id=?; `;
   const arr = [req.params.id];
-  const data = [ProfileObj.firstName, ProfileObj.lastName, ProfileObj.image, ProfileObj.phone, ProfileObj.age, ProfileObj.email, ProfileObj.password];
+  const data = [
+    ProfileObj.firstName,
+    ProfileObj.lastName,
+    ProfileObj.image,
+    ProfileObj.phone,
+    ProfileObj.age,
+    ProfileObj.email,
+    ProfileObj.password,
+  ];
 
   db.query(command, arr, data, (err, result) => {
     if (err) return res.status(500);
@@ -64,4 +84,5 @@ module.exports = {
   getProfileById,
   updateProfile,
   deleteProfile,
+  getAllUsersPost,
 };

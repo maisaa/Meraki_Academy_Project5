@@ -15,7 +15,7 @@ const Members = () => {
     };
   });
 
-  const getAllMembers = async () => {
+  const getAllMembersForAdmin = async () => {
     const allUsers = await axios.get("http://localhost:5000/users");
     console.log("allUsers", allUsers.data);
     dispatch(setMembers(allUsers.data));
@@ -32,7 +32,7 @@ const Members = () => {
   };
   useEffect(() => {
     getToken();
-    getAllMembers();
+    getAllMembersForAdmin();
     console.log("state.token", state.token);
   }, []);
 
