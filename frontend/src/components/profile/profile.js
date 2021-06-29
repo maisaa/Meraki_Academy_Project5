@@ -17,25 +17,23 @@ const dispatch = useDispatch();
       profile: state.profileReducers.profile,
     };
   });
-const [profile, setprofile] = useState(" ");
-const [update_profile, setupdate_profile] = useState(" ")
-const [delete_profile, setdelete_profile] = useState(" ")
+
+
 
   useEffect(() => {
     getProfile();
-  }, []);
-
-  useEffect(() => {
-    updateprofile();
-  }, []);
-
-  useEffect(() => {
     deleteprofile();
+     updateprofile();
   }, []);
+
+  
+
+
 
 
 
   const getProfile = () => {
+
     axios
       .get(`http://localhost:5000/users/${id}`)
       .then((res) => {
@@ -55,7 +53,8 @@ const [delete_profile, setdelete_profile] = useState(" ")
       })
       .catch((err) => {
         console.log(err);
-      });
+      })
+
   };
 
 
