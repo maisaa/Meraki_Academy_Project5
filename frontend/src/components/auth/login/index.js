@@ -11,6 +11,23 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState('');
+
+    const state = useSelector(state => {
+        return {
+            token: state.loginReducer.token,
+            user: state.loginReducer.user,
+            loggedIn: state.loginReducer.loggedIn,
+            sports: state.sportReducer.sports
+        }
+    })
+    useEffect(() => {
+        loggedOut();
+    }, []);
+
+    const loggedOut = () => {
+        localStorage.clear();
+        dispatch(setToken({ token: '', user: {}, loggedIn: false }))
+    }
     //this function to handle the submitted form
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -62,4 +79,3 @@ const Login = () => {
 }
 
 export default Login;
-
