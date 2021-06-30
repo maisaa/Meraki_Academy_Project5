@@ -29,6 +29,5 @@ export const setMembers = (members) => {
 // };
 
 export const setUserId = (id) => {
-  console.log("typeMembers", id);
   return { type: "SET_ID", payload: id };
 };
