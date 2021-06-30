@@ -9,6 +9,7 @@ import Navigation from './components/navigation/index';
 import Dashboard from './components/dashboard/index';
 import Members from "./components/members/members";
 import Post from './components/post/post';
+import Sport from './components/sport/sport';
 
 const App = () => {
 
@@ -19,8 +20,9 @@ const App = () => {
 			<Route path="/register/:id" component={SignUp} />
 			<Route exact path="/login" component={Login} />
 			<Route exact path="/dashboard" component={Dashboard} />
-      <Route exact path="/allMembers" component={Members} />
-      <Route exact path="/posts" component={Post} />
+			<Route exact path="/allMembers" component={Members} />
+			<Route exact path="/posts" component={Post} />
+			<Route exact path="/sports" component={Sport} />
 		</div>
 	);
 };
