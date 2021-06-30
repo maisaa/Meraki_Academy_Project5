@@ -37,8 +37,20 @@ const getAllSports = (req, res) => {
   });
 };
 
+// the below fun return sport by type from sports table
+const getSportByType = (req, res) => {
+  const type = req.params.type;
+  const data = [type];
+  const query = `SELECT * FROM sports WHERE type=?;`;
+  connection.query(query,data, (err, results) => {
+    if (err) return res.status(404).json(err);
+    return res.status(200).json(results);
+  });
+};
+
 module.exports = {
   addSport,
   deleteSport,
   getAllSports,
+  getSportByType,
 };
