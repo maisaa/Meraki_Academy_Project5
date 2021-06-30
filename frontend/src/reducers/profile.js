@@ -4,20 +4,21 @@ const profileReducers = (state = initialState, { type, payload }) => {
   switch (type) {
     case "SET_PROFILE":
       return { profile: payload };
-
+ 
     case 'UPDATE_PROFILE':
-      return state.profile.map((elem) => {
-        if (elem.id === payload.id) {
-          return payload;
-        }
-        return elem;
-      });
-
-    case 'DELETE_PROFILE':
-      return state.profile.filter((elem) => elem.id !== payload.id);
-
-    default:
-      return state;
+       
+        return state.profile.map((elem) => {
+          if (elem.id === payload.id) {
+            return payload;
+          }
+          return elem;
+        });
+      
+     case 'DELETE_PROFILE':
+        return state.profile.filter((elem) => elem.id !== payload.id);
+    
+      default:
+        return state;
 
   }
 };
