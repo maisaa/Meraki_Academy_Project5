@@ -8,45 +8,29 @@ import { setToken } from '../../../reducers/login';
 const Login = () => {
     const history = useHistory();
     const dispatch = useDispatch();
-
-    // const state = useSelector((state) => { return { token: state.loginReducer.token } });
-    useEffect(() => {
-        saveToken(localStorage.getItem('token'));
-    }, []);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState('');
-    const [userId, setUserId] = useState('');
-    const [loggedIn, setLoggedIn] = useState(false);
-
     //this function to handle the submitted form
     const handleSubmit = (e) => {
         e.preventDefault();
         axios.post('http://localhost:5000/login', { email, password })
             .then((result) => {
-                if (result.status === 200) {
-                    saveToken(result.data);
-                    setLoggedIn(true);
-                    history.push('/dashboard');
+                if (result) {
+                    const user = jwt.decode(result.data);
+                    dispatch(setToken({ token: result.data, user, loggedIn: true }))
+                    localStorage.setItem('token', result.data);
+                    setMessage("The user has been loggedIn successfully ");
+                    setTimeout(function () {
+                        history.push('/dashboard');
+                    }, 2000);
+                } else {
+                    setMessage("Error happened while login, please try again");
                 }
             })
             .catch((err) => {
-                setMessage(err.response.data);
+                setMessage(err.response);
             })
-    }
-    //this function to logout user and clear the localStorage
-    function logout() {
-        setLoggedIn(false);
-        localStorage.clear();
-    }
-    //this function to save the token in the localStorage
-    function saveToken(token) {
-        const user = jwt.decode(token);
-        if (user) {
-            dispatch(setToken(token));
-            setUserId(user.userId);
-            localStorage.setItem('token', token)
-        }
     }
     return (
         <>
