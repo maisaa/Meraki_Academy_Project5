@@ -17,12 +17,10 @@ const Members = () => {
 
   const getAllMember = async () => {
     const allUsers = await axios.get("http://localhost:5000/usersPost");
-    console.log("allUsers", allUsers.data);
     dispatch(setMembers(allUsers.data));
   };
   const getToken = async () => {
     const user = await decode(localStorage.getItem("token"));
-    console.log("user", user);
     dispatch(setUserId({ userId: user.userId, role: user.roleId }));
   };
 
