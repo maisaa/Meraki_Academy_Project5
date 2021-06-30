@@ -9,6 +9,7 @@ import Navigation from './components/navigation/index';
 import Dashboard from './components/dashboard/index';
 import Members from "./components/members/members";
 import Post from './components/post/post';
+import Sport from './components/sport/sport';
 import ViewPost from './components/viewPost/viewPost';
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
       <Route exact path="/allMembers" component={Members} />
       <Route exact path="/posts" component={Post} />
       <Route exact path="/post" component={ViewPost} />
+      <Route exact path="/sports" component={Sport} />
 		</div>
 	);
 };
