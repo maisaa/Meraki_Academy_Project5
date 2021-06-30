@@ -6,9 +6,6 @@ const profileReducers = (state = initialState, { type, payload }) => {
       return { profile: payload };
    
 
-    default:
-      return state;
-
       case 'UPDATE_PROFILE':
        
         return state.profile.map((elem) => {
