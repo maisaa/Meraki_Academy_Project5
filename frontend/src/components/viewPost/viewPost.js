@@ -91,7 +91,7 @@ const ViewPost = (props) => {
           {state.posts.map((elem, i) => (
             <div key={i}>
               <p> post : {elem.post}</p>
-              <img src={elem.photo} height="100" width="100" /> <br />
+              <img src={elem.photo} alt='post' height="100" width="100" /> <br />
               <video width="320" height="240" controls>
                 <source src={elem.video} type="video/mp4" />
               </video>
