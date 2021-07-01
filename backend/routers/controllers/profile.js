@@ -1,9 +1,7 @@
 const db = require("./../../db/db");
 
 const getAllUsers = (req, res) => {
-  const { roleId, type } = req.body;
-  // console.log('roleId ....', roleId);
-  // console.log('type ....', type);
+  const { roleId, type } = req.query;
   const command = `SELECT * FROM users 
   INNER JOIN sports ON  users.role_id =? AND sports.type=? AND sports.is_deleted = 0 AND users.is_deleted =0;`;
   const data = [roleId, type];
