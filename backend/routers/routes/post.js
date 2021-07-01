@@ -14,7 +14,7 @@ postRouter.get("/posts/all/:id", getAllPostByUserId);
 postRouter.post("/posts", addpost);
 postRouter.get("/posts/:id", getPostById);
 postRouter.put("/posts/:id",  updatePost);
-postRouter.delete("/posts/:id", deletePost);
+postRouter.put("/post/:id", deletePost);
 module.exports = postRouter;
 
 // authentication, authorization("1"),
