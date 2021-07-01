@@ -11,7 +11,7 @@ const authentication = require("../middlewares/authentication");
 const authorization = require("../middlewares/authorization");
 const profileRouter = express.Router();
 
-profileRouter.get("/users", getAllUsers);
+profileRouter.get("/usersByRole", getAllUsers);
 profileRouter.get("/usersPost", getAllUsersPost);
 profileRouter.get("/users/:id", getProfileById);
 profileRouter.put("/users/:id", updateProfile);
