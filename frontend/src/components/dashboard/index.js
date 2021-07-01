@@ -50,9 +50,9 @@ const Dashboard = () => {
 		axios.get(`http://localhost:5000/sport/${e.target.value}`)
 		.then((result)=>{
 			setType(e.target.value);
-			history.push(`/sports`);
 			dispatch(setSports(result.data));
-			console.log("result.data....",result.data)
+			history.push(`/sports`);
+			console.log("result.data....dashboard....",result.data)
 		})
 	}
 

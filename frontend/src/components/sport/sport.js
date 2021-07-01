@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 
 const Sport = () => {
     const history = useHistory();
+    const dispatch = useDispatch();
     const state = useSelector(state => {
         return {
             token: state.loginReducer.token,
@@ -19,10 +20,14 @@ const Sport = () => {
     }, []);
 
     const getSportByType = (e) => {
-        axios.get(`http://localhost:5000/sport/${localStorage.getItem('type')}`)
+        axios.get(`http://localhost:5000/usersByRole`,
+            {
+                "roleId": e.target.value,
+                "type": localStorage.getItem('type')
+            })
             .then((result) => {
+                // dispatch()
                 history.push(`/${e.target.value}`);
-                // console.log('..........', state);
             })
     }
 
@@ -42,8 +47,8 @@ const Sport = () => {
                     </video>
                 </div>
                 <div>
-                    <input type="button" value='Gym' onClick={getSportByType}></input>
-                    <input type="button" value='Coach' onClick={getSportByType}></input>
+                    <button value='4'  onClick={getSportByType}>Gym</button>
+                    <button value='3' onClick={getSportByType}>Coach</button>
                 </div>
             </div>
         ))}</div>
