@@ -6,8 +6,7 @@ const profileReducers = (state = initialState, { type, payload }) => {
       return { profile: payload };
    
 
-    default:
-      return state;
+   
 
       case 'UPDATE_PROFILE':
        
@@ -20,7 +19,7 @@ const profileReducers = (state = initialState, { type, payload }) => {
   
       case 'DELETE_PROFILE':
        
-        return state.profile.filter((elem) =>elem.id !== payload.id);
+         return state.profile.filter((elem) =>elem.id !== payload.id);
   
       default:
         return state;

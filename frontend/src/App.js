@@ -9,7 +9,7 @@ import Login from './components/auth/login/index';
 import Navigation from './components/navigation/index';
 import Dashboard from './components/dashboard/index';
 import Members from "./components/members/members";
-
+import Profile  from "./components/profile/profile";
 const App = () => {
 
 	return (
@@ -20,6 +20,7 @@ const App = () => {
 			<Route exact path="/login" component={Login} />
 			<Route exact path="/dashboard" component={Dashboard} />
       <Route exact path="/allMembers" component={Members} />
+	  <Route exact path="/profile" component={Profile} />
 		</div>
 	);
 };
