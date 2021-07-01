@@ -20,15 +20,16 @@ const Sport = () => {
     }, []);
 
     const getSportByType = (e) => {
-        axios.get(`http://localhost:5000/usersByRole`,
-            {
-                "roleId": e.target.value,
-                "type": localStorage.getItem('type')
-            })
+        let roleId = e.target.value;
+        let type = localStorage.getItem('type');
+        axios.get(`http://localhost:5000/usersByRole?roleId=${roleId}&type=${type}`)
             .then((result) => {
+                console.log("getSportByType.....", result)
                 // dispatch()
-                history.push(`/${e.target.value}`);
+                // history.push(`/${e.target.value}`);
             })
+        console.log(" roleId...........", roleId);
+        console.log(" type...........", type);
     }
 
     return <>
@@ -47,7 +48,7 @@ const Sport = () => {
                     </video>
                 </div>
                 <div>
-                    <button value='4'  onClick={getSportByType}>Gym</button>
+                    <button value='4' onClick={getSportByType}>Gym</button>
                     <button value='3' onClick={getSportByType}>Coach</button>
                 </div>
             </div>
