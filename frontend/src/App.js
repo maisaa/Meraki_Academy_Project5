@@ -12,6 +12,7 @@ import Post from "./components/post/post";
 import ViewPost from './components/viewPost/viewPost';
 import Sport from "./components/sport/sport";
 import GymAndCouch from "./components/gym&couchbyType/gymCouch";
+import Profile  from "./components/profile/profile";
 
 const App = () => {
   return (
@@ -27,8 +28,8 @@ const App = () => {
       <Route exact path="/sports" component={Sport} />
       <Route exact path="/Gym" component={GymAndCouch} />
       <Route exact path="/Couch" component={GymAndCouch} />
+      <Route exact path="/profile" component={Profile} />    
     </div>
-  );
 };
 
 export default App;

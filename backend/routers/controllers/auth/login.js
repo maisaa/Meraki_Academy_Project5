@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 const login = (req, res) => {
   try {
     const { email, password } = req.body;
-    const command = `SELECT * FROM users WHERE email = ?;`;
+    const command = `SELECT * FROM users WHERE email = ? AND is_deleted= 0; `;
     const data = [email, password];
     db.query(command, data, async (err, result) => {
       if (err) {

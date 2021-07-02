@@ -38,48 +38,26 @@ const getProfileById = (req, res) => {
 };
 
 const updateProfile = (req, res) => {
-  const ProfileObj = {
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    image: req.body.image,
-    phone: req.body.phone,
-    age: req.body.age,
-    email: req.body.email,
-    password: req.body.password,
-  };
-  const command = `
-    UPDATE users
-    SET firstName='?', lastName='?',image='?',phone='?',age='?', email='?', password='?'
-    WHERE user_id=?; `;
-  const arr = [req.params.id];
-  const data = [
-    ProfileObj.firstName,
-    ProfileObj.lastName,
-    ProfileObj.image,
-    ProfileObj.phone,
-    ProfileObj.age,
-    ProfileObj.email,
-    ProfileObj.password,
-  ];
 
-  db.query(command, arr, data, (err, result) => {
+  const userId = req.params.id;
+  const { firstName, lastName, image, phone, age } = req.body;
+  const data = [firstName, lastName, image, phone, age, userId];
+  const command = `UPDATE users SET firstName= ? , lastName= ? , image= ? , phone= ?, age= ?  WHERE user_id=?; `;
+  db.query(command, data, (err, result) => {
     if (err) return res.status(500);
     res.json(result);
-    res.status(200);
+    res.status(201);
   });
 };
 
 const deleteProfile = (req, res) => {
-  const command = `
-    DELETE FROM users
-    WHERE user_id= ? AND is_deleted=0;
-    `;
-
-  const arr = [req.params.id];
-  db.query(command, arr, (err, result) => {
-    if (err) return res.status(404);
-    res.status(200);
-    res.json(result);
+  const userId = req.params.id;
+  const data = [userId];
+  const command = `UPDATE users SET is_deleted =1 WHERE user_id= ?`;
+  db.query(command, data, (err, results) => {
+    if (err) return res.status(500);
+    res.json("This user is delete successful");
+    res.status(201);
   });
 };
 
