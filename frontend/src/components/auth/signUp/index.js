@@ -21,7 +21,16 @@ const SignUp = ({ id }) => {
 
   async function addNewUser() {
     try {
-      const newUser = { firstName, lastName, age, country, email, password, role_id, sport_id };
+      const newUser = {
+        firstName,
+        lastName,
+        age,
+        country,
+        email,
+        password,
+        role_id,
+        sport_id,
+      };
       //client validation
       if (!firstName || !lastName || !country || !age || !email || !password) {
         setMessage("Please fill all the info");
@@ -59,22 +68,46 @@ const SignUp = ({ id }) => {
           <form className="Profile" onSubmit={handelSubmit}>
             <h3 className="nameProfile"> SignUp </h3>
             <div>
-              <input type="text" placeholder="First Name here" onChange={(e) => setFirstName(e.target.value)} />
+              <input
+                type="text"
+                placeholder="First Name here"
+                onChange={(e) => setFirstName(e.target.value)}
+              />
             </div>
             <div>
-              <input type="text" placeholder="Last Name here" onChange={(e) => setLastName(e.target.value)} />
+              <input
+                type="text"
+                placeholder="Last Name here"
+                onChange={(e) => setLastName(e.target.value)}
+              />
             </div>
             <div>
-              <input type="Number" placeholder="Age here" onChange={(e) => setAge(e.target.value)} />
+              <input
+                type="Number"
+                placeholder="Age here"
+                onChange={(e) => setAge(e.target.value)}
+              />
             </div>
             <div>
-              <input type="text" placeholder="Country here" onChange={(e) => setCountry(e.target.value)} />
+              <input
+                type="text"
+                placeholder="Country here"
+                onChange={(e) => setCountry(e.target.value)}
+              />
             </div>
             <div>
-              <input type="text" placeholder="Email here" onChange={(e) => setEmail(e.target.value)} />
+              <input
+                type="email"
+                placeholder="Email here"
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </div>
             <div>
-              <input type="password" placeholder="Password here" onChange={(e) => setPassword(e.target.value)} />
+              <input
+                type="password"
+                placeholder="Password here"
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </div>
             <div>
               <button className="button4">SignUp</button>
@@ -90,22 +123,46 @@ const SignUp = ({ id }) => {
             <form className="Profile" onSubmit={handelSubmit}>
               <h3 className="nameProfile"> SignUp </h3>
               <div>
-                <input type="text" placeholder="First Name here" onChange={(e) => setFirstName(e.target.value)} />
+                <input
+                  type="text"
+                  placeholder="First Name here"
+                  onChange={(e) => setFirstName(e.target.value)}
+                />
               </div>
               <div>
-                <input type="text" placeholder="Last Name here" onChange={(e) => setLastName(e.target.value)} />
+                <input
+                  type="text"
+                  placeholder="Last Name here"
+                  onChange={(e) => setLastName(e.target.value)}
+                />
               </div>
               <div>
-                <input type="Number" placeholder="Age here" onChange={(e) => setAge(e.target.value)} />
+                <input
+                  type="Number"
+                  placeholder="Age here"
+                  onChange={(e) => setAge(e.target.value)}
+                />
               </div>
               <div>
-                <input type="text" placeholder="Country here" onChange={(e) => setCountry(e.target.value)} />
+                <input
+                  type="text"
+                  placeholder="Country here"
+                  onChange={(e) => setCountry(e.target.value)}
+                />
               </div>
               <div>
-                <input type="text" placeholder="Email here" onChange={(e) => setEmail(e.target.value)} />
+                <input
+                  type="email"
+                  placeholder="Email here"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
               </div>
               <div>
-                <input type="password" placeholder="Password here" onChange={(e) => setPassword(e.target.value)} />
+                <input
+                  type="password"
+                  placeholder="Password here"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
               </div>
               <div>
                 <select
