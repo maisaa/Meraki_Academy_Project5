@@ -7,6 +7,7 @@ import MembersReducer from "./members";
 import sportReducer from "./sports";
 import postsReducer from "./post";
 import GymOrCouchReducer from "./gym&couch";
+import infoGymCochReducer from "./infoGymCoch";
 
 const reducers = combineReducers({
   // add reducers here
@@ -16,6 +17,7 @@ const reducers = combineReducers({
   sportReducer,
   postsReducer,
   GymOrCouchReducer,
+  infoGymCochReducer,
 });
 
 const store = createStore(reducers);

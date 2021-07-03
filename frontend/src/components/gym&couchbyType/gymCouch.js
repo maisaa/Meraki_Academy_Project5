@@ -25,7 +25,6 @@ const GymAndCouch = ({ id }) => {
     axios
       .get(`http://localhost:5000/usersByRole?roleId=${roleId}&type=${type}`)
       .then((result) => {
-        console.log("getSportByType.....", result.data);
         dispatch(setAllGymOrCoach(result.data, role));
       });
   };
@@ -37,20 +36,21 @@ const GymAndCouch = ({ id }) => {
     <div className="GymOrCooch">
       <p></p>
       <div></div>
-      {state.allGymOrCouch.map((ele, i) => {
-        return (
-          <div key={i}>
-            <img
-              src={ele.image}
-              onClick={() => {
-                history.push(`/info/${ele.user_id}`);
-              }}
-            ></img>
-            Name: <p>{ele.firstName}</p>
-            Rate: <p>{ele.rate}</p>
-          </div>
-        );
-      })}
+      {state.allGymOrCouch &&
+        state.allGymOrCouch.map((ele, i) => {
+          return (
+            <div key={i}>
+              <img
+                src={ele.image}
+                onClick={() => {
+                  history.push(`/info/${ele.user_id}`);
+                }}
+              ></img>
+              Name: <p>{ele.firstName}</p>
+              Rate: <p>{ele.rate}</p>
+            </div>
+          );
+        })}
     </div>
   );
 };

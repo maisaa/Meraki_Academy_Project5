@@ -18,5 +18,5 @@ export default GymOrCouchReducer;
 //Action
 
 export const setAllGymOrCoach = (allUser, roleId) => {
-  return { type: "SET_GYM", payload: { allUser: allUser, roleId: roleId } };
+  return { type: "SET_GYM", payload: { allUser, roleId } };
 };
