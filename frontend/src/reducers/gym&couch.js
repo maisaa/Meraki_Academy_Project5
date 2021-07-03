@@ -5,7 +5,7 @@ const GymOrCouchReducer = (state = initialState, { type, payload }) => {
     case "SET_GYM":
       return {
         allGymOrCouch: payload.allUser.filter((ele) => {
-          return ele.role_id == payload.roleId;
+          return ele.role_id == payload.roleId && ele.sport_id;
         }),
       };
     // { allGymOrCouch: payload };

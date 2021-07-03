@@ -2,13 +2,20 @@ const db = require("./../../db/db");
 
 const getAllUsers = (req, res) => {
   const { roleId, type } = req.query;
-  const command = `SELECT * FROM users 
-  INNER JOIN sports ON  users.role_id =? AND sports.type=? AND sports.is_deleted = 0 AND users.is_deleted =0;`;
-  const data = [roleId, type];
-  db.query(command, data, (err, result) => {
+  let typeByID;
+  const command_type = `SELECT * FROM sports where sports.type = ?  `;
+  const data_type = [type];
+  db.query(command_type, data_type, (err, result) => {
     if (err) return res.status(404);
-    res.status(200);
-    res.json(result);
+    typeByID = result[0].sport_id;
+    const command = `SELECT * FROM users 
+    where  role_id =? AND sport_id=? AND is_deleted =0;`;
+    const data = [roleId, typeByID];
+    db.query(command, data, (err, result) => {
+      if (err) return res.status(404);
+      res.status(200);
+      res.json(result);
+    });
   });
 };
 
@@ -38,7 +45,6 @@ const getProfileById = (req, res) => {
 };
 
 const updateProfile = (req, res) => {
-
   const userId = req.params.id;
   const { firstName, lastName, image, phone, age } = req.body;
   const data = [firstName, lastName, image, phone, age, userId];
@@ -71,6 +77,7 @@ const deleteFromUserPosts = (req, res) => {
     res.json(result);
   });
 };
+
 module.exports = {
   getAllUsers,
   getProfileById,
