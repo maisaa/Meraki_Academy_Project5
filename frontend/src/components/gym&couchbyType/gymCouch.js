@@ -40,6 +40,12 @@ const GymAndCouch = ({ id }) => {
       {state.allGymOrCouch.map((ele, i) => {
         return (
           <div key={i}>
+            <img
+              src={ele.image}
+              onClick={() => {
+                history.push(`/info/${ele.user_id}`);
+              }}
+            ></img>
             Name: <p>{ele.firstName}</p>
             Rate: <p>{ele.rate}</p>
           </div>
