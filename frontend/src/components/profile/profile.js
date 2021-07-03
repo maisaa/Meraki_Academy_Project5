@@ -1,13 +1,9 @@
 import React, { cloneElement, useEffect, useState } from "react";
-import Modal from "react-bootstrap/Modal";
+// import Modal from "react-bootstrap/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import {
-  setProfile,
-  updateProfile,
-  deleteProfile,
-} from "./../../reducers/profile";
+import { setProfile, updateProfile, deleteProfile } from "./../../reducers/profile";
 import { decode } from "jsonwebtoken";
 const Profile = () => {
   const dispatch = useDispatch();
@@ -36,9 +32,7 @@ const Profile = () => {
       });
   };
   const editProfile = (e) => {
-    axios
-      .put(`http://localhost:5000/users/${e.target.value}`)
-      .then((result) => {});
+    axios.put(`http://localhost:5000/users/${e.target.value}`).then((result) => {});
     setEdit(true);
   };
 
@@ -99,11 +93,7 @@ const Profile = () => {
                 >
                   <label>
                     firstName :
-                    <input
-                      type="text"
-                      name="firstName"
-                      defaultValue={elem.firstName}
-                    />
+                    <input type="text" name="firstName" defaultValue={elem.firstName} />
                   </label>{" "}
                   <br />
                   <label>
@@ -117,29 +107,17 @@ const Profile = () => {
                   <br />
                   <label>
                     image:
-                    <input
-                      type="text"
-                      name="image"
-                      defaultValue={elem.image}
-                    />{" "}
+                    <input type="text" name="image" defaultValue={elem.image} />{" "}
                   </label>
                   <br />
                   <label>
                     phone:
-                    <input
-                      type="text"
-                      name="phone"
-                      defaultValue={elem.phone}
-                    />{" "}
+                    <input type="text" name="phone" defaultValue={elem.phone} />{" "}
                   </label>
                   <br />
                   <label>
                     age:
-                    <input
-                      type="text"
-                      name="age"
-                      defaultValue={elem.age}
-                    />{" "}
+                    <input type="text" name="age" defaultValue={elem.age} />{" "}
                   </label>
                   <br />
                   <button>save changes</button>
