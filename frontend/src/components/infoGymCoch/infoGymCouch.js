@@ -77,13 +77,6 @@ const GymAndCouchInfo = ({ id }) => {
               </div>
             );
           })}
-        allll:{" "}
-        {state.comments &&
-          state.comments.map((ele) => {
-            console.log("elecomments", ele[0]);
-            return <p>{ele[0].postID}</p>;
-          })}
-        {/* <p>{allComments && allComments.map((ele) => {})}</p> */}
       </div>
     </div>
   );
