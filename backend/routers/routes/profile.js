@@ -6,6 +6,7 @@ const {
   deleteProfile,
   getAllUsersPost,
   getProfileById1,
+  getAllUsersPost1,
 } = require("./../controllers/profile");
 //middle-wares
 const authentication = require("../middlewares/authentication");
@@ -14,6 +15,7 @@ const profileRouter = express.Router();
 
 profileRouter.get("/usersByRole", getAllUsers);
 profileRouter.get("/usersPost", getAllUsersPost);
+profileRouter.get("/usersPost1/:id", getAllUsersPost1);
 profileRouter.get("/users/:id", getProfileById);
 profileRouter.get("/usersInfo/:id", getProfileById1);
 profileRouter.put("/users/:id", updateProfile);

@@ -31,6 +31,20 @@ const getAllUsersPost = (req, res) => {
     res.json(result);
   });
 };
+const getAllUsersPost1 = (req, res) => {
+  const id = req.params.id;
+  console.log("id", id);
+  const command = `SELECT users_posts.user_id , posts.post, users_posts.post_id 
+  , posts.poster_id , users.firstName From users_posts
+  INNER JOIN posts ON users_posts.post_id = posts.post_id AND users_posts.is_deleted =0
+  INNER JOIN users ON users.user_id = ? AND users.user_id = users_posts.user_id`;
+  const data = [id];
+  db.query(command, data, (err, result) => {
+    if (err) return res.status(404);
+    res.status(200);
+    res.json(result);
+  });
+};
 
 const getProfileById = (req, res) => {
   const command = `
@@ -97,4 +111,5 @@ module.exports = {
   getAllUsersPost,
   deleteFromUserPosts,
   getProfileById1,
+  getAllUsersPost1,
 };
