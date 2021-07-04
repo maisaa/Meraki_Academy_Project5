@@ -35,6 +35,8 @@ const App = () => {
       <Route exact path="/user" component={User} />    
       <Route exact path="/type/:id" component={GymAndCouch} />
       <Route exact path="/info/:id" component={GymAndCouchInfo} />
+    </div>
+  )
 };
 
 export default App;
