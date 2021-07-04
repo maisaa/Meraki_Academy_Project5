@@ -23,13 +23,13 @@ const GymAndCouch = ({ id }) => {
     const roleId = role;
     const type = localStorage.getItem("type");
     axios
-      .get(`http://localhost:5000/usersByRole?roleId=${roleId}&type=${type}`)
+      .get(`http://localhost:5000/usersByRolee?roleId=${roleId}&type=${type}`)
       .then((result) => {
         dispatch(setAllGymOrCoach(result.data, role));
       });
   };
 
-  useEffect(async () => {
+  useEffect(() => {
     getSportByType();
   }, []);
   return (

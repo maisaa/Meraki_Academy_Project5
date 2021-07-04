@@ -20,15 +20,7 @@ const Sport = () => {
   }, []);
 
   const getSportByType = (e) => {
-    let roleId = e.target.value;
-    let type = localStorage.getItem("type");
-    axios
-      .get(`http://localhost:5000/usersByRole?roleId=${roleId}&type=${type}`)
-      .then((result) => {
-        console.log("getSportByType.....", result);
-        // dispatch()
-        history.push(`/${e.target.value}`);
-      });
+    history.push(`/type/${e.target.value}`);
   };
 
   return (
