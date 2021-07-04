@@ -14,12 +14,13 @@ const getAllUsers = (req, res) => {
 
 const getAllUsers1 = (req, res) => {
   const { roleId, type } = req.query;
+  let typeByID;
   const command_type = `SELECT * FROM sports where sports.type = ?  `;
   const data_type = [type];
   db.query(command_type, data_type, (err, result) => {
     if (err) return res.status(404);
     typeByID = result[0].sport_id;
-    const command = `SELECT * FROM users
+    const command = `SELECT * FROM users 
     where  role_id =? AND sport_id=? AND is_deleted =0;`;
     const data = [roleId, typeByID];
     db.query(command, data, (err, result) => {
