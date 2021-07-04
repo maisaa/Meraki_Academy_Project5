@@ -7,7 +7,10 @@ import MembersReducer from "./members";
 import sportReducer from "./sports";
 import postsReducer from "./post";
 import GymOrCouchReducer from "./gym&couch";
+import infoGymCochReducer from "./infoGymCoch";
+import commentsReducer from "./commints";
 import favoriteReducer from "./favorite";
+
 const reducers = combineReducers({
   // add reducers here
   loginReducer,
@@ -16,6 +19,8 @@ const reducers = combineReducers({
   sportReducer,
   postsReducer,
   GymOrCouchReducer,
+  infoGymCochReducer,
+  commentsReducer,
   favoriteReducer,
 });
 

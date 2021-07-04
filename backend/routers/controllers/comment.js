@@ -16,9 +16,10 @@ const addComment = (req, res) => {
 //Get all comments for one post
 const getCommentsByPostId = (req, res) => {
   const postId = req.params.id;
-  const command = `SELECT * FROM comments WHERE post_id = ?;`;
+  const command = `SELECT users.firstName, comments.comment FROM comments 
+  INNER JOIN users ON comments.commenter_id = user_id 
+  INNER JOIN posts ON comments.post_id = posts.post_id AND posts.post_id = ?   ;`;
   const data = [postId];
-
   db.query(command, data, (err, result) => {
     if (err) return res.status(404).json(err);
 

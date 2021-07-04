@@ -3,10 +3,10 @@ const initialState = { comments: [] };
 const commentsReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case "SET_COMMENT":
-      return { comments: payload };
+      return { comments: [...state.comments, payload] };
     case "ADD_COMMENT":
       return { comments: [...state.comments, payload] };
-    
+
     default:
       return state;
   }
