@@ -34,7 +34,7 @@ const getAllUsersPost = (req, res) => {
 
 const getProfileById = (req, res) => {
   const command = `
-    SELECT * FROM users 
+    SELECT * FROM users  
     WHERE user_id= ? AND is_deleted=0;`;
   const arr = [req.params.id];
   db.query(command, arr, (err, result) => {
@@ -44,6 +44,17 @@ const getProfileById = (req, res) => {
   });
 };
 
+const getProfileById1 = (req, res) => {
+  const command = `
+    SELECT * FROM users 
+    INNER JOIN sports ON users.user_id= ? AND users.is_deleted=0 AND users.sport_id = sports.sport_id;`;
+  const arr = [req.params.id];
+  db.query(command, arr, (err, result) => {
+    if (err) return res.status(404);
+    res.json(result);
+    res.status(200);
+  });
+};
 const updateProfile = (req, res) => {
   const userId = req.params.id;
   const { firstName, lastName, image, phone, age } = req.body;
@@ -85,4 +96,5 @@ module.exports = {
   deleteProfile,
   getAllUsersPost,
   deleteFromUserPosts,
+  getProfileById1,
 };

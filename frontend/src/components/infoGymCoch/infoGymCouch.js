@@ -21,9 +21,9 @@ const GymAndCouch = ({ id }) => {
   const getSportByType1 = () => {
     const roleId = role;
     const type = localStorage.getItem("type");
-    axios.get(`http://localhost:5000/users/${role}`).then((result) => {
+    axios.get(`http://localhost:5000/usersInfo/${role}`).then((result) => {
+      console.log("result.data", result.data[0]);
       dispatch(setGymOrCoach(result.data));
-      console.log("result.data", result.data[0].firstName);
     });
   };
 
@@ -33,9 +33,11 @@ const GymAndCouch = ({ id }) => {
   return (
     <div className="GymCooch">
       <img src={state.GymOrCouch && state.GymOrCouch[0].image}></img>
-      <button>{state.GymOrCouch && state.GymOrCouch[0].firstName}</button>
-      <button>chat</button>
+      First Name : <button>{state.GymOrCouch && state.GymOrCouch[0].firstName}</button>
+      <button>add to favorite </button>
+      Description : <p>{state.GymOrCouch && state.GymOrCouch[0].firstName}</p>
       <button>video call</button>
+      <button>chat</button>
       <div>post</div>
     </div>
   );
