@@ -7,6 +7,7 @@ const {
   getAllUsersPost,
   getProfileById1,
   getAllUsersPost1,
+  getAllUsers1,
 } = require("./../controllers/profile");
 //middle-wares
 const authentication = require("../middlewares/authentication");
@@ -14,6 +15,7 @@ const authorization = require("../middlewares/authorization");
 const profileRouter = express.Router();
 
 profileRouter.get("/usersByRole", getAllUsers);
+profileRouter.get("/usersByRolee", getAllUsers1);
 profileRouter.get("/usersPost", getAllUsersPost);
 profileRouter.get("/usersPost1/:id", getAllUsersPost1);
 profileRouter.get("/users/:id", getProfileById);

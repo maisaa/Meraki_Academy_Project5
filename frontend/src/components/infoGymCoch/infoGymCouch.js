@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setGymOrCoach, setGymOrCoachPost } from "./../../reducers/infoGymCoch";
-import { setComment } from "./../../reducers/commints";
+import { AddComment, setComment } from "./../../reducers/commints";
 
 import { useHistory, useParams } from "react-router-dom";
 
 // import {}
 
 const GymAndCouchInfo = ({ id }) => {
-  const [allComments, setAllComments] = useState([]);
+  const [comments, setAComments] = useState("");
   // const decoratedOnClick = useAccordionToggle(eventKey, onClick);
   const history = useHistory();
   const role = useParams().id;
@@ -66,14 +66,40 @@ const GymAndCouchInfo = ({ id }) => {
               <div>
                 <p>{ele.post}</p>
                 <p>
-                  CCCCC :{" "}
+                  Comments :{" "}
                   {state.comments &&
                     state.comments.map((elem) => {
                       if (elem[0].postID === ele.post_id) {
-                        return <p>{elem[0].comment}</p>;
+                        return (
+                          <div>
+                            <p>{elem[0].firstName}</p>
+                            <p>{elem[0].comment}</p>
+                          </div>
+                        );
                       }
                     })}
                 </p>
+                <input
+                  onChange={(e) => {
+                    setAComments(e.target.value);
+                  }}
+                  placeholder="comment here"
+                ></input>
+                <button
+                  onClick={() => {
+                    dispatch(
+                      AddComment([
+                        {
+                          postID: ele.post_id,
+                          comment: comments,
+                          // firstName: elm.firstName,
+                        },
+                      ])
+                    );
+                  }}
+                >
+                  add commints
+                </button>
               </div>
             );
           })}

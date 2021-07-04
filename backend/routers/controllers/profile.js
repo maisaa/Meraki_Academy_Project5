@@ -2,6 +2,18 @@ const db = require("./../../db/db");
 
 const getAllUsers = (req, res) => {
   const { roleId, type } = req.query;
+  const command = `SELECT * FROM users
+  INNER JOIN sports ON  users.role_id =? AND sports.type=? AND sports.is_deleted = 0 AND users.is_deleted =0;`;
+  const data = [roleId, type];
+  db.query(command, data, (err, result) => {
+    if (err) return res.status(404);
+    res.status(200);
+    res.json(result);
+  });
+};
+
+const getAllUsers1 = (req, res) => {
+  const { roleId, type } = req.query;
   let typeByID;
   const command_type = `SELECT * FROM sports where sports.type = ?  `;
   const data_type = [type];
@@ -112,4 +124,5 @@ module.exports = {
   deleteFromUserPosts,
   getProfileById1,
   getAllUsersPost1,
+  getAllUsers1,
 };

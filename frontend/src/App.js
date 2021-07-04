@@ -22,14 +22,14 @@ const App = () => {
     <div className="App">
       <Navigation />
       <Route exact path="/register" component={BeforeSignUp} />
-      <Route path="/register/:id" component={SignUp} />
+      <Route exact path="/register/:id" component={SignUp} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/dashboard" component={Dashboard} />
       <Route exact path="/allMembers" component={Members} />
       <Route exact path="/posts" component={Post} />
       <Route exact path="/post" component={ViewPost} />
       <Route exact path="/sports" component={Sport} />
-      <Route exact path="/:id" component={GymAndCouch} />
+      <Route exact path="/type/:id" component={GymAndCouch} />
       <Route exact path="/info/:id" component={GymAndCouchInfo} />
       <Route exact path="/profile" component={Profile} />
     </div>

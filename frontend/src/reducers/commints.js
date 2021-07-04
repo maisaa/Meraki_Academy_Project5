@@ -20,10 +20,10 @@ export const setComment = (comments) => {
   return { type: "SET_COMMENT", payload: comments };
 };
 
-// export const AddComment = (comments) => {
-//   // comments here represents just for comment that added .
-//   return { type: "ADD_COMMENT", payload: comments };
-// };
+export const AddComment = (comments) => {
+  // comments here represents just for comment that added .
+  return { type: "ADD_COMMENT", payload: comments };
+};
 
 // export const editComment = (comments) => {
 //   return { type: "UPDATE_COMMENT", payload: comments };
