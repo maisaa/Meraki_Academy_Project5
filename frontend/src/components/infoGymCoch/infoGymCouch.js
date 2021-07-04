@@ -1,35 +1,48 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setGymOrCoach, setGymOrCoachPost } from "./../../reducers/infoGymCoch";
+import { setComment } from "./../../reducers/commints";
+
 import { useHistory, useParams } from "react-router-dom";
 
 // import {}
 
-const GymAndCouch = ({ id }) => {
+const GymAndCouchInfo = ({ id }) => {
+  const [allComments, setAllComments] = useState([]);
   // const decoratedOnClick = useAccordionToggle(eventKey, onClick);
   const history = useHistory();
   const role = useParams().id;
-  console.log("role", role);
   const dispatch = useDispatch();
   const state = useSelector((state) => {
     return {
       token: state.loginReducer.token,
       GymOrCouch: state.infoGymCochReducer.GymOrCouch,
       allPosts: state.infoGymCochReducer.allPosts,
+      comments: state.commentsReducer.comments,
     };
   });
 
   const getSportByType = () => {
     axios.get(`http://localhost:5000/usersInfo/${role}`).then((result) => {
-      console.log("result.data", result.data[0]);
       dispatch(setGymOrCoach(result.data));
     });
   };
   const getAllPosts = () => {
     axios.get(`http://localhost:5000/usersPost1/${role}`).then((result) => {
-      console.log("result.data2", result.data);
+      // console.log("result.data2", result.data);
       dispatch(setGymOrCoachPost(result.data));
+      result.data.map((ele) => {
+        axios.get(`http://localhost:5000/comments/${ele.post_id}/`).then((result) => {
+          result.data.map((elm) => {
+            dispatch(
+              setComment([
+                { postID: ele.post_id, comment: elm.comment, firstName: elm.firstName },
+              ])
+            );
+          });
+        });
+      });
     });
   };
 
@@ -49,11 +62,31 @@ const GymAndCouch = ({ id }) => {
         All Posts :{" "}
         {state.allPosts &&
           state.allPosts.map((ele) => {
-            return <p>{ele.post}</p>;
+            return (
+              <div>
+                <p>{ele.post}</p>
+                <p>
+                  CCCCC :{" "}
+                  {state.comments &&
+                    state.comments.map((elem) => {
+                      if (elem[0].postID === ele.post_id) {
+                        return <p>{elem[0].comment}</p>;
+                      }
+                    })}
+                </p>
+              </div>
+            );
           })}
+        allll:{" "}
+        {state.comments &&
+          state.comments.map((ele) => {
+            console.log("elecomments", ele[0]);
+            return <p>{ele[0].postID}</p>;
+          })}
+        {/* <p>{allComments && allComments.map((ele) => {})}</p> */}
       </div>
     </div>
   );
 };
 
-export default GymAndCouch;
+export default GymAndCouchInfo;
