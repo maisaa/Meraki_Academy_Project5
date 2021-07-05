@@ -1,16 +1,22 @@
 import React, { cloneElement, useEffect, useState } from "react";
-// import Modal from "react-bootstrap/Modal";
+import Modal from "react-bootstrap/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
-import { setProfile, updateProfile, deleteProfile } from "./../../reducers/profile";
 import { decode } from "jsonwebtoken";
-const Profile = () => {
+import { useHistory } from "react-router-dom";
+import {
+  setProfile,
+  updateProfile,
+  deleteProfile,
+} from "./../../reducers/profile";
+import { setFavorite } from "./../../reducers/favorite";
+const User = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const state = useSelector((state) => {
     return {
       profile: state.profileReducers.profile,
+      favorite: state.favoriteReducer.favorite,
     };
   });
   const [edit, setEdit] = useState(false);
@@ -32,7 +38,9 @@ const Profile = () => {
       });
   };
   const editProfile = (e) => {
-    axios.put(`http://localhost:5000/users/${e.target.value}`).then((result) => {});
+    // axios
+    //   .put(`http://localhost:5000/users/${e.target.value}`)
+    //   .then((result) => {});
     setEdit(true);
   };
 
@@ -40,6 +48,18 @@ const Profile = () => {
     getProfile();
   }, [edit]);
 
+  useEffect(() => {
+    getAllPost();
+  }, []);
+
+  const getAllPost = () => {
+    axios
+      .get(`http://localhost:5000/favorite/${user.userId}`)
+      .then((result) => {
+        dispatch(setFavorite(result.data));
+        console.log(result.data);
+      });
+  };
   const saveProfile = async (elem, firstName, lastName, image, phone, age) => {
     await axios.put(`http://localhost:5000/users/${elem.user_id}`, {
       firstName,
@@ -70,11 +90,10 @@ const Profile = () => {
     setMessage("");
     await axios.get(`http://localhost:5000/user/${elem.user_id}`);
   };
+
   return (
     <>
       {deleteProfile ? (
-
-        
         <div>
           {edit ? (
             <div>
@@ -90,13 +109,16 @@ const Profile = () => {
                       e.target.image.value,
                       e.target.phone.value,
                       e.target.age.value
-                      
                     );
                   }}
                 >
                   <label>
                     firstName :
-                    <input type="text" name="firstName" defaultValue={elem.firstName} />
+                    <input
+                      type="text"
+                      name="firstName"
+                      defaultValue={elem.firstName}
+                    />
                   </label>{" "}
                   <br />
                   <label>
@@ -110,17 +132,29 @@ const Profile = () => {
                   <br />
                   <label>
                     image:
-                    <input type="text" name="image" defaultValue={elem.image} />{" "}
+                    <input
+                      type="text"
+                      name="image"
+                      defaultValue={elem.image}
+                    />{" "}
                   </label>
                   <br />
                   <label>
                     phone:
-                    <input type="text" name="phone" defaultValue={elem.phone} />{" "}
+                    <input
+                      type="text"
+                      name="phone"
+                      defaultValue={elem.phone}
+                    />{" "}
                   </label>
                   <br />
                   <label>
                     age:
-                    <input type="text" name="age" defaultValue={elem.age} />{" "}
+                    <input
+                      type="text"
+                      name="age"
+                      defaultValue={elem.age}
+                    />{" "}
                   </label>
                   <br />
                   <button>save changes</button>
@@ -137,13 +171,26 @@ const Profile = () => {
                   <img src={elem.image} height="100" width="100" /> <br />
                   <p> phone : {elem.phone}</p>
                   <p> age : {elem.age}</p>
-                  <p> rate : {elem.rate}</p>
                   <button onClick={editProfile} value={elem.user_id}>
                     edit profile
                   </button>
                   <button onClick={popup} value={elem.user_id}>
                     deleted profile
                   </button>
+                  <div>
+                    {state.favorite.map((elem, i) => (
+                      <div key={i}>
+                        <p>post:{elem.post}</p>
+                        
+                        <img
+                          src={elem.photo}
+                          height="100"
+                          width="100"
+                        />
+                      
+                      </div>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
@@ -180,4 +227,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default User;

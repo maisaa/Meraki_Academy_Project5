@@ -15,7 +15,7 @@ const addToFavorite = async (req, res) => {
 
 const getFavorite = (req, res) => {
   const id = req.params.id;
-  const query = `SELECT firstName,post,photo,video FROM users
+  const query = `SELECT firstName,post,photo,video,poster_id FROM users
   INNER JOIN users_posts ON users.user_id = users_posts.user_id AND users_posts.user_id =? 
   INNER JOIN posts ON users_posts.post_id = posts.post_id AND posts.is_deleted=0`;
   const data = [id];

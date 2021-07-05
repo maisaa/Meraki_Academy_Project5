@@ -9,6 +9,7 @@ import postsReducer from "./post";
 import GymOrCouchReducer from "./gym&couch";
 import infoGymCochReducer from "./infoGymCoch";
 import commentsReducer from "./commints";
+import favoriteReducer from "./favorite";
 
 const reducers = combineReducers({
   // add reducers here
@@ -20,6 +21,7 @@ const reducers = combineReducers({
   GymOrCouchReducer,
   infoGymCochReducer,
   commentsReducer,
+  favoriteReducer,
 });
 
 const store = createStore(reducers);
