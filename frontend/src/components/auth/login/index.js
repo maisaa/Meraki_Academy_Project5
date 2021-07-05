@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken";
 import axios from "axios";
 import { setToken } from "../../../reducers/login";
 import GoogleLogin from "react-google-login";
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button } from "react-bootstrap";
 import "./login.css";
 
 const Login = () => {
@@ -25,6 +25,9 @@ const Login = () => {
   });
 
   const loginWithGoogle = (response) => {
+    //go data base and save the response if the response
+    // exists login directly if not signup this user
+    // in data base and put the role_id is 2 like user
     localStorage.setItem("token", response.accessToken);
     dispatch(setToken({ token: response.accessToken, loggedIn: true }));
     history.push("/");
@@ -62,7 +65,7 @@ const Login = () => {
   };
   const validateForm = () => {
     return email.length > 0 && password.length > 0;
-  }
+  };
 
   return (
     <>
@@ -71,11 +74,22 @@ const Login = () => {
           <h2>Login</h2>
           <Form.Group size="lg" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" name="email" onChange={(e) => setEmail(e.target.value)} required />
+            <Form.Control
+              type="email"
+              placeholder="Enter email"
+              name="email"
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
           </Form.Group>
           <Form.Group size="lg" controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" name="password" onChange={(e) => setPassword(e.target.value)} />
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              name="password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
           </Form.Group>
           <Form.Group>
             <Button size="lg" variant="primary" type="submit" disabled={!validateForm()}>
@@ -87,10 +101,9 @@ const Login = () => {
             buttonText="login with google"
             onSuccess={loginWithGoogle}
             onFailure={loginWithGoogle}
-            cookiePolicy={"single_host_origin"} />
-          <Form.Text className="text-muted">
-            {message && <div>{message}</div>}
-          </Form.Text>
+            cookiePolicy={"single_host_origin"}
+          />
+          <Form.Text className="text-muted">{message && <div>{message}</div>}</Form.Text>
         </Form>
       </div>
     </>

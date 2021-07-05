@@ -71,6 +71,19 @@ const getProfileById = (req, res) => {
   });
 };
 
+const getProfileFirstName = (req, res) => {
+  const command = `
+    SELECT * FROM users  
+    WHERE firstName= ? AND is_deleted=0;`;
+  const data = [req.body.firstName];
+  console.log("req.body.firstName", req.body.firstName);
+  db.query(command, data, (err, result) => {
+    if (err) return res.status(404);
+    res.json(result);
+    res.status(200);
+  });
+};
+
 const getProfileById1 = (req, res) => {
   const command = `
     SELECT * FROM users 
@@ -126,4 +139,5 @@ module.exports = {
   getProfileById1,
   getAllUsersPost1,
   getAllUsers1,
+  getProfileFirstName,
 };
