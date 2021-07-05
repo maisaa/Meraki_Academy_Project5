@@ -17,6 +17,7 @@ const Members = () => {
 
   const getAllMember = async () => {
     const allUsers = await axios.get("http://localhost:5000/usersPost");
+    console.log("all", allUsers.data);
     dispatch(setMembers(allUsers.data));
   };
   const getToken = async () => {

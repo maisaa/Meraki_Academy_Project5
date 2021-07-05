@@ -14,8 +14,10 @@ import ViewPost from "./components/viewPost/viewPost";
 import Sport from "./components/sport/sport";
 import GymAndCouch from "./components/gym&couchbyType/gymCouch";
 import GymAndCouchInfo from "./components/infoGymCoch/infoGymCouch";
-import Profile  from "./components/profile/profile";
+import Profile from "./components/profile/profile";
+import contactUs from "./components/contact/contactus";
 import User from "./components/profile/normal_User";
+
 
 const App = () => {
   return (
@@ -35,6 +37,8 @@ const App = () => {
       <Route exact path="/user" component={User} />    
       <Route exact path="/type/:id" component={GymAndCouch} />
       <Route exact path="/info/:id" component={GymAndCouchInfo} />
+      <Route exact path="/profile" component={Profile} />
+      <Route exact path="/contactUs" component={contactUs} />
     </div>
   )
 };

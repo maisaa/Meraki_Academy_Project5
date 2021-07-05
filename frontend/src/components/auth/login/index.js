@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import jwt from "jsonwebtoken";
 import axios from "axios";
 import { setToken } from "../../../reducers/login";
+import GoogleLogin from "react-google-login";
 import { Form, Button } from 'react-bootstrap';
-
 
 const Login = () => {
   const history = useHistory();
@@ -22,6 +22,13 @@ const Login = () => {
       sports: state.sportReducer.sports,
     };
   });
+
+  const loginWithGoogle = (response) => {
+    localStorage.setItem("token", response.accessToken);
+    dispatch(setToken({ token: response.accessToken, loggedIn: true }));
+    history.push("/");
+  };
+
   useEffect(() => {
     loggedOut();
   }, []);
@@ -66,6 +73,14 @@ const Login = () => {
         <Button variant="primary" type="submit">
           Login
         </Button>
+         <div>
+          <GoogleLogin
+            clientId="701876201185-nj6jqs8eqjrehl98410phe5vu3spjfgb.apps.googleusercontent.com"
+            buttonText="login with google"
+            onSuccess={loginWithGoogle}
+            onFailure={loginWithGoogle}
+            cookiePolicy={"single_host_origin"} />
+        </div>
         <Form.Text className="text-muted">
           {message && <div>{message}</div>}
         </Form.Text>
