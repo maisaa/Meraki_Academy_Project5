@@ -6,6 +6,7 @@ import axios from "axios";
 import { setToken } from "../../../reducers/login";
 import GoogleLogin from "react-google-login";
 import { Form, Button } from 'react-bootstrap';
+import "./login.css";
 
 const Login = () => {
   const history = useHistory();
@@ -59,32 +60,38 @@ const Login = () => {
         setMessage(err.response);
       });
   };
+  const validateForm = ()=> {
+    return email.length > 0 && password.length > 0;
+  }
+
   return (
     <>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" name="email" onChange={(e) => setEmail(e.target.value)} required />
-        </Form.Group>
-        <Form.Group controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" name="password" onChange={(e) => setPassword(e.target.value)} />
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Login
-        </Button>
-         <div>
+      <div className="Login">
+        <Form onSubmit={handleSubmit}>
+          <Form.Group size="lg" controlId="formBasicEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control type="email" placeholder="Enter email" name="email" onChange={(e) => setEmail(e.target.value)} required />
+          </Form.Group>
+          <Form.Group size="lg" controlId="formBasicPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control type="password" placeholder="Password" name="password" onChange={(e) => setPassword(e.target.value)} />
+          </Form.Group>
+          <Form.Group>
+            <Button size="lg" variant="primary" type="submit" disabled={!validateForm()}>
+              Login
+            </Button>
+          </Form.Group>
           <GoogleLogin
             clientId="701876201185-nj6jqs8eqjrehl98410phe5vu3spjfgb.apps.googleusercontent.com"
             buttonText="login with google"
             onSuccess={loginWithGoogle}
             onFailure={loginWithGoogle}
             cookiePolicy={"single_host_origin"} />
-        </div>
-        <Form.Text className="text-muted">
-          {message && <div>{message}</div>}
-        </Form.Text>
-      </Form>
+          <Form.Text className="text-muted">
+            {message && <div>{message}</div>}
+          </Form.Text>
+        </Form>
+      </div>
     </>
   );
 };
