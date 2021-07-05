@@ -1,16 +1,17 @@
 body {
-  /* background-color: #51C4D3    ; */
-  /* background-color: #3053F0; */
+  background-image: url("https://i.ibb.co/bRBH7r7/Remini20210706001710208.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
 }
 
+.pointer{
+  cursor:pointer;
+}
 @media all and (min-width: 480px) {
   .SignUp {
     padding: 60px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
-
   .SignUp form {
     margin: 0 auto;
     max-width: 320px;
@@ -19,12 +20,43 @@ body {
     margin-bottom: 0.3rem;
   }
 }
+.RegisterSelectSignUp{
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.RegisterSelect{
+  margin-top: 2rem;
+  margin-left: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.styleSelectSignUp{
+  margin-left: 14rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+.SignUpSelect {
+  margin-top: 16rem;
+  margin-left: 16rem;
+  border-radius: 0.5rem;
+  background-color: #dee2e6;
+  width: 30rem;
+  height: 18rem;
+  box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+}
 .SignUpUser {
+  margin-top: 4rem;
+  margin-left: 16rem;
   padding-top: 2rem;
   padding-bottom: 1rem;
   border-radius: 0.5rem;
   background-color: #dee2e6;
-  /* ;#50A3B9 */
   width: 30rem;
   height: 38em;
   box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
@@ -33,6 +65,8 @@ body {
 }
 
 .SignUpGymCoach {
+  margin-top: 2rem;
+  margin-left: 16rem;
   padding-top: 2rem;
   padding-bottom: 1rem;
   border-radius: 0.5rem;
@@ -42,6 +76,10 @@ body {
   box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+}
+
+.marg {
+  margin-top: 0.7rem;
 }
 
 .tostMassage {

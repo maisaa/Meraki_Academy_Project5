@@ -14,7 +14,6 @@ const Navigation = () => {
 			{!state.token ? <Link to='/login'>Login</Link> : ''}
 			{state.token ? <Link to='/dashboard'>Dashboard</Link> : ''}
 		</div> */}
-
 		<Navbar className="colorNav" expand="lg">
 			<Navbar.Brand href="#home">Terminators</Navbar.Brand>
 			<Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -32,7 +31,7 @@ const Navigation = () => {
 				</Nav>
 				<Form inline>
 					<FormControl type="text" placeholder="Search" className="mr-sm-2" />
-					<Button variant="info">Search</Button>
+					<Button variant="primary">Search</Button>
 				</Form>
 			</Navbar.Collapse>
 		</Navbar>

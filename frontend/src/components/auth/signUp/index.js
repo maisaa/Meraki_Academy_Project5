@@ -94,7 +94,7 @@ const SignUp = ({ id }) => {
               <Form.Control type="password" placeholder="Password" name="password" onChange={(e) => setPassword(e.target.value)} />
             </Form.Group>
             <Form.Group>
-              <Button size="lg" variant="info" type="submit" >
+              <Button className="marg" size="lg" variant="primary" type="submit" >
                 SignUp
               </Button>
             </Form.Group>
@@ -140,7 +140,7 @@ const SignUp = ({ id }) => {
                 </Form.Control>
               </Form.Group>
               <Form.Group>
-                <Button size="lg" variant="info" type="submit" >
+                <Button className="marg" size="lg" variant="primary" type="submit" >
                   SignUp
                 </Button>
               </Form.Group>
