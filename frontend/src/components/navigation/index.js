@@ -28,13 +28,7 @@ const Navigation = () => {
   };
 
   return (
-    <>
-      {/* <div className="App">Navigation component
-			{!state.token ? <Link to='/register'>Register</Link> : ''}
-			{!state.token ? <Link to='/login'>Login</Link> : ''}
-			{state.token ? <Link to='/dashboard'>Dashboard</Link> : ''}
-		</div> */}
-
+    <>  
       <Navbar className="colorNav" expand="lg">
         <Navbar.Brand href="#home">Terminators</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
