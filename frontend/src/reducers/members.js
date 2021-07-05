@@ -1,6 +1,5 @@
 const initialState = {
   members: [],
-  typeMembers: "",
   id: { userId: "", role: "" },
 };
 
@@ -20,6 +19,7 @@ export default MembersReducer;
 // Action
 
 export const setMembers = (members) => {
+  console.log("members", members);
   return { type: "SET_MEMBERS", payload: members };
 };
 
