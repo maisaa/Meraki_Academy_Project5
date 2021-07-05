@@ -10,6 +10,7 @@ import GymOrCouchReducer from "./gym&couch";
 import infoGymCochReducer from "./infoGymCoch";
 import commentsReducer from "./commints";
 import favoriteReducer from "./favorite";
+import SearchReducer from "./search";
 
 const reducers = combineReducers({
   // add reducers here
@@ -22,6 +23,7 @@ const reducers = combineReducers({
   infoGymCochReducer,
   commentsReducer,
   favoriteReducer,
+  SearchReducer,
 });
 
 const store = createStore(reducers);
