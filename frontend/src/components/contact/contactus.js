@@ -1,16 +1,6 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
 
-const Result = () => {
-  return (
-    <div>
-      <p className="contactResult">
-        Your Message was sent successfully! we will contact you as soon as possible{" "}
-      </p>
-    </div>
-  );
-};
-
 const ContactUs = () => {
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -75,7 +65,7 @@ const ContactUs = () => {
             <button onClick={emailSend}>send</button>
           </td>
         </div>
-        {message ? <p>successfully send </p> : <p>please full all</p>}
+        {message ? <p>successfully send </p> : <p></p>}
       </div>
     </div>
   );
