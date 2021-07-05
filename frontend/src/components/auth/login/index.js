@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import jwt from "jsonwebtoken";
 import axios from "axios";
 import { setToken } from "../../../reducers/login";
+import { Form, Button } from 'react-bootstrap';
+
 
 const Login = () => {
   const history = useHistory();
@@ -52,29 +54,22 @@ const Login = () => {
   };
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Email Address</label>
-          <input
-            type="email"
-            placeholder="email here"
-            name="email"
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label>Password</label>
-          <input
-            type="password"
-            placeholder="password here"
-            name="password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <button type="submit">Login</button>
-      </form>
-      {message && <div>{message}</div>}
+      <Form onSubmit={handleSubmit}>
+        <Form.Group controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control type="email" placeholder="Enter email" name="email" onChange={(e) => setEmail(e.target.value)} required />
+        </Form.Group>
+        <Form.Group controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control type="password" placeholder="Password" name="password" onChange={(e) => setPassword(e.target.value)} />
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Login
+        </Button>
+        <Form.Text className="text-muted">
+          {message && <div>{message}</div>}
+        </Form.Text>
+      </Form>
     </>
   );
 };
