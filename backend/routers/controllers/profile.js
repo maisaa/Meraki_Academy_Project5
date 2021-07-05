@@ -39,6 +39,7 @@ const getAllUsersPost = (req, res) => {
 
   db.query(command, (err, result) => {
     if (err) return res.status(404);
+    console.log("result", result);
     res.status(200);
     res.json(result);
   });
