@@ -63,46 +63,50 @@ const SignUp = ({ id }) => {
     });
   };
   return (
+
     <div className="SignUp">
       {role === "user" ? (
-        <Form onSubmit={handelSubmit}>
-          <h2 > SignUp </h2>
-          <Form.Group size="lg" controlId="formFirstName">
-            <Form.Label>First Name</Form.Label>
-            <Form.Control type="text" placeholder="Enter First Name" name="firstName" onChange={(e) => setFirstName(e.target.value)} required />
-          </Form.Group>
-          <Form.Group size="lg" controlId="formLastName">
-            <Form.Label>Last Name</Form.Label>
-            <Form.Control type="text" placeholder="Enter Last Name" name="lastName" onChange={(e) => setLastName(e.target.value)} required />
-          </Form.Group>
-          <Form.Group size="lg" controlId="formAge">
-            <Form.Label>Age</Form.Label>
-            <Form.Control type="Number" placeholder="Enter Age" name="age" onChange={(e) => setAge(e.target.value)} />
-          </Form.Group>
-          <Form.Group size="lg" controlId="formCountry">
-            <Form.Label>Country</Form.Label>
-            <Form.Control type="text" placeholder="Enter Country" name="Country" onChange={(e) => setCountry(e.target.value)} required />
-          </Form.Group>
-          <Form.Group size="lg" controlId="formEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" name="email" onChange={(e) => setEmail(e.target.value)} required />
-          </Form.Group>
-          <Form.Group size="lg" controlId="formPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" name="password" onChange={(e) => setPassword(e.target.value)} />
-          </Form.Group>
-          <Form.Group>
-            <Button size="lg" variant="primary" type="submit" >
-              SignUp
-            </Button>
-          </Form.Group>
-          <Form.Text className="text-muted">
-            {message && <div>{message}</div>}
-          </Form.Text>
-        </Form>
+        <div className="SignUpUser" >
+          <Form onSubmit={handelSubmit}>
+            <h2 > SignUp </h2>
+            <Form.Group size="lg" controlId="formFirstName">
+              <Form.Label>First Name</Form.Label>
+              <Form.Control type="text" placeholder="Enter First Name" name="firstName" onChange={(e) => setFirstName(e.target.value)} required />
+            </Form.Group>
+            <Form.Group size="lg" controlId="formLastName">
+              <Form.Label>Last Name</Form.Label>
+              <Form.Control type="text" placeholder="Enter Last Name" name="lastName" onChange={(e) => setLastName(e.target.value)} required />
+            </Form.Group>
+            <Form.Group size="lg" controlId="formAge">
+              <Form.Label>Age</Form.Label>
+              <Form.Control type="Number" placeholder="Enter Age" name="age" onChange={(e) => setAge(e.target.value)} />
+            </Form.Group>
+            <Form.Group size="lg" controlId="formCountry">
+              <Form.Label>Country</Form.Label>
+              <Form.Control type="text" placeholder="Enter Country" name="Country" onChange={(e) => setCountry(e.target.value)} required />
+            </Form.Group>
+            <Form.Group size="lg" controlId="formEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control type="email" placeholder="Enter email" name="email" onChange={(e) => setEmail(e.target.value)} required />
+            </Form.Group>
+            <Form.Group size="lg" controlId="formPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control type="password" placeholder="Password" name="password" onChange={(e) => setPassword(e.target.value)} />
+            </Form.Group>
+            <Form.Group>
+              <Button size="lg" variant="info" type="submit" >
+                SignUp
+              </Button>
+            </Form.Group>
+            <div className="tostMassage" >
+            <Form.Label >
+              {message && <div  >{message}</div>}
+            </Form.Label>
+            </div>
+          </Form>
+        </div>
       ) : role === "gym" || "couch" ? (
-        <div>
-          <div className="SignUp">
+          <div className="SignUpGymCoach">
             <Form onSubmit={handelSubmit}>
               <h2 > SignUp </h2>
               <Form.Group size="lg" controlId="formFirstName">
@@ -136,7 +140,7 @@ const SignUp = ({ id }) => {
                 </Form.Control>
               </Form.Group>
               <Form.Group>
-                <Button size="lg" variant="primary" type="submit" >
+                <Button size="lg" variant="info" type="submit" >
                   SignUp
                 </Button>
               </Form.Group>
@@ -146,7 +150,6 @@ const SignUp = ({ id }) => {
               <div></div>
             </Form>
           </div>
-        </div>
       ) : (
         <div>none</div>
       )}
