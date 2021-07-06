@@ -69,7 +69,7 @@ const Login = () => {
 
   return (
     <>
-      <div className="Login">
+      <div className="Login body1">
         <div className="styleLogin">
           <Form onSubmit={handleSubmit}>
             <h2>Login</h2>
@@ -90,6 +90,7 @@ const Login = () => {
                 placeholder="Password"
                 name="password"
                 onChange={(e) => setPassword(e.target.value)}
+                required
               />
             </Form.Group>
             <Form.Group>
@@ -98,7 +99,7 @@ const Login = () => {
                 variant="primary"
                 type="submit"
                 disabled={!validateForm()}
-                className="pointer"
+                className="pointer marg"
               >
                 Login
               </Button>
@@ -109,11 +110,11 @@ const Login = () => {
               onSuccess={loginWithGoogle}
               onFailure={loginWithGoogle}
               cookiePolicy={"single_host_origin"}
-              className="pointer"
+              className="pointer marg"
             />
-            <Form.Text className="text-muted">
-              {message && <div>{message}</div>}
-            </Form.Text>
+            <Form.Label >
+              {message && <div  >{message}</div>}
+            </Form.Label>
           </Form>
         </div>
       </div>

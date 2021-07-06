@@ -1,8 +1,12 @@
-body {
+.body1 {
   background-image: url("https://i.ibb.co/bRBH7r7/Remini20210706001710208.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
+}
+.classImage{
+  padding: 60px ;
+  padding-bottom: 16rem;
 }
 
 .pointer{
@@ -40,8 +44,8 @@ body {
   border-radius: 0.5rem;
 }
 .SignUpSelect {
-  margin-top: 16rem;
-  margin-left: 16rem;
+  margin-top: 12rem;
+  margin-left: 12rem;
   border-radius: 0.5rem;
   background-color: #dee2e6;
   width: 30rem;
@@ -58,7 +62,7 @@ body {
   border-radius: 0.5rem;
   background-color: #dee2e6;
   width: 30rem;
-  height: 38em;
+  height: 39rem;
   box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
