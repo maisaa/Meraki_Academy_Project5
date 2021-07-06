@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Route, useHistory } from "react-router-dom";
-import { Button, Media, Container, Row, Col, Image } from 'react-bootstrap';
+import { Button, Media, Container, Row, Col } from 'react-bootstrap';
 import axios from "axios";
 import "./signUp.css";
 import SignUp from "./index";
@@ -16,6 +16,11 @@ const BeforeSignUp = () => {
     history.push(`/register/${e.target.value}`);
   };
 
+  const stateForSignUpImages = async (e) => {
+    await setState(e.target.alt);
+    history.push(`/register/${e.target.alt}`);
+  };
+
   return (
     <div className="body1 classImage">
       <div className="SignUpSelect">
@@ -29,9 +34,9 @@ const BeforeSignUp = () => {
                   height={64}
                   className="mr-3 pointer"
                   src="https://i.ibb.co/8YPsDH5/man-1.png"
-                  alt="User"
+                  alt="user"
                   rounded
-                  value="user" onClick={stateForSignUp}
+                  onClick={stateForSignUpImages}
                 />
               </Media>
             </Col>
@@ -42,9 +47,9 @@ const BeforeSignUp = () => {
                   height={64}
                   className="mr-3 pointer"
                   src="https://i.ibb.co/f2twS8g/coach.png"
-                  alt="Coach"
+                  alt="coach"
                   rounded
-                  value="couch" onClick={stateForSignUp}
+                  onClick={stateForSignUpImages}
                 />
               </Media>
             </Col>
@@ -55,9 +60,9 @@ const BeforeSignUp = () => {
                   height={64}
                   className="mr-3 pointer"
                   src="https://i.ibb.co/MCfGZv2/gym-2.pnggit "
-                  alt="Gym"
+                  alt="gym"
                   rounded
-                  value="gym" onClick={stateForSignUp}
+                  onClick={stateForSignUpImages}
                 />
               </Media>
             </Col>
@@ -73,7 +78,7 @@ const BeforeSignUp = () => {
             <Col xs={6} md={4}>
               <Media>
                 <Media.Body>
-                  <Button className="marg pointer" variant="primary" type="button" value="couch" onClick={stateForSignUp}>Coach</Button>
+                  <Button className="marg pointer" variant="primary" type="button" value="coach" onClick={stateForSignUp}>Coach</Button>
                 </Media.Body>
               </Media>
             </Col>
