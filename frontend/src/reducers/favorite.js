@@ -6,9 +6,13 @@ const favoriteReducer = (state = initialState, { type, payload }) => {
       return { favorite: payload };
     case "ADD_FAVORITE":
       return { favorite: [...state.favorite, payload] };
-    
+
     case "DELETE_FAVORITE":
-      return state.favorite.filter((elem) => elem.id !== payload.id);
+      return state.favorite.filter((ele, i) => {
+        console.log("payload", payload);
+        return ele.id !== payload;
+      });
+
     default:
       return state;
   }
@@ -22,6 +26,7 @@ export const setFavorite = (favorite) => {
 export const AddFavorite = (newFavorite) => {
   return { type: "ADD_FAVORITE", payload: newFavorite };
 };
-export const deleteFavorite= (deleteFavorite) => {
+export const deleteFavorite = (deleteFavorite) => {
+  console.log("deleteFavorite", deleteFavorite);
   return { type: "DELETE_FAVORITE", payload: deleteFavorite };
 };

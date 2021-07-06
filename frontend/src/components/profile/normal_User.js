@@ -5,8 +5,10 @@ import axios from "axios";
 import { decode } from "jsonwebtoken";
 import { useHistory } from "react-router-dom";
 import { setProfile, updateProfile, deleteProfile } from "./../../reducers/profile";
-import { setFavorite } from "./../../reducers/favorite";
+import { setFavorite, deleteFavorite } from "./../../reducers/favorite";
 const User = () => {
+  const [state1, setState1] = useState(true);
+
   const dispatch = useDispatch();
   const history = useHistory();
   const state = useSelector((state) => {
@@ -23,6 +25,7 @@ const User = () => {
   useEffect(() => {
     getProfile();
   }, []);
+
   const getProfile = () => {
     axios
       .get(`http://localhost:5000/users/${user.userId}`)
@@ -48,6 +51,10 @@ const User = () => {
   useEffect(() => {
     getAllPost();
   }, []);
+
+  useEffect(() => {
+    getAllPost();
+  }, [state1]);
 
   const getAllPost = () => {
     axios.get(`http://localhost:5000/favorite/${user.userId}`).then((result) => {
@@ -153,26 +160,30 @@ const User = () => {
                     deleted profile
                   </button>
                   <div>
-                    {state.favorite.map((elem, i) => (
-                      <div key={i}>
-                        <p>post:{elem.post}</p>
-                        <img src={elem.photo} height="100" width="100" />
-                        <button
-                          onClick={() => {
-                            console.log("aaa");
-                            const postId = elem.post_id;
-                            const user = decode(state.token);
-                            const userId = user.userId;
-                            axios.put("http://localhost:5000/favorite", {
-                              postId,
-                              userId,
-                            });
-                          }}
-                        >
-                          delete post
-                        </button>
-                      </div>
-                    ))}
+                    {state.favorite &&
+                      state.favorite.map((elem, i) => (
+                        <div key={i}>
+                          <p>post:{elem.post}</p>
+                          <img src={elem.photo} height="100" width="100" />
+                          <button
+                            onClick={() => {
+                              console.log("aaa");
+                              const postId = elem.post_id;
+
+                              const user = decode(state.token);
+                              const userId = user.userId;
+                              axios.put("http://localhost:5000/favorite", {
+                                postId,
+                                userId,
+                              });
+                              dispatch(deleteFavorite(postId));
+                              setState1(!state);
+                            }}
+                          >
+                            delete post
+                          </button>
+                        </div>
+                      ))}
                   </div>
                 </div>
               ))}
