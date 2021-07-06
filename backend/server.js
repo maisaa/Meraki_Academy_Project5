@@ -44,15 +44,12 @@ const io = socket(server, {
 });
 
 io.on("connection", (socket) => {
-  console.log("socket.id", socket.id);
-
   socket.on("join_room", (data) => {
     socket.join(data);
     console.log("user joined Room:", data);
   });
 
   socket.on("send_message", (data) => {
-    console.log("data.rom", data.role);
     socket.to(data.role).emit("receive_message", data.content);
   });
 
