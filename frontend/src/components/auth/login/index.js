@@ -70,41 +70,52 @@ const Login = () => {
   return (
     <>
       <div className="Login">
-        <Form onSubmit={handleSubmit}>
-          <h2>Login</h2>
-          <Form.Group size="lg" controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="Enter email"
-              name="email"
-              onChange={(e) => setEmail(e.target.value)}
-              required
+        <div className="styleLogin">
+          <Form onSubmit={handleSubmit}>
+            <h2>Login</h2>
+            <Form.Group size="lg" controlId="formBasicEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Enter email"
+                name="email"
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </Form.Group>
+            <Form.Group size="lg" controlId="formBasicPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                name="password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group>
+              <Button
+                size="lg"
+                variant="primary"
+                type="submit"
+                disabled={!validateForm()}
+                className="pointer"
+              >
+                Login
+              </Button>
+            </Form.Group>
+            <GoogleLogin
+              clientId="701876201185-nj6jqs8eqjrehl98410phe5vu3spjfgb.apps.googleusercontent.com"
+              buttonText="login with google"
+              onSuccess={loginWithGoogle}
+              onFailure={loginWithGoogle}
+              cookiePolicy={"single_host_origin"}
+              className="pointer"
             />
-          </Form.Group>
-          <Form.Group size="lg" controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              type="password"
-              placeholder="Password"
-              name="password"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </Form.Group>
-          <Form.Group>
-            <Button size="lg" variant="primary" type="submit" disabled={!validateForm()}>
-              Login
-            </Button>
-          </Form.Group>
-          <GoogleLogin
-            clientId="701876201185-nj6jqs8eqjrehl98410phe5vu3spjfgb.apps.googleusercontent.com"
-            buttonText="login with google"
-            onSuccess={loginWithGoogle}
-            onFailure={loginWithGoogle}
-            cookiePolicy={"single_host_origin"}
-          />
-          <Form.Text className="text-muted">{message && <div>{message}</div>}</Form.Text>
-        </Form>
+            <Form.Text className="text-muted">
+              {message && <div>{message}</div>}
+            </Form.Text>
+          </Form>
+        </div>
       </div>
     </>
   );

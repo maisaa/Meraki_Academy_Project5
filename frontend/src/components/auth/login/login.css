@@ -1,10 +1,30 @@
 @media all and (min-width: 480px) {
   .Login {
-    padding: 60px 0;
+    padding: 60px;
+
   }
 
   .Login form {
-    margin: 0 auto;
+    margin: 0 0;
     max-width: 320px;
   }
 }
+
+.styleLogin {
+  margin-top: 4rem;
+  margin-left: 12.5rem;
+  padding-left: 4.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 0.5rem;
+  background-color: #dee2e6;
+  width: 29.5rem;
+  height: 21rem;
+  box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+}
+
+.pointer{
+    cursor:pointer;
+  }
