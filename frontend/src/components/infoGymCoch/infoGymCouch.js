@@ -10,7 +10,7 @@ let socket;
 const CONNECTION_PORT = "http://localhost:5000";
 
 socket = io(CONNECTION_PORT);
-
+//gymInfo
 const GymAndCouchInfo = ({ id }) => {
   const [comments, setAComments] = useState("");
   const [message, setMessage] = useState("");
