@@ -17,6 +17,7 @@ import GymAndCouchInfo from "./components/infoGymCoch/infoGymCouch";
 import Profile from "./components/profile/profile";
 import contactUs from "./components/contact/contactus";
 import User from "./components/profile/normal_User";
+import chat from "./components/chatapp/chat";
 
 
 const App = () => {
@@ -39,6 +40,7 @@ const App = () => {
       <Route exact path="/info/:id" component={GymAndCouchInfo} />
       <Route exact path="/profile" component={Profile} />
       <Route exact path="/contactUs" component={contactUs} />
+      <Route exact path="/chat" component={chat} />
     </div>
   )
 };

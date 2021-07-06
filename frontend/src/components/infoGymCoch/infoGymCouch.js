@@ -26,6 +26,7 @@ const GymAndCouchInfo = ({ id }) => {
   const getSportByType = () => {
     axios.get(`http://localhost:5000/usersInfo/${role}`).then((result) => {
       dispatch(setGymOrCoach(result.data));
+     
     });
   };
   const getAllPosts = () => {
