@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setSports, getSport } from '../../reducers/sports';
 import { setToken } from '../../reducers/login';
 import { useHistory } from "react-router-dom";
-import {Carousel } from 'react-bootstrap';
+import { Carousel, Card, Button, Row, Col } from 'react-bootstrap';
 import jwt from 'jsonwebtoken';
 import axios from 'axios';
 import './dashboard.css'
@@ -65,7 +65,7 @@ const Dashboard = () => {
 			<Carousel.Item>
 				<img
 					className="d-block w-100 imgH"
-					src= 'https://www.davidlloyd.co.uk/cms/images/softwire-david-lloyd/image/upload/f_auto/v1/Tennis/tennis-hero.jpg'
+					src='https://www.davidlloyd.co.uk/cms/images/softwire-david-lloyd/image/upload/f_auto/v1/Tennis/tennis-hero.jpg'
 					alt="Tennis"
 				/>
 				<Carousel.Caption>
@@ -115,26 +115,32 @@ const Dashboard = () => {
 			<Carousel.Item>
 				<img
 					className="d-block w-100 imgH"
-					src="https://www.polar.com/sites/default/files/static/categories/team_sports-desktop.jpg"
-					alt="Football"
+					src="https://cdn.workgreat.orchardroad.org/wp-content/uploads/2018/04/Battle-Ropes-900x450.jpg"
+					alt="Gym"
 				/>
 				<Carousel.Caption>
-					<h3>Football</h3>
+					<h3>Gym</h3>
 				</Carousel.Caption>
 			</Carousel.Item>
 		</Carousel>
 		<div className="App">
-			<h2>Dashboard  for user with Id (  {state.user.userId} )</h2>
 			<h3>All sports</h3>
-			<div>{state.sports.map((elem, i) => (
-				<div key={i}>
-					<p >Sport type:{elem.type}</p>
-					<p >Sport type:{elem.description}</p>
-					<img src={elem.photo} alt={elem.type} height="100" width="100" />
-					<input type="button" value={elem.type} onClick={getSportByType}></input>
-				</div>
-			))}</div>
-		</div> 
+			<Row md={3} className="g-4">
+				{state.sports.map((elem, i) => (
+					<Col>
+						<Card style={{ width: '20rem',height: '25rem', margin:'2erm' }}>
+							<Card.Img variant="top" src={elem.photo} alt={elem.type} />
+							<Card.Body>
+								<Card.Title>{elem.type}</Card.Title>
+								<Card.Text>{elem.description}</Card.Text>
+								<Button variant="primary" value={elem.type} onClick={getSportByType}>{elem.type}</Button>
+								<Card.Text></Card.Text>
+							</Card.Body>
+						</Card>
+					</Col>
+				))}
+			</Row>
+		</div>
 	</>;
 };
 
