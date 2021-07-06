@@ -39,7 +39,7 @@ const User = () => {
   };
   const editProfile = (e) => {
     // axios
-    //   .put(`http://localhost:5000/users/${e.target.value}`)
+    //   .put(`http://localhost:5000/users/${e.target.value}`)//
     //   .then((result) => {});
     setEdit(true);
   };
