@@ -17,7 +17,9 @@ import GymAndCouchInfo from "./components/infoGymCoch/infoGymCouch";
 import Profile from "./components/profile/profile";
 import contactUs from "./components/contact/contactus";
 import User from "./components/profile/normal_User";
+import chat from "./components/chatapp/chat";
 import Search from "./components/search/search";
+
 
 const App = () => {
   return (
@@ -39,7 +41,9 @@ const App = () => {
       <Route exact path="/info/:id" component={GymAndCouchInfo} />
       <Route exact path="/profile" component={Profile} />
       <Route exact path="/contactUs" component={contactUs} />
-      <Route exact path="/search" component={Search} />
+      <Route exact path="/chat" component={chat} />
+        <Route exact path="/search" component={Search} />
+
     </div>
   );
 };
