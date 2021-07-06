@@ -29,7 +29,7 @@ const Navigation = () => {
 
   return (
     <>  
-      <Navbar className="colorNav" expand="lg">
+      <Navbar className="colorNav fixedNav" expand="lg">
         <Navbar.Brand href="#home">Terminators</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -53,7 +53,7 @@ const Navigation = () => {
               placeholder="Search"
               className="mr-sm-2"
             />
-            <Button onClick={searchFun} variant="info">
+            <Button onClick={searchFun} variant="primary">
               Search
             </Button>
           </Form>

@@ -64,9 +64,9 @@ const SignUp = ({ id }) => {
   };
   return (
 
-    <div className="SignUp">
+    <div className="SignUp body1">
       {role === "user" ? (
-        <div className="SignUpUser" >
+        <div className="SignUpUser " >
           <Form onSubmit={handelSubmit}>
             <h2 > SignUp </h2>
             <Form.Group size="lg" controlId="formFirstName">
@@ -99,57 +99,57 @@ const SignUp = ({ id }) => {
               </Button>
             </Form.Group>
             <div className="tostMassage" >
-            <Form.Label >
-              {message && <div  >{message}</div>}
-            </Form.Label>
+              <Form.Label >
+                {message && <div  >{message}</div>}
+              </Form.Label>
             </div>
           </Form>
         </div>
       ) : role === "gym" || "couch" ? (
-          <div className="SignUpGymCoach">
-            <Form onSubmit={handelSubmit}>
-              <h2 > SignUp </h2>
-              <Form.Group size="lg" controlId="formFirstName">
-                <Form.Label>First Name</Form.Label>
-                <Form.Control type="text" placeholder="Enter First Name" name="firstName" onChange={(e) => setFirstName(e.target.value)} required />
-              </Form.Group>
-              <Form.Group size="lg" controlId="formLastName">
-                <Form.Label>Last Name</Form.Label>
-                <Form.Control type="text" placeholder="Enter Last Name" name="lastName" onChange={(e) => setLastName(e.target.value)} required />
-              </Form.Group>
-              <Form.Group size="lg" controlId="formAge">
-                <Form.Label>Age</Form.Label>
-                <Form.Control type="Number" placeholder="Enter Age" name="age" onChange={(e) => setAge(e.target.value)} />
-              </Form.Group>
-              <Form.Group size="lg" controlId="formCountry">
-                <Form.Label>Country</Form.Label>
-                <Form.Control type="text" placeholder="Enter Country" name="Country" onChange={(e) => setCountry(e.target.value)} required />
-              </Form.Group>
-              <Form.Group size="lg" controlId="formEmail">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" name="email" onChange={(e) => setEmail(e.target.value)} required />
-              </Form.Group>
-              <Form.Group size="lg" controlId="formPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" name="password" onChange={(e) => setPassword(e.target.value)} />
-              </Form.Group>
-              <Form.Group controlId="exampleForm.ControlSelect1">
-                <Form.Label>Sport Type select</Form.Label>
-                <Form.Control as="select" onClick={async (e) => { SportType(); await setSport_id(e.target.value); }}>
-                  {state1.map((ele, i) => { return <option key={i} value={ele.sport_id}>{ele.type}</option>; })}
-                </Form.Control>
-              </Form.Group>
-              <Form.Group>
-                <Button className="marg" size="lg" variant="primary" type="submit" >
-                  SignUp
-                </Button>
-              </Form.Group>
-              <Form.Text className="text-muted">
-                {message && <div>{message}</div>}
-              </Form.Text>
-              <div></div>
-            </Form>
-          </div>
+        <div className="SignUpGymCoach">
+          <Form onSubmit={handelSubmit}>
+            <h2 > SignUp </h2>
+            <Form.Group size="lg" controlId="formFirstName">
+              <Form.Label>First Name</Form.Label>
+              <Form.Control type="text" placeholder="Enter First Name" name="firstName" onChange={(e) => setFirstName(e.target.value)} required />
+            </Form.Group>
+            <Form.Group size="lg" controlId="formLastName">
+              <Form.Label>Last Name</Form.Label>
+              <Form.Control type="text" placeholder="Enter Last Name" name="lastName" onChange={(e) => setLastName(e.target.value)} required />
+            </Form.Group>
+            <Form.Group size="lg" controlId="formAge">
+              <Form.Label>Age</Form.Label>
+              <Form.Control type="Number" placeholder="Enter Age" name="age" onChange={(e) => setAge(e.target.value)} />
+            </Form.Group>
+            <Form.Group size="lg" controlId="formCountry">
+              <Form.Label>Country</Form.Label>
+              <Form.Control type="text" placeholder="Enter Country" name="Country" onChange={(e) => setCountry(e.target.value)} required />
+            </Form.Group>
+            <Form.Group size="lg" controlId="formEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control type="email" placeholder="Enter email" name="email" onChange={(e) => setEmail(e.target.value)} required />
+            </Form.Group>
+            <Form.Group size="lg" controlId="formPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control type="password" placeholder="Password" name="password" onChange={(e) => setPassword(e.target.value)} />
+            </Form.Group>
+            <Form.Group controlId="exampleForm.ControlSelect1">
+              <Form.Label>Sport Type select</Form.Label>
+              <Form.Control as="select" onClick={async (e) => { SportType(); await setSport_id(e.target.value); }}>
+                {state1.map((ele, i) => { return <option key={i} value={ele.sport_id}>{ele.type}</option>; })}
+              </Form.Control>
+            </Form.Group>
+            <Form.Group>
+              <Button className="marg" size="lg" variant="primary" type="submit" >
+                SignUp
+              </Button>
+            </Form.Group>
+            <Form.Label >
+              {message && <div  >{message}</div>}
+            </Form.Label>
+            <div></div>
+          </Form>
+        </div>
       ) : (
         <div>none</div>
       )}

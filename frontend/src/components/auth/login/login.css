@@ -1,6 +1,13 @@
+.body1 {
+  background-image: url("https://i.ibb.co/bRBH7r7/Remini20210706001710208.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
 @media all and (min-width: 480px) {
   .Login {
     padding: 60px;
+    padding-bottom: 18rem;
 
   }
 
@@ -11,7 +18,7 @@
 }
 
 .styleLogin {
-  margin-top: 4rem;
+  margin-top: 9rem;
   margin-left: 12.5rem;
   padding-left: 4.5rem;
   padding-top: 1rem;
@@ -19,7 +26,7 @@
   border-radius: 0.5rem;
   background-color: #dee2e6;
   width: 29.5rem;
-  height: 21rem;
+  height: 23rem;
   box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
@@ -27,4 +34,8 @@
 
 .pointer{
     cursor:pointer;
+  }
+
+  .marg {
+    margin-top: 0.7rem;
   }
