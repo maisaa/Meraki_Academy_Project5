@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
+const socket = require("socket.io");
 const db = require("./db/db");
 
 //routers
@@ -31,6 +32,31 @@ app.use(postRouter);
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`Server On ${PORT}`);
+});
+
+const io = socket(server, {
+  cors: {
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST", "DELETE", "PUT"],
+  },
+});
+
+io.on("connection", (socket) => {
+  console.log("socket.id", socket.id);
+
+  socket.on("join_room", (data) => {
+    socket.join(data);
+    console.log("user joined Room:", data);
+  });
+
+  socket.on("send_message", (data) => {
+    console.log("data.rom", data.role);
+    socket.to(data.role).emit("receive_message", data.content);
+  });
+
+  socket.on("disconnect", () => {
+    console.log("User disconnected");
+  });
 });
