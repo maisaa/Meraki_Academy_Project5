@@ -42,16 +42,15 @@ const io = socket(server, {
     methods: ["GET", "POST", "DELETE", "PUT"],
   },
 });
-io.on("connection", (socket) => {
-  console.log(socket.id);
 
+io.on("connection", (socket) => {
   socket.on("join_room", (data) => {
     socket.join(data);
     console.log("user joined Room:", data);
   });
 
   socket.on("send_message", (data) => {
-    socket.to(data.room).emit("receive_message", data.content);
+    socket.to(data.role).emit("receive_message", data.content);
   });
 
   socket.on("disconnect", () => {

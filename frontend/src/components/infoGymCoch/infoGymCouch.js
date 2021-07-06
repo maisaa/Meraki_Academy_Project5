@@ -4,11 +4,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { setGymOrCoach, setGymOrCoachPost } from "./../../reducers/infoGymCoch";
 import { AddComment, setComment } from "./../../reducers/commints";
 import { useHistory, useParams } from "react-router-dom";
+import io from "socket.io-client";
+import jwt from "jsonwebtoken";
+let socket;
+const CONNECTION_PORT = "http://localhost:5000";
 
-// import {}
+socket = io(CONNECTION_PORT);
 
 const GymAndCouchInfo = ({ id }) => {
   const [comments, setAComments] = useState("");
+  const [message, setMessage] = useState("");
+  const [messageList, setMessageList] = useState([]);
   // const decoratedOnClick = useAccordionToggle(eventKey, onClick);
   const history = useHistory();
   const role = useParams().id;
@@ -30,7 +36,6 @@ const GymAndCouchInfo = ({ id }) => {
   };
   const getAllPosts = () => {
     axios.get(`http://localhost:5000/usersPost1/${role}`).then((result) => {
-      // console.log("result.data2", result.data);
       dispatch(setGymOrCoachPost(result.data));
       result.data.map((ele) => {
         axios.get(`http://localhost:5000/comments/${ele.post_id}/`).then((result) => {
@@ -41,11 +46,38 @@ const GymAndCouchInfo = ({ id }) => {
       });
     });
   };
+  /////socket io
+  socket.on("receive_message", (data) => {
+    setMessageList([...messageList, data]);
+  });
 
-  useEffect(async () => {
+  const connectToRoom = () => {
+    //role = rome number
+    socket.emit("join_room", role); //raise event
+  };
+
+  const sendMessage = () => {
+    const user = jwt.decode(state.token);
+    const messageContent = {
+      role,
+      content: {
+        author: user.firstName,
+        message,
+      },
+    };
+
+    socket.emit("send_message", messageContent); //raise event
+    setMessageList([...messageList, messageContent.content]);
+    setMessage("");
+  };
+
+  //////////////////////////// end socket io ...
+  useEffect(() => {
     getSportByType();
     getAllPosts();
+    connectToRoom();
   }, []);
+
   return (
     <div className="GymCooch">
       <img src={state.GymOrCouch && state.GymOrCouch[0].image}></img>
@@ -100,6 +132,17 @@ const GymAndCouchInfo = ({ id }) => {
             );
           })}
       </div>
+      <br></br>
+      <br></br>
+      {messageList.map((ele, i) => {
+        return (
+          <h3 key={i}>
+            {ele.author} {ele.message}
+          </h3>
+        );
+      })}
+      <input type="text" placeholder="Write your message here ..." onChange={(e) => setMessage(e.target.value)} />
+      <button onClick={sendMessage}>Send</button>
     </div>
   );
 };
