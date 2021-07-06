@@ -18,6 +18,7 @@ import Profile from "./components/profile/profile";
 import contactUs from "./components/contact/contactus";
 import User from "./components/profile/normal_User";
 import chat from "./components/chatapp/chat";
+import Search from "./components/search/search";
 
 
 const App = () => {
@@ -34,15 +35,17 @@ const App = () => {
       <Route exact path="/sports" component={Sport} />
       <Route exact path="/Gym" component={GymAndCouch} />
       <Route exact path="/Couch" component={GymAndCouch} />
-      <Route exact path="/profile" component={Profile} /> 
-      <Route exact path="/user" component={User} />    
+      <Route exact path="/profile" component={Profile} />
+      <Route exact path="/user" component={User} />
       <Route exact path="/type/:id" component={GymAndCouch} />
       <Route exact path="/info/:id" component={GymAndCouchInfo} />
       <Route exact path="/profile" component={Profile} />
       <Route exact path="/contactUs" component={contactUs} />
       <Route exact path="/chat" component={chat} />
+        <Route exact path="/search" component={Search} />
+
     </div>
-  )
+  );
 };
 
 export default App;

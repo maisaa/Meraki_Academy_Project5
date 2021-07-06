@@ -3,7 +3,6 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setGymOrCoach, setGymOrCoachPost } from "./../../reducers/infoGymCoch";
 import { AddComment, setComment } from "./../../reducers/commints";
-
 import { useHistory, useParams } from "react-router-dom";
 
 // import {}
@@ -36,11 +35,7 @@ const GymAndCouchInfo = ({ id }) => {
       result.data.map((ele) => {
         axios.get(`http://localhost:5000/comments/${ele.post_id}/`).then((result) => {
           result.data.map((elm) => {
-            dispatch(
-              setComment([
-                { postID: ele.post_id, comment: elm.comment, firstName: elm.firstName },
-              ])
-            );
+            dispatch(setComment([{ postID: ele.post_id, comment: elm.comment, firstName: elm.firstName }]));
           });
         });
       });
