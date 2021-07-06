@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { Route, useHistory } from "react-router-dom";
-import { Button, Media, Container, Row, Col } from 'react-bootstrap';
+import { Button, Media, Container, Row, Col, Image } from "react-bootstrap";
 import axios from "axios";
 import "./signUp.css";
 import SignUp from "./index";
-
 
 const BeforeSignUp = () => {
   const [state, setState] = useState("");

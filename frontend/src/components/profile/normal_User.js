@@ -4,17 +4,14 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { decode } from "jsonwebtoken";
 import { useHistory } from "react-router-dom";
-import {
-  setProfile,
-  updateProfile,
-  deleteProfile,
-} from "./../../reducers/profile";
+import { setProfile, updateProfile, deleteProfile } from "./../../reducers/profile";
 import { setFavorite } from "./../../reducers/favorite";
 const User = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const state = useSelector((state) => {
     return {
+      token: state.loginReducer.token,
       profile: state.profileReducers.profile,
       favorite: state.favoriteReducer.favorite,
     };
@@ -53,12 +50,10 @@ const User = () => {
   }, []);
 
   const getAllPost = () => {
-    axios
-      .get(`http://localhost:5000/favorite/${user.userId}`)
-      .then((result) => {
-        dispatch(setFavorite(result.data));
-        console.log(result.data);
-      });
+    axios.get(`http://localhost:5000/favorite/${user.userId}`).then((result) => {
+      dispatch(setFavorite(result.data));
+      console.log(result.data);
+    });
   };
   const saveProfile = async (elem, firstName, lastName, image, phone, age) => {
     await axios.put(`http://localhost:5000/users/${elem.user_id}`, {
@@ -114,47 +109,27 @@ const User = () => {
                 >
                   <label>
                     firstName :
-                    <input
-                      type="text"
-                      name="firstName"
-                      defaultValue={elem.firstName}
-                    />
+                    <input type="text" name="firstName" defaultValue={elem.firstName} />
                   </label>{" "}
                   <br />
                   <label>
                     lastName :
-                    <input
-                      type="text"
-                      name="lastName"
-                      defaultValue={elem.lastName}
-                    />{" "}
+                    <input type="text" name="lastName" defaultValue={elem.lastName} />{" "}
                   </label>{" "}
                   <br />
                   <label>
                     image:
-                    <input
-                      type="text"
-                      name="image"
-                      defaultValue={elem.image}
-                    />{" "}
+                    <input type="text" name="image" defaultValue={elem.image} />{" "}
                   </label>
                   <br />
                   <label>
                     phone:
-                    <input
-                      type="text"
-                      name="phone"
-                      defaultValue={elem.phone}
-                    />{" "}
+                    <input type="text" name="phone" defaultValue={elem.phone} />{" "}
                   </label>
                   <br />
                   <label>
                     age:
-                    <input
-                      type="text"
-                      name="age"
-                      defaultValue={elem.age}
-                    />{" "}
+                    <input type="text" name="age" defaultValue={elem.age} />{" "}
                   </label>
                   <br />
                   <button>save changes</button>
@@ -181,13 +156,21 @@ const User = () => {
                     {state.favorite.map((elem, i) => (
                       <div key={i}>
                         <p>post:{elem.post}</p>
-                        
-                        <img
-                          src={elem.photo}
-                          height="100"
-                          width="100"
-                        />
-                      
+                        <img src={elem.photo} height="100" width="100" />
+                        <button
+                          onClick={() => {
+                            console.log("aaa");
+                            const postId = elem.post_id;
+                            const user = decode(state.token);
+                            const userId = user.userId;
+                            axios.put("http://localhost:5000/favorite", {
+                              postId,
+                              userId,
+                            });
+                          }}
+                        >
+                          delete post
+                        </button>
                       </div>
                     ))}
                   </div>
