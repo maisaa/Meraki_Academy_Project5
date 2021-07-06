@@ -2,3 +2,8 @@
 .colorNav{
     background-color: #dee2e6 !important;
 }
+.fixedNav{
+    position: sticky;
+    top: 0;
+    z-index: 1040;
+}
