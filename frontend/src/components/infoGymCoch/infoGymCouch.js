@@ -31,7 +31,6 @@ const GymAndCouchInfo = ({ id }) => {
   const getSportByType = () => {
     axios.get(`http://localhost:5000/usersInfo/${role}`).then((result) => {
       dispatch(setGymOrCoach(result.data));
-     
     });
   };
   const getAllPosts = () => {
@@ -71,6 +70,10 @@ const GymAndCouchInfo = ({ id }) => {
     setMessage("");
   };
 
+  const addToFav = async () => {
+    const postId = "";
+  };
+
   //////////////////////////// end socket io ...
   useEffect(() => {
     getSportByType();
@@ -87,7 +90,6 @@ const GymAndCouchInfo = ({ id }) => {
       <button>video call</button>
       <button>chat</button>
       <div>
-        All Posts :{" "}
         {state.allPosts &&
           state.allPosts.map((ele) => {
             return (
@@ -128,6 +130,21 @@ const GymAndCouchInfo = ({ id }) => {
                 >
                   add commints
                 </button>
+                All Posts :{" "}
+                <button
+                  onClick={async () => {
+                    const user = jwt.decode(state.token);
+                    const userID = user.userId;
+                    const postID = ele.post_id;
+                    const a = await axios.post("http://localhost:5000/favorite", {
+                      userID,
+                      postID,
+                    });
+                    console.log("a", a);
+                  }}
+                >
+                  add to fav
+                </button>
               </div>
             );
           })}
@@ -141,7 +158,7 @@ const GymAndCouchInfo = ({ id }) => {
           </h3>
         );
       })}
-      <input type="text" placeholder="Write your message here ..." onChange={(e) => setMessage(e.target.value)} />
+      <textarea type="text" placeholder="Write your message here ..." onChange={(e) => setMessage(e.target.value)} />
       <button onClick={sendMessage}>Send</button>
     </div>
   );

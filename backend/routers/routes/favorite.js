@@ -8,6 +8,6 @@ const favoriteRouter = express.Router();
 
 favoriteRouter.post("/favorite", addToFavorite);
 favoriteRouter.get("/favorite/:id", getFavorite);
-favoriteRouter.delete("/favorite/:postID", deleteFavorite);
+favoriteRouter.put("/favorite", deleteFavorite);
 
 module.exports = favoriteRouter;
