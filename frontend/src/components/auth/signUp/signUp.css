@@ -1,8 +1,8 @@
 .body1 {
-  /* background-image: url("https://i.ibb.co/bRBH7r7/Remini20210706001710208.jpg");
+  background-image: url("https://i.ibb.co/bRBH7r7/Remini20210706001710208.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 100% 100%; */
+  background-size: 100% 100%;
 }
 .classImage{
   padding: 60px ;
@@ -93,4 +93,11 @@
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   padding-top: -2rem;
+}
+
+.styleButton2{
+  background-color: #2CCCC4;
+  border-color: #2CCCC4;
+  color:black;
+  font-weight: 400;
 }

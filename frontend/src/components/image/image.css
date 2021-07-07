@@ -1,0 +1,17 @@
+.imageHome {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 77rem;
+}
+
+.divHome {
+  margin-top: 63.5rem;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 50rem;
+  background-color: #2CCCC4;
+}
+
+

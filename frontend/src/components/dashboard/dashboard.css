@@ -40,3 +40,43 @@
     font-weight:400;
     font-size: 1.5rem;
 }
+
+.borderStyleAll {
+  align-items: right;
+  border-style: solid;
+  border-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0);
+  width: 47.8rem;
+  height: 45.5rem;
+  padding-top: 5.6rem;
+  margin-top: 7.2rem;
+  margin-left: 69rem;
+  padding-left: 2.6rem;
+  margin-bottom: 6rem;
+}
+
+.bigTittle {
+  color:white;
+  font-weight: 600;
+  font-size: 8rem;
+  text-align: left;
+  font-family: Oswald, sans-serif;
+  padding: -30rem;
+}
+
+.bigTittle2 {
+  color: white;
+  padding: 0.5rem;
+  font-size: 3rem;
+  text-align: left;
+  font-family: Oswald, sans-serif;
+}
+
+.borderStyleT{
+  border: white;
+  border-style: solid;
+  background-color: white;
+  margin-top: 3.5rem;
+  width: 33rem;
+  height: 1rem;
+}

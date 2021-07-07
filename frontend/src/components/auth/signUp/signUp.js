@@ -21,7 +21,7 @@ const BeforeSignUp = () => {
   };
 
   return (
-    <div className="body1 classImage">
+    <div className=" classImage">
       <div className="SignUpSelect">
         <h2 className="RegisterSelectSignUp"> SignUp </h2>
         <Container>
@@ -70,21 +70,21 @@ const BeforeSignUp = () => {
             <Col xs={6} md={4}>
               <Media>
                 <Media.Body>
-                  <Button className="marg pointer" variant="primary" type="button" value="user" onClick={stateForSignUp}>User</Button>
+                  <Button className="marg pointer styleButton2" variant="dark" type="button" value="user" onClick={stateForSignUp}>User</Button>
                 </Media.Body>
               </Media>
             </Col>
             <Col xs={6} md={4}>
               <Media>
                 <Media.Body>
-                  <Button className="marg pointer" variant="primary" type="button" value="coach" onClick={stateForSignUp}>Coach</Button>
+                  <Button className="marg pointer styleButton2" variant="dark" type="button" value="coach" onClick={stateForSignUp}>Coach</Button>
                 </Media.Body>
               </Media>
             </Col>
             <Col xs={6} md={4}>
               <Media>
                 <Media.Body>
-                  <Button className="marg pointer" variant="primary" type="button" value="gym" onClick={stateForSignUp}>Gym</Button>
+                  <Button className="marg pointer styleButton2" variant="dark" type="button" value="gym" onClick={stateForSignUp}>Gym</Button>
                 </Media.Body>
               </Media>
             </Col>

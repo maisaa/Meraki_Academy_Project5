@@ -1,12 +1,20 @@
 .colorNav {
-  background-color: #fcfcfc !important;
-  box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 1px 4px 23px -5px #000000; 
-    box-shadow: 1px 4px 23px -5px #000000;
-
+  background-color: #ffffff !important;
+  height: 6rem;
+  font-family: Oswald, sans-serif;
+  font-size: 1.5rem;
+  color: black;
+  text-decoration: none;
 }
-.fixedNav {
-  position: sticky;
-  top: 0;
-  z-index: 1040;
+
+.styleButton{
+  background-color: #2CCCC4;
+  border-color: #2CCCC4;
+  color:black;
+  font-weight: 400;
+  width: 6rem;
+}
+
+.logo{
+  width: 8rem;
 }
