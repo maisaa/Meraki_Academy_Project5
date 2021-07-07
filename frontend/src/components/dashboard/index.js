@@ -3,10 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { setSports, getSport } from "../../reducers/sports";
 import { setToken } from "../../reducers/login";
 import { useHistory } from "react-router-dom";
+import Footer from "./../footer/index";
 import { Carousel, Card, Button, Row, Col } from "react-bootstrap";
 import jwt from "jsonwebtoken";
 import axios from "axios";
 import "./dashboard.css";
+import Images from "./../image/image";
 
 const Dashboard = () => {
   const [type, setType] = useState("");
@@ -72,7 +74,47 @@ const Dashboard = () => {
   console.log("úser", state);
   return (
     <>
-      <Carousel fade>
+  <Images />
+      <div className="borderStyleAll">
+        <div className="bigTittle2"> m o v e d  &nbsp; &nbsp; c l u b</div>
+        <div className="bigTittle">REACH YOUR GOALS‎</div>
+        <div className="borderStyleT"></div>
+      </div>
+      <div className="padd">
+        <Row md={3} className="g-4">
+          {state.sports.map((elem, i) => (
+            <Col>
+              <Card
+                style={{ width: "28rem", margin: "2erm" }}
+                className="newMarg"
+              >
+                <Card.Img
+                  variant="top"
+                  src={elem.photo}
+                  alt={elem.type}
+                  className="imageCard pointer"
+                  onClick={getSportByTypeImage}
+                />
+                <Card.Body>
+                  <Card.Title
+                    id={elem.type}
+                    onClick={getSportByType}
+                    className="pointer centerText boldStyle"
+                  >
+                    {elem.type}
+                  </Card.Title>
+                  <Card.Text className="centerText descriptionStyle">
+                    {elem.description}
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </div>
+      <Footer />
+
+      {/* <Carousel fade>
         <Carousel.Item>
           <img
             className="d-block w-100 imgH"
@@ -133,33 +175,7 @@ const Dashboard = () => {
             <h3>Gym</h3>
           </Carousel.Caption>
         </Carousel.Item>
-      </Carousel>
-      <div className="padd">
-        <Row md={3} className="g-4">
-          {state.sports.map((elem, i) => (
-            <Col>
-              <Card
-                style={{ width: "28rem", margin: "2erm" }}
-                className="newMarg"
-              >
-                <Card.Img
-                  variant="top"
-                  src={elem.photo}
-                  alt={elem.type}
-                  className="imageCard pointer"
-                  onClick={getSportByTypeImage}
-                />
-                <Card.Body>
-                  <Card.Title id={elem.type} onClick={getSportByType} className="pointer centerText boldStyle">
-                    {elem.type}
-                  </Card.Title>
-                  <Card.Text className="centerText descriptionStyle">{elem.description}</Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-          ))}
-        </Row>
-      </div>
+      </Carousel> */}
     </>
   );
 };

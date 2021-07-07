@@ -96,10 +96,9 @@ const Login = () => {
             <Form.Group>
               <Button
                 size="lg"
-                variant="primary"
+                variant="dark"
                 type="submit"
-                disabled={!validateForm()}
-                className="pointer marg"
+                className="pointer marg styleButton1"
               >
                 Login
               </Button>
@@ -110,7 +109,7 @@ const Login = () => {
               onSuccess={loginWithGoogle}
               onFailure={loginWithGoogle}
               cookiePolicy={"single_host_origin"}
-              className="pointer marg"
+              className="pointer marg styleButton1"
             />
             <Form.Label >
               {message && <div  >{message}</div>}
