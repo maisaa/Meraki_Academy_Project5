@@ -1,3 +1,42 @@
-.imgH{
-    height: 55rem;
+.imgH {
+  height: 55rem;
+}
+
+.imageCard {
+  width: 27.8rem;
+  height: 16rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.newMarg {
+  margin: 2rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+}
+
+.padd {
+  margin-left: 5rem;
+  margin-top: 3rem;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.centerText {
+  text-align: center;
+}
+
+.boldStyle {
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+.descriptionStyle{
+    font-weight:400;
+    font-size: 1.5rem;
 }
