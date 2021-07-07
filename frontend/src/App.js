@@ -20,7 +20,6 @@ import User from "./components/profile/normal_User";
 import chat from "./components/chatapp/chat";
 import Search from "./components/search/search";
 
-
 const App = () => {
   return (
     <div className="App">
@@ -41,9 +40,8 @@ const App = () => {
       <Route exact path="/info/:id" component={GymAndCouchInfo} />
       <Route exact path="/profile" component={Profile} />
       <Route exact path="/contactUs" component={contactUs} />
-      <Route exact path="/chat" component={chat} />
-        <Route exact path="/search" component={Search} />
-
+      <Route exact path="/chat/:gym/:user" component={chat} />
+      <Route exact path="/search" component={Search} />
     </div>
   );
 };

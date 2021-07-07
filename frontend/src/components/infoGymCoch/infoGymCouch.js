@@ -88,7 +88,15 @@ const GymAndCouchInfo = ({ id }) => {
       <p>add to favorite </p>
       description : <p>{state.GymOrCouch && state.GymOrCouch[0].description}</p>
       <button>video call</button>
-      <button>chat</button>
+      <button
+        onClick={async () => {
+          const user = await jwt.decode(state.token);
+          console.log("user", user);
+          history.push(`/chat/${role}/${user.userId}`);
+        }}
+      >
+        chat
+      </button>
       <div>
         {state.allPosts &&
           state.allPosts.map((ele) => {
@@ -137,13 +145,10 @@ const GymAndCouchInfo = ({ id }) => {
                     console.log("user", user);
                     const userID = user.userId;
                     const postID = ele.post_id;
-                    console.log("user", userID);
-                    console.log("user", postID);
                     const a = await axios.post("http://localhost:5000/favorite", {
                       userID,
                       postID,
                     });
-                    console.log("a", a);
                   }}
                 >
                   add to fav
