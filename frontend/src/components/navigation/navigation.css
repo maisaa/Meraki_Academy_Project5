@@ -1,9 +1,12 @@
+.colorNav {
+  background-color: #fcfcfc !important;
+  box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 4px 23px -5px #000000; 
+    box-shadow: 1px 4px 23px -5px #000000;
 
-.colorNav{
-    background-color: #dee2e6 !important;
 }
-.fixedNav{
-    position: sticky;
-    top: 0;
-    z-index: 1040;
+.fixedNav {
+  position: sticky;
+  top: 0;
+  z-index: 1040;
 }

@@ -19,7 +19,7 @@ import contactUs from "./components/contact/contactus";
 import User from "./components/profile/normal_User";
 import chat from "./components/chatapp/chat";
 import Search from "./components/search/search";
-
+import Footer from "./components/footer/index";
 
 const App = () => {
   return (
@@ -42,8 +42,8 @@ const App = () => {
       <Route exact path="/profile" component={Profile} />
       <Route exact path="/contactUs" component={contactUs} />
       <Route exact path="/chat" component={chat} />
-        <Route exact path="/search" component={Search} />
-
+      <Route exact path="/search" component={Search} />
+      <Footer />
     </div>
   );
 };

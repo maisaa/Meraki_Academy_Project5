@@ -1,9 +1,9 @@
-.body1 {
+/* .body1 {
   background-image: url("https://i.ibb.co/bRBH7r7/Remini20210706001710208.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
-}
+} */
 @media all and (min-width: 480px) {
   .Login {
     padding: 60px;
