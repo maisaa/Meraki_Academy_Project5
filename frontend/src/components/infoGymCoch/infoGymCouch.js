@@ -134,8 +134,11 @@ const GymAndCouchInfo = ({ id }) => {
                 <button
                   onClick={async () => {
                     const user = jwt.decode(state.token);
+                    console.log("user", user);
                     const userID = user.userId;
                     const postID = ele.post_id;
+                    console.log("user", userID);
+                    console.log("user", postID);
                     const a = await axios.post("http://localhost:5000/favorite", {
                       userID,
                       postID,

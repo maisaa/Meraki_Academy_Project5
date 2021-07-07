@@ -13,6 +13,10 @@ is_deleted TINYINT DEFAULT 0,
 PRIMARY KEY (sport_id)
 );
 
+
+
+
+
 CREATE TABLE roles (
 role_id INT AUTO_INCREMENT NOT NULL,
 role VARCHAR(255) NOT NULL,

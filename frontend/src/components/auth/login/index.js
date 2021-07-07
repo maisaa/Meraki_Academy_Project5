@@ -47,6 +47,7 @@ const Login = () => {
     axios
       .post("http://localhost:5000/login", { email, password })
       .then((result) => {
+        console.log("result", result);
         if (result) {
           const user = jwt.decode(result.data);
           dispatch(setToken({ token: result.data, user, loggedIn: true }));
@@ -60,7 +61,8 @@ const Login = () => {
         }
       })
       .catch((err) => {
-        setMessage(err.response);
+        console.log("err", err);
+        setMessage("the Email Or password in incorrect");
       });
   };
   const validateForm = () => {
@@ -94,13 +96,7 @@ const Login = () => {
               />
             </Form.Group>
             <Form.Group>
-              <Button
-                size="lg"
-                variant="primary"
-                type="submit"
-                disabled={!validateForm()}
-                className="pointer marg"
-              >
+              <Button size="lg" variant="primary" type="submit" disabled={!validateForm()} className="pointer marg">
                 Login
               </Button>
             </Form.Group>
@@ -112,9 +108,7 @@ const Login = () => {
               cookiePolicy={"single_host_origin"}
               className="pointer marg"
             />
-            <Form.Label >
-              {message && <div  >{message}</div>}
-            </Form.Label>
+            <Form.Label>{message && <div>{message}</div>}</Form.Label>
           </Form>
         </div>
       </div>
