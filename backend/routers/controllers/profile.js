@@ -44,6 +44,17 @@ const getAllUsersPost = (req, res) => {
     res.json(result);
   });
 };
+
+const getAllChats = (req, res) => {
+  const command = `SELECT *  FROM users_chats WHERE user_id =?;`;
+  data = [req.body.userId];
+  db.query(command, data, (err, result) => {
+    if (err) return res.status(404);
+    res.status(200);
+    res.json(result);
+  });
+};
+
 const getAllUsersPost1 = (req, res) => {
   const id = req.params.id;
   console.log("id", id);
@@ -140,4 +151,5 @@ module.exports = {
   getAllUsersPost1,
   getAllUsers1,
   getProfileFirstName,
+  getAllChats,
 };

@@ -3,6 +3,7 @@ import Modal from "react-bootstrap/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { decode } from "jsonwebtoken";
+import "./normal_user.css";
 import { useHistory } from "react-router-dom";
 import { setProfile, updateProfile, deleteProfile } from "./../../reducers/profile";
 import { setFavorite, deleteFavorite } from "./../../reducers/favorite";

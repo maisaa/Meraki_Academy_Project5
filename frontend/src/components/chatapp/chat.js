@@ -59,7 +59,6 @@ function Chat() {
   return (
     <div className="chat">
       {messageList.map((ele, i) => {
-        console.log("ele", ele);
         return (
           <h3 key={i}>
             {ele.author} {ele.message}
