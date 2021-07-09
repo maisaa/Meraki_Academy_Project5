@@ -61,8 +61,7 @@ const Login = () => {
         }
       })
       .catch((err) => {
-        console.log("err", err);
-        setMessage("the Email Or password in incorrect");
+        setMessage("The Email Or password is incorrect");
       });
   };
   const validateForm = () => {

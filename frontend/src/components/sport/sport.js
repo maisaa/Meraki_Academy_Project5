@@ -37,9 +37,26 @@ const Sport = () => {
             <div>
               <section class="u-align-left u-clearfix u-section-2" id="carousel_040f">
                 <div>
-                  <img src={img3} height="800" width="100%"></img>
+                  <img src={elem.photo} height="800" width="100%"></img>
                 </div>
               </section>
+              <section class="u-align-left u-clearfix u-section-2" id="sec-5747">
+                <div class=" u-clearfix u-sheet u-valign-middle u-sheet-1">
+                  <p className="u-text u-text-default u-text-1" style={{ "text-align": "center" }}>
+                    <span style={{ "line-height": "2.0" }}>- {elem.type} Sport -</span>
+                  </p>
+                  <h2 style={{ "text-align": "" }}>
+                    <span>{elem.description}</span>
+                  </h2>
+                  <h3 style={{ "text-align": "" }}>
+                    <span>This video described all you need to know about {elem.type} :</span>
+                  </h3>
+                  <video className="video-sports" width="800" height="400" controls>
+                    <source src="" type="video/mp4" />
+                  </video>
+                </div>
+              </section>
+              <hr></hr>
               <section class="u-align-center u-clearfix u-section-2" id="carousel_5dcb">
                 <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
                   <h3 class="u-text u-text-default u-text-1">Meet Your Trainers</h3>
@@ -85,23 +102,6 @@ const Sport = () => {
                   </div>
                 </div>
               </section>
-              <hr></hr>
-
-              <section class="u-align-left u-clearfix u-section-2" id="sec-5747"></section>
-              <div class=" u-clearfix u-sheet u-valign-middle u-sheet-1">
-                <h1 style={{ "text-align": "center" }}>
-                  <span style={{ "line-height": "2.0" }}>{elem.type} Sport</span>
-                </h1>
-                <h2 style={{ "text-align": "" }}>
-                  <span>{elem.description}</span>
-                </h2>
-                <h3 style={{ "text-align": "" }}>
-                  <span>This video described all you need to know about {elem.type} :</span>
-                </h3>
-                <video className="video-sports" width="700" height="400" controls>
-                  <source src="" type="video/mp4" />
-                </video>
-              </div>
             </div>
           );
         })}
