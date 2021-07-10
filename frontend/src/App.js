@@ -24,6 +24,7 @@ const App = () => {
   return (
     <div className="App">
       <Navigation />
+      <Route exact path="/" component={Dashboard} />
       <Route exact path="/register" component={BeforeSignUp} />
       <Route exact path="/register/:id" component={SignUp} />
       <Route exact path="/login" component={Login} />
@@ -40,6 +41,7 @@ const App = () => {
       <Route exact path="/info/:id" component={GymAndCouchInfo} />
       <Route exact path="/contactUs" component={contactUs} />
       <Route exact path="/chat/:gym/:user" component={chat} />
+      <Route exact path="/chat" component={chat} />
       <Route exact path="/search" component={Search} />
     </div>
   );
