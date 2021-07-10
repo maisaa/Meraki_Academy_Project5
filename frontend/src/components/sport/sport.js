@@ -105,7 +105,7 @@ const Sport = () => {
                   </div>
                 </div>
               </section>
-              <section class="u-align-center u-clearfix u-valign-bottom-xl u-section-1" id="sec-7d7d">
+              <section class="below u-align-center u-clearfix u-valign-bottom-xl u-section-1" id="sec-7d7d">
                 <div
                   class="
           u-align-center-sm

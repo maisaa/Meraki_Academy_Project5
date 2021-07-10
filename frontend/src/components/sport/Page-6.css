@@ -291,3 +291,8 @@
     grid-template-columns: 100%;
   }
 }
+
+.below {
+  background-color: #007bff;
+  color: white;
+}
