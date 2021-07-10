@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Route, useHistory } from "react-router-dom";
-import { Button, Media, Container, Row, Col, Image } from "react-bootstrap";
+import { CardDeck, Card, Button } from "react-bootstrap";
 import axios from "axios";
 import "./signUp.css";
 import SignUp from "./index";
@@ -10,86 +10,62 @@ const BeforeSignUp = () => {
   const history = useHistory();
   localStorage.setItem("status", state);
 
-  const stateForSignUp = async (e) => {
-    await setState(e.target.value);
-    history.push(`/register/${e.target.value}`);
-  };
-
   const stateForSignUpImages = async (e) => {
     await setState(e.target.alt);
     history.push(`/register/${e.target.alt}`);
   };
 
   return (
-    <div className=" classImage">
+    <div className="classImage">
       <div className="SignUpSelect">
-        <h2 className="RegisterSelectSignUp"> SignUp </h2>
-        <Container>
-          <Row className="RegisterSelect">
-            <Col xs={6} md={4}>
-              <Media>
-                <img
-                  width={64}
-                  height={64}
-                  className="mr-3 pointer"
-                  src="https://i.ibb.co/8YPsDH5/man-1.png"
-                  alt="user"
-                  rounded
-                  onClick={stateForSignUpImages}
-                />
-              </Media>
-            </Col>
-            <Col xs={6} md={4}>
-              <Media>
-                <img
-                  width={64}
-                  height={64}
-                  className="mr-3 pointer"
-                  src="https://i.ibb.co/f2twS8g/coach.png"
-                  alt="coach"
-                  rounded
-                  onClick={stateForSignUpImages}
-                />
-              </Media>
-            </Col>
-            <Col xs={6} md={4}>
-              <Media>
-                <img
-                  width={64}
-                  height={64}
-                  className="mr-3 pointer"
-                  src="https://i.ibb.co/MCfGZv2/gym-2.pnggit "
-                  alt="gym"
-                  rounded
-                  onClick={stateForSignUpImages}
-                />
-              </Media>
-            </Col>
-          </Row>
-          <Row className="RegisterSelect">
-            <Col xs={6} md={4}>
-              <Media>
-                <Media.Body>
-                  <Button className="marg pointer styleButton2" variant="dark" type="button" value="user" onClick={stateForSignUp}>User</Button>
-                </Media.Body>
-              </Media>
-            </Col>
-            <Col xs={6} md={4}>
-              <Media>
-                <Media.Body>
-                  <Button className="marg pointer styleButton2" variant="dark" type="button" value="coach" onClick={stateForSignUp}>Coach</Button>
-                </Media.Body>
-              </Media>
-            </Col>
-            <Col xs={6} md={4}>
-              <Media>
-                <Media.Body>
-                  <Button className="marg pointer styleButton2" variant="dark" type="button" value="gym" onClick={stateForSignUp}>Gym</Button>
-                </Media.Body>
-              </Media>
-            </Col>
-          </Row>
-        </Container>
+        <h2 className="RegisterSelectSignUp"> Now you can join us </h2>
+        <CardDeck className='CardDeckMarg'>
+          <Card>
+            <Card.Img variant="top" className="imageCard pointer" src="https://i.ibb.co/gZ5vWbM/running.png" alt="user"
+              rounded
+              onClick={stateForSignUpImages} />
+            <Card.Body>
+              <Card.Title>User</Card.Title>
+              <Card.Text>
+                register with us to get the pest experience from our professional coaches and private subscriptions from top Gyms.
+              </Card.Text>
+              <Button variant="outline-dark" className="buttonStyleHome" onClick={stateForSignUpImages}>join </Button>
+            </Card.Body>
+            <Card.Footer>
+              <small className="text-muted">+1500 Users</small>
+            </Card.Footer>
+          </Card>
+          <Card>
+            <Card.Img variant="top" className="imageCard pointer" src="https://i.ibb.co/gZ5vWbM/running.png" alt="coach"
+              rounded
+              onClick={stateForSignUpImages} />
+            <Card.Body>
+              <Card.Title>Coach</Card.Title>
+              <Card.Text>
+                join our team of the top professional coaches and enjoy the flexibility of working hours.
+              </Card.Text>
+              <Button variant="outline-dark" className="buttonStyleHome" onClick={stateForSignUpImages}>join </Button>
+            </Card.Body>
+            <Card.Footer>
+              <small className="text-muted">+100 Coaches</small>
+            </Card.Footer>
+          </Card>
+          <Card>
+            <Card.Img variant="top" className="imageCard pointer" src="https://i.ibb.co/gZ5vWbM/running.png" alt="gym"
+              rounded
+              onClick={stateForSignUpImages} />
+            <Card.Body>
+              <Card.Title>Gym</Card.Title>
+              <Card.Text>
+                .
+              </Card.Text>
+              <Button variant="outline-dark" className="buttonStyleHome" onClick={stateForSignUpImages}>join </Button>
+            </Card.Body>
+            <Card.Footer>
+              <small className="text-muted">+10 Gyms</small>
+            </Card.Footer>
+          </Card>
+        </CardDeck>
       </div>
     </div>
   );
