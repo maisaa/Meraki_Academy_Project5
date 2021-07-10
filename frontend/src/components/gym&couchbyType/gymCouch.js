@@ -4,7 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { setAllGymOrCoach } from "./../../reducers/gym&couch";
 import { useHistory, useParams } from "react-router-dom";
 import Accordion from "react-bootstrap/Accordion";
-
+import { Link } from "react-router-dom";
+import "./gym.css";
+import img66 from "../sport/images/1.jpeg";
 // import {}
 
 const GymAndCouch = ({ id }) => {
@@ -22,36 +24,41 @@ const GymAndCouch = ({ id }) => {
   const getSportByType = () => {
     const roleId = role;
     const type = localStorage.getItem("type");
-    axios
-      .get(`http://localhost:5000/usersByRolee?roleId=${roleId}&type=${type}`)
-      .then((result) => {
-        dispatch(setAllGymOrCoach(result.data, role));
-      });
+    axios.get(`http://localhost:5000/usersByRolee?roleId=${roleId}&type=${type}`).then((result) => {
+      dispatch(setAllGymOrCoach(result.data, role));
+    });
   };
 
   useEffect(() => {
     getSportByType();
   }, []);
+
   return (
-    <div className="GymOrCooch">
-      <p></p>
-      <div></div>
-      {state.allGymOrCouch &&
-        state.allGymOrCouch.map((ele, i) => {
-          return (
-            <div key={i}>
-              <img
-                src={ele.image}
-                onClick={() => {
-                  history.push(`/info/${ele.user_id}`);
-                }}
-              ></img>
-              Name: <p>{ele.firstName}</p>
-              Rate: <p>{ele.rate}</p>
-            </div>
-          );
-        })}
-    </div>
+    <section className="hero-section">
+      <div className="card1-grid">
+        {state.allGymOrCouch &&
+          state.allGymOrCouch.map((ele, i) => {
+            const divStyle = {
+              backgroundImage: `url(${ele.image})`,
+            };
+            return (
+              <Link class="card1" href="#">
+                <div
+                  onClick={() => {
+                    history.push(`/info/${ele.user_id}`);
+                  }}
+                  class="card1__background"
+                  style={divStyle}
+                ></div>
+                <div class="card1__content">
+                  <h3 class="card1__category">{ele.firstName}</h3>
+                  <h3 class="card1__heading"> Rate:{ele.rate}/5</h3>
+                </div>
+              </Link>
+            );
+          })}
+      </div>
+    </section>
   );
 };
 
