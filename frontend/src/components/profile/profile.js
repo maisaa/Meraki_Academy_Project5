@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import { setProfile, updateProfile, deleteProfile } from "./../../reducers/profile";
 import { decode } from "jsonwebtoken";
 const Profile = () => {
+  const [myChats, setMyChats] = useState("");
   const dispatch = useDispatch();
   const history = useHistory();
   const state = useSelector((state) => {
@@ -24,7 +25,6 @@ const Profile = () => {
     axios
       .get(`http://localhost:5000/users/${user.userId}`)
       .then((res) => {
-        console.log(res, "respons");
         dispatch(setProfile(res.data));
       })
       .catch((err) => {
@@ -35,6 +35,18 @@ const Profile = () => {
     axios.put(`http://localhost:5000/users/${e.target.value}`).then((result) => {});
     setEdit(true);
   };
+
+  const myChat = async () => {
+    const allMyChats = await axios.post("http://localhost:5000/myChats", {
+      userId: user.userId,
+    });
+    console.log(allMyChats);
+    //set all chate
+  };
+
+  useEffect(() => {
+    myChat();
+  }, []);
 
   useEffect(() => {
     getProfile();
@@ -73,8 +85,6 @@ const Profile = () => {
   return (
     <>
       {deleteProfile ? (
-
-        
         <div>
           {edit ? (
             <div>
@@ -90,7 +100,6 @@ const Profile = () => {
                       e.target.image.value,
                       e.target.phone.value,
                       e.target.age.value
-                      
                     );
                   }}
                 >
@@ -101,11 +110,7 @@ const Profile = () => {
                   <br />
                   <label>
                     lastName :
-                    <input
-                      type="text"
-                      name="lastName"
-                      defaultValue={elem.lastName}
-                    />{" "}
+                    <input type="text" name="lastName" defaultValue={elem.lastName} />{" "}
                   </label>{" "}
                   <br />
                   <label>
@@ -130,6 +135,7 @@ const Profile = () => {
             </div>
           ) : (
             <div>
+              {state.profile.map((elem, i) => {})}
               {state.profile.map((elem, i) => (
                 <div key={i}>
                   <p> firstName : {elem.firstName}</p>
@@ -138,6 +144,9 @@ const Profile = () => {
                   <p> phone : {elem.phone}</p>
                   <p> age : {elem.age}</p>
                   <p> rate : {elem.rate}</p>
+                  My Chat :<p>1</p>
+                  <p>2</p>
+                  <p>3</p>
                   <button onClick={editProfile} value={elem.user_id}>
                     edit profile
                   </button>

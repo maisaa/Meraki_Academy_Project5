@@ -2,18 +2,19 @@ const connection = require("../../db/db");
 
 const addToFavorite = async (req, res) => {
   const { userID, postID } = req.body;
-  console.log("userID", userID);
-  console.log("postID", postID);
+  console.log("userI2222D", userID);
+  console.log("postID2222", postID);
 
   const query = `INSERT INTO users_posts (user_id,post_id) VALUES (?,?);`;
   const data = [userID, postID];
   connection.query(query, data, (err, results) => {
     if (err) return res.status(404).json(err);
+    res.json(results);
   });
-  const query_select = `SELECT * FROM users_posts WHERE user_id= ? && post_id = ?`;
-  const data_select = [userID, postID];
-  const favorite = await connection.promise().query(query_select, data_select);
-  res.status(200).json(favorite[0]);
+  // const query_select = `SELECT * FROM users_posts WHERE user_id= ? && post_id = ?`;
+  // const data_select = [userID, postID];
+  // const favorite = await connection.promise().query(query_select, data_select);
+  // res.status(200).json(favorite[0]);
 };
 
 const getFavorite = (req, res) => {

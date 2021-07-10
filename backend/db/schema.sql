@@ -13,6 +13,10 @@ is_deleted TINYINT DEFAULT 0,
 PRIMARY KEY (sport_id)
 );
 
+
+
+
+
 CREATE TABLE roles (
 role_id INT AUTO_INCREMENT NOT NULL,
 role VARCHAR(255) NOT NULL,
@@ -59,6 +63,14 @@ FOREIGN KEY (sport_id) REFERENCES sports (sport_id) ON DELETE RESTRICT ON UPDATE
 PRIMARY KEY (user_id, sport_id)
 );
 
+CREATE TABLE users_chats (
+id INT AUTO_INCREMENT NOT NULL,
+user_id INT NOT NULL,
+rome_id INT NOT NULL,
+is_deleted TINYINT DEFAULT 0,
+FOREIGN KEY (user_id) REFERENCES users (user_id),
+PRIMARY KEY (id)
+);
 
 CREATE TABLE users_posts (
 user_id INT NOT NULL,

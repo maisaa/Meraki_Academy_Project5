@@ -3,6 +3,7 @@ import Modal from "react-bootstrap/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { decode } from "jsonwebtoken";
+import "./normal_user.css";
 import { useHistory } from "react-router-dom";
 import { setProfile, updateProfile, deleteProfile } from "./../../reducers/profile";
 import { setFavorite, deleteFavorite } from "./../../reducers/favorite";
@@ -166,17 +167,16 @@ const User = () => {
                           <p>post:{elem.post}</p>
                           <img src={elem.photo} height="100" width="100" />
                           <button
-                            onClick={() => {
+                            onClick={async () => {
                               console.log("aaa");
                               const postId = elem.post_id;
-
                               const user = decode(state.token);
                               const userId = user.userId;
                               axios.put("http://localhost:5000/favorite", {
                                 postId,
                                 userId,
                               });
-                              dispatch(deleteFavorite(postId));
+                              await dispatch(deleteFavorite(postId));
                               setState1(!state);
                             }}
                           >
