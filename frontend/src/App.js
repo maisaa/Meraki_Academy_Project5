@@ -24,6 +24,7 @@ const App = () => {
   return (
     <div className="App">
       <Navigation />
+      <Route exact path="/" component={Dashboard} />
       <Route exact path="/register" component={BeforeSignUp} />
       <Route exact path="/register/:id" component={SignUp} />
       <Route exact path="/login" component={Login} />
