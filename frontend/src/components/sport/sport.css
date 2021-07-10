@@ -1,5 +1,5 @@
 .u-section-1 {
-  background-image: url("images/athlete-bike-black-and-white-cycle-260409.jpg");
+  /* background-image: url("images/athlete-bike-black-and-white-cycle-260409.jpg"); */
   background-position: 50% 50%;
 }
 
@@ -410,4 +410,102 @@
 }
 
 .h3_sports {
+}
+
+element.style {
+}
+.u-sheet:not(.u-image):not(.u-video) > * {
+  pointer-events: auto;
+  pointer-events: initial;
+}
+.u-section-1 .u-line-1 {
+  width: 116px;
+  height: 3px;
+  transform-origin: right center;
+  margin: 20px auto 0;
+}
+[class*="u-border-"]:not(.u-shape-svg) {
+  stroke: none;
+}
+.u-line.u-line-horizontal {
+  border-right-width: 0;
+  border-left-width: 0;
+  border-bottom-width: 0;
+}
+.u-border-palette-2-base,
+.u-separator-palette-2-base:after {
+  border-color: #db545a;
+  stroke: #db545a;
+}
+.u-border-3,
+.u-separator-3:after,
+.u-text.u-border-3,
+a.u-button-style.u-border-3 {
+  border-width: 3px;
+}
+[class*="u-border-"],
+.u-link[class*="u-border-"] {
+  border-style: solid;
+}
+section > *,
+header > *,
+footer > *,
+.u-sheet > * {
+  position: relative;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+user agent stylesheet div {
+  display: block;
+}
+.u-sheet:not(.u-image):not(.u-video) {
+  pointer-events: none;
+}
+.u-palette-3-light-2,
+.u-body.u-palette-3-light-2,
+.u-container-style.u-palette-3-light-2:before,
+.u-table-alt-palette-3-light-2 tr:nth-child(even) {
+  color: #111111;
+  background-color: #f9e79b;
+}
+.u-align-center {
+  text-align: center;
+}
+.u-body {
+  color: #111111;
+  background-color: #ffffff;
+}
+.u-body {
+  font-family: "Open Sans", sans-serif;
+}
+.u-body {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+style attribute {
+  font-size: 16px;
+}
+html {
+  font-size: 16px;
+}
+html {
+  font-size: 16px;
+}
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
