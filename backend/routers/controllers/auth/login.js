@@ -31,7 +31,7 @@ const login = (req, res) => {
       }
     });
   } catch (error) {
-    throw new Error(error.message);
+    return res.status(403).json("The password or email is incorrect");
   }
 };
 

@@ -3,16 +3,15 @@
 }
 
 .imageCard {
-  width: 27.8rem;
-  height: 16rem;
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
+  width: 10rem;
+  height: 10rem;
+  padding-top: 1.5rem;
+  padding-left: 1.5rem;
 }
 
 .newMarg {
   margin: 2rem;
   padding-bottom: 0.5rem;
-  border-radius: 0.5rem;
   box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
@@ -27,13 +26,16 @@
   cursor: pointer;
 }
 
-.centerText {
-  text-align: center;
-}
-
+.buttonStyleHome{
+  border-color:#2cccc4;
+  border-radius: 0px;
+  width: 6.5rem; 
+  height: 2.5rem;
+  }
+  
 .boldStyle {
     font-weight: bold;
-    font-size: 2.5rem;
+    font-size: 3rem;
 }
 
 .descriptionStyle{
@@ -47,7 +49,7 @@
   border-color: rgb(255, 255, 255);
   background-color: rgba(255, 255, 255, 0);
   width: 47.8rem;
-  height: 45.5rem;
+  height: 40.5rem;
   padding-top: 5.6rem;
   margin-top: 7.2rem;
   margin-left: 69rem;
@@ -58,7 +60,7 @@
 .bigTittle {
   color:white;
   font-weight: 600;
-  font-size: 8rem;
+  font-size: 5.9rem;
   text-align: left;
   font-family: Oswald, sans-serif;
   padding: -30rem;
@@ -80,3 +82,4 @@
   width: 33rem;
   height: 1rem;
 }
+
