@@ -19,7 +19,6 @@ export default MembersReducer;
 // Action
 
 export const setMembers = (members) => {
-  console.log("members", members);
   return { type: "SET_MEMBERS", payload: members };
 };
 
@@ -29,5 +28,6 @@ export const setMembers = (members) => {
 // };
 
 export const setUserId = (id) => {
+  console.log("id", id);
   return { type: "SET_ID", payload: id };
 };
