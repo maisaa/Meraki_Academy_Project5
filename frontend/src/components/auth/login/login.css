@@ -2,8 +2,6 @@
   .Login {
     padding-bottom: 20rem;
     padding-top: 5rem;
-    /* padding-bottom: 10rem; */
-    /* height: 6rem; */
   }
   .textStyle{
     font-weight: bold;
@@ -18,20 +16,11 @@
     border-color: #2cccc4;
     padding: 3.5rem;
     max-width: 40rem;
-    /* border-radius: 1rem; */
     box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
   }
-  /* .Login Image {
-    max-width: 400px;
-    height: auto;
-  } */
 }
-
-/* .body1 {
-  background-color: #2cccc4;
-} */
 
 .container {
   position: fixed;
@@ -60,7 +49,6 @@
 
 .styleButton1 {
   margin-top:0.5rem ;
-  background-color: #2cccc4;
   border-color: #2cccc4;
   color: black;
   font-weight: 400;

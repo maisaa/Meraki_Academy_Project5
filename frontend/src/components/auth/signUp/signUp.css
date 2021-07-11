@@ -23,11 +23,11 @@
   color:white;
   font-weight: bold;
   font-size: 1.9rem;
-  text-align: left;
+  /* text-align: left; */
   font-family: Oswald, sans-serif;
-  padding: -30rem;
-  margin-top: 1rem;
-  padding-top: 2rem;
+  /* padding: -30rem; */
+  /* margin-top: 0.5rem;
+  padding-top: 2rem; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,22 +46,32 @@
   border-radius: 0.5rem;
 }
 .SignUpSelect {
-  margin: 0.2rem;
-  margin-top: 3.5rem;
-  margin-left: 20rem;
-  border-radius: 0.1rem;
-  background-color: #fffdff;
-  width: 70rem;
-  height: 40rem;
+  /* background-color: #fffdff; */
+  width: auto;
+  height: auto;
   box-shadow: 1px 4px 8px -12px rgb(0 0 0 / 75%);
   -webkit-box-shadow: 1px 8px 34px -12px rgb(0 0 0 / 75%);
   -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
-  background-color: #2cccc4;
+  background-image: url('https://i.ibb.co/pfY72G8/joshua-burdick-0xp-FNUjzdbw-unsplash.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: fixed;
+  display: grid;
+  max-width: 70rem;
+  padding: 0px 0px;
+  top: 25%;
+  left: 20%;
+  z-index: 12;
 }
 
 .CardDeckMarg{
   margin: 2rem;
+  padding-bottom: 2rem;
 }  
+/* .c{
+  border:solid #2cccc4;
+  border-radius: 50%;
+} */
 
 .SignUpUser {
   margin-top: 3rem;
@@ -117,3 +127,11 @@
   padding-top: 1.5rem;
   padding-left: 1.5rem;
 }
+.textLeft{
+  /* text-align: left; */
+  padding-left: 5rem;
+}
+
+
+
+

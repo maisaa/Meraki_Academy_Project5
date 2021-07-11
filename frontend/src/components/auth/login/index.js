@@ -96,7 +96,7 @@ const Login = () => {
             <Form.Group>
               <Button
                 size="lg"
-                variant="dark"
+                variant="outline-dark"
                 type="submit"
                 className="styleButton1"
                 >
