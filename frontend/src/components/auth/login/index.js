@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken";
 import axios from "axios";
 import { setToken } from "../../../reducers/login";
 import GoogleLogin from "react-google-login";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Image } from "react-bootstrap";
 import "./login.css";
 
 const Login = () => {
@@ -47,7 +47,6 @@ const Login = () => {
     axios
       .post("http://localhost:5000/login", { email, password })
       .then((result) => {
-        console.log("result", result);
         if (result) {
           const user = jwt.decode(result.data);
           dispatch(setToken({ token: result.data, user, loggedIn: true }));
@@ -61,7 +60,7 @@ const Login = () => {
         }
       })
       .catch((err) => {
-        setMessage("The Email Or password is incorrect");
+        setMessage("Password or Email is incorrect");
       });
   };
   const validateForm = () => {
@@ -71,9 +70,9 @@ const Login = () => {
   return (
     <>
       <div className="Login body1">
-        <div className="styleLogin">
+        <div className="container">
           <Form onSubmit={handleSubmit}>
-            <h2>Login</h2>
+            <h2 className="TextStyle">Login</h2>
             <Form.Group size="lg" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
               <Form.Control
@@ -99,8 +98,8 @@ const Login = () => {
                 size="lg"
                 variant="dark"
                 type="submit"
-                className="pointer marg styleButton1"
-              >
+                className="styleButton1"
+                >
                 Login
               </Button>
             </Form.Group>
@@ -112,8 +111,13 @@ const Login = () => {
               cookiePolicy={"single_host_origin"}
               className="pointer marg styleButton1"
             />
-            <Form.Label>{message && <div>{message}</div>}</Form.Label>
+            <Form.Label >
+              {message && <div  >{message}</div>}
+            </Form.Label>
           </Form>
+          <div>
+          <Image className="loginImage" src="https://i.ibb.co/QdMHGDn/logan-weaver-p-YQ2-ASycjg-I-unsplash.jpg" alt="logan-weaver-p-YQ2-ASycjg-I-unsplash" border="0" rounded />
+          </div>
         </div>
       </div>
     </>

@@ -18,7 +18,7 @@ const BeforeSignUp = () => {
   return (
     <div className="classImage">
       <div className="SignUpSelect">
-        <h2 className="RegisterSelectSignUp"> Now you can join us </h2>
+        <p className="RegisterSelectSignUp"> Now you can join us </p>
         <CardDeck className='CardDeckMarg'>
           <Card>
             <Card.Img variant="top" className="imageCard pointer" src="https://i.ibb.co/gZ5vWbM/running.png" alt="user"
