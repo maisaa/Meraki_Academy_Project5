@@ -133,7 +133,7 @@ const Navigation = () => {
               className="mr-sm-2"
               style={{width: "20rem"}}
             />
-            <Button className="styleButton" onClick={searchFun}  variant="dark">
+            <Button className="styleButton" onClick={searchFun}  variant="outline-dark">
               Search
             </Button>
           </Form>
