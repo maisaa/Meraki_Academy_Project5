@@ -1,10 +1,17 @@
 import React, { cloneElement, useEffect, useState } from "react";
 // import Modal from "react-bootstrap/Modal";
+import { Form, Button, Modal } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import { setProfile, updateProfile, deleteProfile } from "./../../reducers/profile";
+import {
+  setProfile,
+  updateProfile,
+  deleteProfile,
+} from "./../../reducers/profile";
 import { decode } from "jsonwebtoken";
+import "./normalUser.css";
+
 const Profile = () => {
   const [myChats, setMyChats] = useState("");
   const dispatch = useDispatch();
@@ -32,7 +39,9 @@ const Profile = () => {
       });
   };
   const editProfile = (e) => {
-    axios.put(`http://localhost:5000/users/${e.target.value}`).then((result) => {});
+    axios
+      .put(`http://localhost:5000/users/${e.target.value}`)
+      .then((result) => {});
     setEdit(true);
   };
 
@@ -87,50 +96,102 @@ const Profile = () => {
       {deleteProfile ? (
         <div>
           {edit ? (
-            <div>
+            <div className="edit_padding">
               {state.profile.map((elem, i) => (
-                <form
-                  key={i}
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    saveProfile(
-                      elem,
-                      e.target.firstName.value,
-                      e.target.lastName.value,
-                      e.target.image.value,
-                      e.target.phone.value,
-                      e.target.age.value
-                    );
-                  }}
-                >
-                  <label>
-                    firstName :
-                    <input type="text" name="firstName" defaultValue={elem.firstName} />
-                  </label>{" "}
-                  <br />
-                  <label>
-                    lastName :
-                    <input type="text" name="lastName" defaultValue={elem.lastName} />{" "}
-                  </label>{" "}
-                  <br />
-                  <label>
-                    image:
-                    <input type="text" name="image" defaultValue={elem.image} />{" "}
-                  </label>
-                  <br />
-                  <label>
-                    phone:
-                    <input type="text" name="phone" defaultValue={elem.phone} />{" "}
-                  </label>
-                  <br />
-                  <label>
-                    age:
-                    <input type="text" name="age" defaultValue={elem.age} />{" "}
-                  </label>
-                  <br />
-                  <button>save changes</button>
-                  {message && <div> {message} </div>}
-                </form>
+                <div className="edit">
+                  <Form
+                    key={i}
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      saveProfile(
+                        elem,
+                        e.target.firstName.value,
+                        e.target.lastName.value,
+                        e.target.image.value,
+                        e.target.phone.value,
+                        e.target.age.value
+                      );
+                    }}
+                  >
+                    <h2> edit profile </h2>
+                    <Form.Group size="lg" controlId="formImage">
+                      <Form.Label>
+                        image:
+                        <Form.Control
+                          type="text"
+                          name="image"
+                          className="input"
+                          defaultValue={elem.image}
+                        />
+                      </Form.Label>
+                    </Form.Group>
+                 
+                    <Form.Group size="lg" controlId="formFirstName">
+                      <Form.Label>
+                        firstName :
+                        <Form.Control
+                          type="text"
+                          name="firstName"
+                          className="input"
+                          defaultValue={elem.firstName}
+                        />
+                      </Form.Label>
+                    </Form.Group>
+                 
+                    <Form.Group size="lg" controlId="formLastName">
+                      <Form.Label>
+                        lastName :
+                        <Form.Control
+                          type="text"
+                          name="lastName"
+                          className="input"
+                          defaultValue={elem.lastName}
+                        />
+                      </Form.Label>
+                    </Form.Group>
+                    
+                    <Form.Group size="lg" controlId="formPhone">
+                      <Form.Label>
+                        phone:
+                        <Form.Control
+                          type="text"
+                          name="phone"
+                          className="input"
+                          defaultValue={elem.phone}
+                        />
+                      </Form.Label>
+                    </Form.Group>
+                    
+                    <Form.Group size="lg" controlId="formAge">
+                      <Form.Label>
+                        age:
+                        <Form.Control
+                          type="text"
+                          name="age"
+                          className="input"
+                          defaultValue={elem.age}
+                        />
+                      </Form.Label>
+                    </Form.Group>
+                   
+                    <Form.Group>
+                      <Button
+                       className="styleButton1"
+                        className="marg"
+                        size="lg"
+                        variant="outline-dark"
+                        type="submit"
+                      >
+                        Save changes
+                      </Button>
+                    </Form.Group>
+
+                    <div className="tostMassage">
+                      <Form.Label>{message && <div>{message}</div>}</Form.Label>
+                    </div>
+                  </Form>
+                </div>
+
               ))}
             </div>
           ) : (
@@ -138,28 +199,68 @@ const Profile = () => {
               {state.profile.map((elem, i) => {})}
               {state.profile.map((elem, i) => (
                 <div key={i}>
-                  <p> firstName : {elem.firstName}</p>
-                  <p> lastName : {elem.lastName}</p>
-                  <img src={elem.image} height="100" width="100" /> <br />
-                  <p> phone : {elem.phone}</p>
-                  <p> age : {elem.age}</p>
-                  <p> rate : {elem.rate}</p>
-                  My Chat :<p>1</p>
-                  <p>2</p>
-                  <p>3</p>
-                  <button onClick={editProfile} value={elem.user_id}>
-                    edit profile
-                  </button>
-                  <button onClick={popup} value={elem.user_id}>
-                    deleted profile
-                  </button>
+                  <div className="body">
+                    <h1 className="herderProfile">{elem.firstName} Profile</h1>
+                    <div className="container">
+                      <div className="divImg">
+                        <img
+                          src={elem.image}
+                          height="100"
+                          width="100"
+                          className="psImg"
+                        />{" "}
+                        <br />
+                      </div>
+                      <div className="Info">
+                        <p>
+                          <b>firstName : </b> {elem.firstName}
+                        </p>
+                        <p>
+                          <b> lastName : </b>
+                          {elem.lastName}
+                        </p>
+
+                        <p>
+                          {" "}
+                          <b>phone : </b>
+                          {elem.phone}
+                        </p>
+                        <p>
+                          <b> Rate : </b>
+                          {elem.rate}
+                        </p>
+
+                        <p>
+                          {" "}
+                          <b>age :</b> {elem.age}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="divbtn">
+                      <button
+                        onClick={editProfile}
+                        value={elem.user_id}
+                        className="btn1"
+                      >
+                        edit profile
+                      </button>
+                      <button
+                        onClick={popup}
+                        value={elem.user_id}
+                        className="btn1"
+                      >
+                        deleted profile
+                      </button>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
           )}
         </div>
       ) : (
-        <div>
+        <div className="popup">
+          <h1>delete profile</h1>
           {message && <div> {message} </div>}
           {state.profile.map((elem, i) => (
             <form
@@ -169,7 +270,10 @@ const Profile = () => {
                 deleteProfilea(elem);
               }}
             >
-              <button>deleted Profile</button>
+              <br />
+              <div className="flot1">
+                <button className="btnDel">deleted Profile</button>
+              </div>
             </form>
           ))}
           {state.profile.map((elem, i) => (
@@ -180,7 +284,10 @@ const Profile = () => {
                 cancel(elem);
               }}
             >
-              <button>cancel</button>
+              <div className="flot2">
+                <button className="btnCan">cancel</button>
+                <br />
+              </div>
             </form>
           ))}
         </div>

@@ -19,6 +19,7 @@ const addpost = (req, res) => {
     sport_id: req.body.sport_id,
     poster_id: req.body.poster_id,
   };
+  console.log(newPost);
   const command = `INSERT INTO posts (post,photo,video,sport_id,poster_id) VALUES (?, ? ,?, ?, ?);`;
   const data = [
     newPost.post,
