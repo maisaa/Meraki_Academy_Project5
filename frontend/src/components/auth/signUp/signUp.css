@@ -3,8 +3,8 @@
   margin: 2rem;
 }
 
-.pointer{
-  cursor:pointer;
+.pointer {
+  cursor: pointer;
 }
 @media all and (min-width: 480px) {
   .SignUp {
@@ -18,6 +18,7 @@
     margin-bottom: 0.3rem;
   }
 }
+
 .RegisterSelectSignUp{
   color:white;
   font-weight: bold;
@@ -31,14 +32,14 @@
   justify-content: center;
   align-items: center;
 }
-.RegisterSelect{
+.RegisterSelect {
   margin-top: 2rem;
   margin-left: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.styleSelectSignUp{
+.styleSelectSignUp {
   margin-left: 14rem;
   padding-top: 2rem;
   padding-bottom: 1rem;
@@ -57,10 +58,11 @@
   -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
   background-color: #2cccc4;
 }
+
 .CardDeckMarg{
   margin: 2rem;
-
 }  
+
 .SignUpUser {
   margin-top: 3rem;
   margin-left: 16rem;
@@ -102,10 +104,10 @@
   padding-top: -2rem;
 }
 
-.styleButton2{
-  background-color: #2CCCC4;
-  border-color: #2CCCC4;
-  color:black;
+.styleButton2 {
+  background-color: #2cccc4;
+  border-color: #2cccc4;
+  color: black;
   font-weight: 400;
 }
 

@@ -26,21 +26,21 @@
   cursor: pointer;
 }
 
-.buttonStyleHome{
-  border-color:#2cccc4;
+.buttonStyleHome {
+  border-color: #2cccc4;
   border-radius: 0px;
-  width: 6.5rem; 
+  width: 6.5rem;
   height: 2.5rem;
-  }
-  
-.boldStyle {
-    font-weight: bold;
-    font-size: 3rem;
 }
 
-.descriptionStyle{
-    font-weight:400;
-    font-size: 1.5rem;
+.boldStyle {
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.descriptionStyle {
+  font-weight: 400;
+  font-size: 1.5rem;
 }
 
 .borderStyleAll {
@@ -58,7 +58,7 @@
 }
 
 .bigTittle {
-  color:white;
+  color: white;
   font-weight: 600;
   font-size: 5.9rem;
   text-align: left;
@@ -74,7 +74,7 @@
   font-family: Oswald, sans-serif;
 }
 
-.borderStyleT{
+.borderStyleT {
   border: white;
   border-style: solid;
   background-color: white;
@@ -82,4 +82,3 @@
   width: 33rem;
   height: 1rem;
 }
-

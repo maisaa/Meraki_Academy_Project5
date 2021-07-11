@@ -14,12 +14,14 @@ const Dashboard = () => {
   const [type, setType] = useState("");
   const history = useHistory();
   localStorage.setItem("type", type);
-  const icons = ["https://i.ibb.co/CK5npv6/humanpictos.png",
+  const icons = [
+    "https://i.ibb.co/CK5npv6/humanpictos.png",
     "https://i.ibb.co/QM6f5gN/gloves.png",
     "https://i.ibb.co/XyLbknY/tennis.png",
     "https://i.ibb.co/gZ5vWbM/running.png",
     "https://i.ibb.co/Q9JrL0D/pilates.png",
-    "https://i.ibb.co/StYs4M5/pilates-1.png"];
+    "https://i.ibb.co/StYs4M5/pilates-1.png",
+  ];
 
   const state = useSelector((state) => {
     return {
@@ -76,14 +78,13 @@ const Dashboard = () => {
     });
   };
 
-
   // you could see the state by
   console.log("úser", state);
   return (
     <>
       <Images />
       <div className="borderStyleAll">
-        <div className="bigTittle2"> m o v e d  &nbsp; &nbsp; c l u b</div>
+        <div className="bigTittle2"> m o v e d &nbsp; &nbsp; c l u b</div>
         <div className="bigTittle">REACH YOUR GOALS‎</div>
         <div className="borderStyleT"></div>
       </div>
@@ -91,10 +92,7 @@ const Dashboard = () => {
         <Row md={3} className="g-4" style={{ padding: "0rem", margin: "2rem" }}>
           {state.sports.map((elem, i) => (
             <Col>
-              <Card
-                style={{ width: "28rem", margin: "2rem", height: "25rem" }}
-                className="newMarg"
-              >
+              <Card style={{ width: "28rem", margin: "2rem", height: "25rem" }} className="newMarg">
                 <Card.Img
                   variant="top"
                   src={icons[i]}
@@ -103,17 +101,13 @@ const Dashboard = () => {
                   onClick={getSportByTypeImage}
                 />
                 <Card.Body>
-                  <Card.Title
-                    id={elem.type}
-                    onClick={getSportByType}
-                    className="pointer boldStyle"
-                  >
+                  <Card.Title id={elem.type} onClick={getSportByType} className="pointer boldStyle">
                     {elem.type}
                   </Card.Title>
-                  <Card.Text className="descriptionStyle">
-                    {elem.description}
-                  </Card.Text>
-                  <Button variant="outline-dark" className="buttonStyleHome"  onClick={getSportByType}>more </Button>
+                  <Card.Text className="descriptionStyle">{elem.description}</Card.Text>
+                  <Button variant="outline-dark" className="buttonStyleHome" onClick={getSportByType}>
+                    more{" "}
+                  </Button>
                 </Card.Body>
               </Card>
             </Col>
