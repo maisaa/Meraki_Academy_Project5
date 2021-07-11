@@ -9,6 +9,7 @@ const {
   getAllUsersPost1,
   getAllUsers1,
   getProfileFirstName,
+  getAllChats,
 } = require("./../controllers/profile");
 //middle-wares
 const authentication = require("../middlewares/authentication");
@@ -23,6 +24,8 @@ profileRouter.get("/users/:id", getProfileById);
 profileRouter.get("/usersInfo/:id", getProfileById1);
 profileRouter.put("/users/:id", updateProfile);
 profileRouter.post("/search", getProfileFirstName);
+profileRouter.post("/myChats", getAllChats);
 profileRouter.put("/user/:id", deleteProfile); // authentication, authorization("Admin"),
 profileRouter.delete("/usersPost", authentication, authorization("Admin"), deleteProfile);
 authentication, authorization("Admin"), (module.exports = profileRouter);
+getAllChats;

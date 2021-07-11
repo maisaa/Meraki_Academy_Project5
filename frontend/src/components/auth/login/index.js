@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken";
 import axios from "axios";
 import { setToken } from "../../../reducers/login";
 import GoogleLogin from "react-google-login";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Image } from "react-bootstrap";
 import "./login.css";
 
 const Login = () => {
@@ -60,7 +60,7 @@ const Login = () => {
         }
       })
       .catch((err) => {
-        setMessage(err.response);
+        setMessage("Password or Email is incorrect");
       });
   };
   const validateForm = () => {
@@ -70,9 +70,9 @@ const Login = () => {
   return (
     <>
       <div className="Login body1">
-        <div className="styleLogin">
+        <div className="container">
           <Form onSubmit={handleSubmit}>
-            <h2>Login</h2>
+            <h2 className="TextStyle">Login</h2>
             <Form.Group size="lg" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
               <Form.Control
@@ -96,11 +96,10 @@ const Login = () => {
             <Form.Group>
               <Button
                 size="lg"
-                variant="primary"
+                variant="outline-dark"
                 type="submit"
-                disabled={!validateForm()}
-                className="pointer marg"
-              >
+                className="styleButton1"
+                >
                 Login
               </Button>
             </Form.Group>
@@ -110,12 +109,15 @@ const Login = () => {
               onSuccess={loginWithGoogle}
               onFailure={loginWithGoogle}
               cookiePolicy={"single_host_origin"}
-              className="pointer marg"
+              className="pointer marg styleButton1"
             />
             <Form.Label >
               {message && <div  >{message}</div>}
             </Form.Label>
           </Form>
+          <div>
+          <Image className="loginImage" src="https://i.ibb.co/QdMHGDn/logan-weaver-p-YQ2-ASycjg-I-unsplash.jpg" alt="logan-weaver-p-YQ2-ASycjg-I-unsplash" border="0" rounded />
+          </div>
         </div>
       </div>
     </>

@@ -13,6 +13,7 @@ import { decode } from "jsonwebtoken";
 import "./normalUser.css";
 
 const Profile = () => {
+  const [myChats, setMyChats] = useState("");
   const dispatch = useDispatch();
   const history = useHistory();
   const state = useSelector((state) => {
@@ -31,7 +32,6 @@ const Profile = () => {
     axios
       .get(`http://localhost:5000/users/${user.userId}`)
       .then((res) => {
-        console.log(res, "respons");
         dispatch(setProfile(res.data));
       })
       .catch((err) => {
@@ -44,6 +44,18 @@ const Profile = () => {
       .then((result) => {});
     setEdit(true);
   };
+
+  const myChat = async () => {
+    const allMyChats = await axios.post("http://localhost:5000/myChats", {
+      userId: user.userId,
+    });
+    console.log(allMyChats);
+    //set all chate
+  };
+
+  useEffect(() => {
+    myChat();
+  }, []);
 
   useEffect(() => {
     getProfile();
@@ -179,10 +191,12 @@ const Profile = () => {
                     </div>
                   </Form>
                 </div>
+
               ))}
             </div>
           ) : (
             <div>
+              {state.profile.map((elem, i) => {})}
               {state.profile.map((elem, i) => (
                 <div key={i}>
                   <div className="body">

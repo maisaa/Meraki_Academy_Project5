@@ -34,26 +34,30 @@ const Members = () => {
     <>
       {state.id.role == 3 ? (
         <div className="allmembers">
-          {state.members.map((ele) => {
-            if (state.id.userId === ele.poster_id) {
-              return (
-                <div className="">
-                  <button>{ele.firstName}</button>
-                  <button>chat</button>
-                  <button
-                    onClick={async (e) => {
-                      await axios.delete(`http://localhost:5000/usersPost`, {
-                        userId: ele.user_Id,
-                        postId: ele.post_id,
-                      });
-                    }}
-                  >
-                    delete
-                  </button>
-                </div>
-              );
-            }
-          })}
+          {state.members &&
+            state.members.map((ele) => {
+              console.log("userId", state.id.userId);
+              console.log("posterId", ele.poster_id);
+
+              if (state.id.userId === ele.poster_id) {
+                return (
+                  <div className="">
+                    <button>{ele.firstName}</button>
+                    <button>chat</button>
+                    <button
+                      onClick={async (e) => {
+                        await axios.delete(`http://localhost:5000/usersPost`, {
+                          userId: ele.user_Id,
+                          postId: ele.post_id,
+                        });
+                      }}
+                    >
+                      delete
+                    </button>
+                  </div>
+                );
+              }
+            })}
         </div>
       ) : state.id.role == 4 ? (
         <div className="allmembers">

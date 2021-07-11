@@ -52,7 +52,13 @@ io.on("connection", (socket) => {
   });
 
   socket.on("send_message", (data) => {
+    console.log("data", data);
     socket.to(data.role).emit("receive_message", data.content);
+  });
+
+  socket.on("send_message_private", (data) => {
+    console.log("data", data);
+    socket.to(data.romeId).emit("receive_message_private", data.content);
   });
 
   socket.on("disconnect", () => {

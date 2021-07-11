@@ -26,12 +26,12 @@ const login = (req, res) => {
           let token = jwt.sign(payload, process.env.SECRET, options);
           res.status(200).json(token);
         } else {
-          res.status(403).json("The password you've entered is incorrect");
+          res.status(403).json("Password you've entered is incorrect");
         }
       }
     });
   } catch (error) {
-    throw new Error(error.message);
+    return res.status(403).json("Password or Email is incorrect");
   }
 };
 

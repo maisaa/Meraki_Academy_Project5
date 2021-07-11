@@ -1,41 +1,55 @@
-.body1 {
-  background-image: url("https://i.ibb.co/bRBH7r7/Remini20210706001710208.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100% 100%;
-}
 @media all and (min-width: 480px) {
   .Login {
-    padding: 60px;
-    padding-bottom: 18rem;
-
+    padding-bottom: 20rem;
+    padding-top: 5rem;
+  }
+  .textStyle{
+    font-weight: bold;
+    font-size: 1.9rem;
+    text-align: left;
+    font-family: Oswald;
   }
 
   .Login form {
     margin: 0 0;
-    max-width: 320px;
+    max-width: 25rem;
+    border-color: #2cccc4;
+    padding: 3.5rem;
+    max-width: 40rem;
+    box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
   }
 }
 
-.styleLogin {
-  margin-top: 9rem;
-  margin-left: 12.5rem;
-  padding-left: 4.5rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  border-radius: 0.5rem;
-  background-color: #dee2e6;
-  width: 29.5rem;
-  height: 23rem;
+.container {
+  position: fixed;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 30rem;
+  max-width: 59rem;
+  padding: 0px 0px;
+  top: 25%;
+  left: 23%;
+  z-index: 12;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.loginImage {
+  width: 555px;
+  height: 480px;
+  border-radius: 0px;
   box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
 }
 
-.pointer{
-    cursor:pointer;
-  }
-
-  .marg {
-    margin-top: 0.7rem;
-  }
+.styleButton1 {
+  margin-top:0.5rem ;
+  border-color: #2cccc4;
+  color: black;
+  font-weight: 400;
+}
