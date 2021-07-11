@@ -33,7 +33,7 @@ const Sport = () => {
 
   return (
     <>
-      <div>
+      <div className="sportsPage">
         {state.sports.map((elem, i) => {
           return (
             <div>
@@ -54,12 +54,20 @@ const Sport = () => {
                   <h3 style={{ "text-align": "" }}>
                     <span>This video described all you need to know about {elem.type} :</span>
                   </h3>
-                  <video className="video-sports" width="800" height="400" controls>
-                    <source src="" type="video/mp4" />
-                  </video>
+                  <iframe
+                    className="video-sports"
+                    width="80%"
+                    height="400"
+                    src={elem.video}
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
                 </div>
               </section>
-              <hr></hr>
+
+              <hr className="hr"></hr>
               <section class="u-align-center u-clearfix u-section-2" id="carousel_5dcb">
                 <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
                   <h3 class="u-text u-text-default u-text-1">Meet Your Trainers</h3>

@@ -1,3 +1,7 @@
+.sportsPage {
+  background-color: #f7f8f4;
+}
+
 .u-section-1 {
   /* background-image: url("images/athlete-bike-black-and-white-cycle-260409.jpg"); */
   background-position: 50% 50%;
@@ -52,7 +56,7 @@
   font-weight: 700;
   text-transform: uppercase;
   font-size: 3rem;
-  margin: 60px auto 0;
+  margin: 0px auto 0;
 }
 
 .u-section-2 .u-list-1 {
@@ -62,17 +66,19 @@
 }
 
 .u-section-2 .u-repeater-1 {
-  grid-template-columns: calc(50% - 5px) calc(50% - 5px);
-  grid-gap: 10px 10px;
-  min-height: 590px;
+  grid-template-columns: calc(45% - 5px) calc(45% - 5px);
+  /* grid-gap: 10px 10px; */
+  min-height: 610px;
+  column-gap: 5%;
 }
 
 .u-section-2 .u-container-layout-1 {
-  padding: 30px;
+  /* padding: 30px; */
+  border: 1px solid rgb(0, 0, 0);
 }
 
 .u-section-2 .u-image-1 {
-  height: 392px;
+  height: 425px;
   margin: 0 auto 0 0;
 }
 
@@ -96,11 +102,12 @@
 }
 
 .u-section-2 .u-container-layout-2 {
-  padding: 30px;
+  /* padding: 30px; */
+  border: 1px solid black;
 }
 
 .u-section-2 .u-image-2 {
-  height: 392px;
+  height: 425px;
   margin: 0 auto 0 0;
 }
 
@@ -163,8 +170,8 @@
   }
 
   .u-section-2 .u-container-layout-1 {
-    padding-left: 10px;
-    padding-right: 10px;
+    /* padding-left: 10px; */
+    /* padding-right: 10px; */
   }
 
   .u-section-2 .u-image-1 {
@@ -174,8 +181,8 @@
   }
 
   .u-section-2 .u-container-layout-2 {
-    padding-left: 10px;
-    padding-right: 10px;
+    /* padding-left: 10px; */
+    /* padding-right: 10px; */
   }
 
   .u-section-2 .u-image-2 {
@@ -239,7 +246,7 @@
 
 .u-section-3 .u-repeater-1 {
   grid-template-columns: 100%;
-  grid-gap: 10px 10px;
+  /* grid-gap: 10px 10px; */
   min-height: 500px;
 }
 
@@ -403,7 +410,7 @@
 
 .video-sports {
   margin-top: 35px;
-  margin-left: 10%;
+  align-self: center;
 }
 .sports-video {
   width: 100%;
@@ -508,4 +515,39 @@ html {
 *:before,
 *:after {
   box-sizing: border-box;
+}
+
+:root {
+  --background-dark: #2d3548;
+  --text-light: rgba(255, 255, 255, 0.6);
+  --text-lighter: rgba(255, 255, 255, 0.9);
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 64px;
+  --width-container: 1200px;
+}
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+
+body {
+  height: 100%;
+}
+
+.hr {
+  margin-left: 20%;
+  margin-right: 20%;
+  border: 2px solid rgb(172, 34, 34);
 }
