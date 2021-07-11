@@ -20,10 +20,9 @@
     -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
   }
-}
-
-.container {
-  position: fixed;
+  
+  .container {
+    position: fixed;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 30rem;
@@ -43,8 +42,8 @@
   height: 480px;
   border-radius: 0px;
   box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
 }
 
 .styleButton1 {
@@ -52,4 +51,6 @@
   border-color: #2cccc4;
   color: black;
   font-weight: 400;
+}
+
 }
