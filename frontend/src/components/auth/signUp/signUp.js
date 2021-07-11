@@ -10,65 +10,73 @@ const BeforeSignUp = () => {
   const history = useHistory();
   localStorage.setItem("status", state);
 
+  const stateForSignUp = async (e) => {
+    await setState(e.target.value);
+    history.push(`/register/${e.target.value}`);
+  };
+
   const stateForSignUpImages = async (e) => {
     await setState(e.target.alt);
     history.push(`/register/${e.target.alt}`);
   };
 
   return (
-      <div className="SignUpSelect">
-        <h2 className="RegisterSelectSignUp"> Join us </h2>
-        <CardDeck className='CardDeckMarg'>
-          <Card>
+    <div className="SignUpSelect">
+      <h2 className="RegisterSelectSignUp"> Join us </h2>
+      <CardDeck className='CardDeckMarg row row-cols-1 row-cols-md-3' style={{ width: "65rem" }}>
+        <div className="col mb-1" style={{ width: "45rem" , height:"30rem" }}>
+          <Card className="h-10">
             <Card.Img variant="top" className="imageCard pointer" src="https://i.ibb.co/2SjTSgD/man-2.png" alt="user"
               rounded
               onClick={stateForSignUpImages} />
-            <Card.Body>
-              <Card.Title>User</Card.Title>
-              <Card.Text>
+            <Card.Body className="card-body">
+              <Card.Title className="card-title">User</Card.Title>
+              <Card.Text className="card-text">
                 register with us to get the pest experience from our professional coaches and private subscriptions from top Gyms.
               </Card.Text>
-              {/* <Button variant="outline-dark" className="buttonStyleHome" onClick={stateForSignUpImages}>join </Button> */}
+              <Button variant="outline-dark" className="buttonStyleHome" value="user" onClick={stateForSignUp}>join </Button>
             </Card.Body>
             <Card.Footer>
-            <Button variant="outline-dark" className="buttonStyleHome " onClick={stateForSignUpImages}>join </Button>
-              <small className="text-muted textLeft">+1500 Users</small>
+              <small className="text-muted ">+900 Users</small>
             </Card.Footer>
           </Card>
-          <Card>
+        </div>
+        <div className="col mb-1" style={{ width: "45rem" , height:"30rem" }}>
+          <Card className="h-10">
             <Card.Img variant="top" className="imageCard pointer c" src="https://i.ibb.co/sKdMB2g/coach-1.png" alt="coach"
               rounded
               onClick={stateForSignUpImages} />
             <Card.Body>
               <Card.Title>Coach</Card.Title>
               <Card.Text>
-                join our team of the top professional coaches and enjoy the flexibility of working hours.
+                join our team of the top professional coaches and enjoy the flexibility of working hours with many benefits more.
               </Card.Text>
-              {/* <Button variant="outline-dark" className="buttonStyleHome" onClick={stateForSignUpImages}>join </Button> */}
+              <Button variant="outline-dark" className="buttonStyleHome" value="coach" onClick={stateForSignUp}>join </Button>
             </Card.Body>
             <Card.Footer>
-              <Button variant="outline-dark" className="buttonStyleHome" onClick={stateForSignUpImages}>join </Button>
-              <small className="text-muted textLeft">+100 Coaches</small>
+              <small className="text-muted ">+90 Coach</small>
             </Card.Footer>
           </Card>
-          <Card>
+        </div>
+        <div className="col mb-1" style={{ width: "45rem" , height:"30rem" }}>
+          <Card className="h-10">
             <Card.Img variant="top" className="imageCard pointer c" src="https://i.ibb.co/Bz92vLs/gym-3.png" alt="gym"
               rounded
               onClick={stateForSignUpImages} />
             <Card.Body>
               <Card.Title>Gym</Card.Title>
               <Card.Text>
-                register with us as a gym to join the best group of top professional Gyms. And get our marketing services. 
+                register with us as a gym to join the best group of top professional Gyms. Beside that you can enjoy the marketing services.
               </Card.Text>
-              {/* <Button variant="outline-dark" className="buttonStyleHome" onClick={stateForSignUpImages}>join </Button> */}
+              <Button variant="outline-dark" className="buttonStyleHome" value="gym" onClick={stateForSignUp}>join </Button>
             </Card.Body>
             <Card.Footer>
-            <Button variant="outline-dark" className="buttonStyleHome" onClick={stateForSignUpImages}>join </Button>
-              <small className="text-muted textLeft">+10 Gyms</small>
+              <small className="text-muted ">+10 Gyms</small>
             </Card.Footer>
           </Card>
-        </CardDeck>
-      </div>
+        </div>
+      </CardDeck>
+    </div>
   );
 };
 export default BeforeSignUp;
