@@ -113,7 +113,7 @@ const Profile = () => {
                         />
                       </Form.Label>
                     </Form.Group>
-                 
+
                     <Form.Group size="lg" controlId="formFirstName">
                       <Form.Label>
                         firstName :
@@ -125,7 +125,7 @@ const Profile = () => {
                         />
                       </Form.Label>
                     </Form.Group>
-                 
+
                     <Form.Group size="lg" controlId="formLastName">
                       <Form.Label>
                         lastName :
@@ -137,7 +137,7 @@ const Profile = () => {
                         />
                       </Form.Label>
                     </Form.Group>
-                    
+
                     <Form.Group size="lg" controlId="formPhone">
                       <Form.Label>
                         phone:
@@ -149,7 +149,7 @@ const Profile = () => {
                         />
                       </Form.Label>
                     </Form.Group>
-                    
+                    {/* hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh */}
                     <Form.Group size="lg" controlId="formAge">
                       <Form.Label>
                         age:
@@ -161,10 +161,10 @@ const Profile = () => {
                         />
                       </Form.Label>
                     </Form.Group>
-                   
+
                     <Form.Group>
                       <Button
-                       className="styleButton1"
+                        className="styleButton1"
                         className="marg"
                         size="lg"
                         variant="outline-dark"
