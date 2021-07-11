@@ -32,7 +32,7 @@ const getAllUsers1 = (req, res) => {
 };
 
 const getAllUsersPost = (req, res) => {
-  const command = `SELECT users_posts.user_id , users_posts.post_id 
+  const command = `SELECT users.image, users_posts.user_id , users_posts.post_id 
   , posts.poster_id , users.firstName From users_posts
   INNER JOIN posts ON users_posts.post_id = posts.post_id AND users_posts.is_deleted =0
   INNER JOIN users ON users.user_id = users_posts.user_id`;
