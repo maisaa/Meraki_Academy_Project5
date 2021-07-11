@@ -60,7 +60,7 @@ const Login = () => {
         }
       })
       .catch((err) => {
-        setMessage(err.response);
+        setMessage("Password or Email is incorrect");
       });
   };
   const validateForm = () => {
@@ -125,83 +125,3 @@ const Login = () => {
 };
 
 export default Login;
-
-// <div className="Login body1">
-//       <section class="u-align-center u-clearfix u-grey-5 u-valign-middle u-section-1" id="carousel_fff8">
-//       <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
-//         <div class="u-layout">
-//           <div class="u-layout-row">
-//             <div class="u-align-left u-container-style u-layout-cell u-left-cell u-size-30 u-white u-layout-cell-1">
-//               <div class="u-container-layout u-valign-middle u-container-layout-1">
-//                 <h2 class="u-custom-font u-font-pt-sans u-text u-text-1">Get a demo</h2>
-//                 <p class="u-large-text u-text u-text-grey-50 u-text-variant u-text-2">
-//                   Amet tellus cras adipiscing enim eu turpis egestas pretium. At quis risus sed vulputate odio ut.
-//                 </p>
-//                 <div class="u-expanded-width u-form u-form-1">
-
-//                 </div>
-//               </div>
-//             </div>
-//             <div
-//               class="
-//                 u-align-left u-container-style u-layout-cell u-palette-4-light-2 u-right-cell u-size-30 u-layout-cell-2
-//               "
-//             >
-//               <div
-//                 class="
-//                   u-container-layout
-//                   u-valign-middle-lg
-//                   u-valign-middle-md
-//                   u-valign-middle-sm
-//                   u-valign-middle-xl
-//                   u-container-layout-2
-//                 "
-//               >
-//                 <p class="u-text u-text-palette-4-dark-1 u-text-3">
-//                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-//                   dolore magna aliqua. Egestas maecenas pharetra convallis posuere morbi.
-//                 </p>
-
-//                 <h4 class="u-text u-text-palette-4-base u-text-4">Mikkel Smith</h4>
-//                 <h5 class="u-text u-text-palette-4-base u-text-5">Sales Manager</h5>
-//                 <p class="u-text u-text-palette-4-dark-2 u-text-6">
-//                   Quis viverra nibh cras pulvinar mattis. Ornare arcu dui vivamus arcu felis bibendum ut tristique.<br />
-//                   <br />Image from
-//                   <a
-//                     href="https://freepik.com/photos/people"
-//                     class="
-//                       u-active-none
-//                       u-border-1
-//                       u-border-palette-4-base
-//                       u-btn
-//                       u-button-link
-//                       u-button-style
-//                       u-hover-none
-//                       u-none
-//                       u-text-palette-4-dark-2
-//                       u-btn-2
-//                     "
-//                     >Freepik</a
-//                   >
-//                 </p>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//     <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-5d2c"><div class="u-clearfix u-sheet u-sheet-1">
-//         <p class="u-small-text u-text u-text-variant u-text-1">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
-//       </div></footer>
-//     <section class="u-backlink u-clearfix u-grey-80">
-//       <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
-//         <span>Web Templates</span>
-//       </a>
-//       <p class="u-text">
-//         <span>created with</span>
-//       </p>
-//       <a class="u-link" href="https://nicepage.com/" target="_blank">
-//         <span>Website Builder Software</span>
-//       </a>. 
-//     </section>
-//       </div>
