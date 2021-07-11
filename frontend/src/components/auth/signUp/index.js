@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button,Image } from 'react-bootstrap';
 import axios from "axios";
 import "./signUp.css";
 
@@ -64,11 +64,11 @@ const SignUp = ({ id }) => {
   };
   return (
 
-    <div className="SignUp body1">
+    <div className="SignUp1 body1">
       {role === "user" ? (
-        <div className="SignUpUser " >
+        <div className="container1" >
           <Form onSubmit={handelSubmit}>
-            <h2 > SignUp </h2>
+            <h2 className="TextStyle"> SignUp </h2>
             <Form.Group size="lg" controlId="formFirstName">
               <Form.Label>First Name</Form.Label>
               <Form.Control type="text" placeholder="Enter First Name" name="firstName" onChange={(e) => setFirstName(e.target.value)} required />
@@ -94,7 +94,7 @@ const SignUp = ({ id }) => {
               <Form.Control type="password" placeholder="Password" name="password" onChange={(e) => setPassword(e.target.value)} />
             </Form.Group>
             <Form.Group>
-              <Button className="marg styleButton2" size="lg" variant="dark" type="submit" >
+              <Button className="marg styleButton1" size="lg" variant="outline-dark" type="submit" >
                 SignUp
               </Button>
             </Form.Group>
@@ -104,11 +104,14 @@ const SignUp = ({ id }) => {
               </Form.Label>
             </div>
           </Form>
+          <div>
+          <Image className="loginImage1" src="https://i.ibb.co/44mBrMY/erik-mclean-qc-KAq5n-Uc-OU-unsplash.jpg" alt="logan-weaver-p-YQ2-ASycjg-I-unsplash" border="0" rounded />
+          </div>
         </div>
       ) : role === "gym" || "couch" ? (
-        <div className="SignUpGymCoach">
-          <Form onSubmit={handelSubmit}>
-            <h2 > SignUp </h2>
+        <div className="container1">
+          <Form className="GC" onSubmit={handelSubmit}>
+            <h2 className="TextStyle"> SignUp </h2>
             <Form.Group size="lg" controlId="formFirstName">
               <Form.Label>First Name</Form.Label>
               <Form.Control type="text" placeholder="Enter First Name" name="firstName" onChange={(e) => setFirstName(e.target.value)} required />
@@ -140,15 +143,17 @@ const SignUp = ({ id }) => {
               </Form.Control>
             </Form.Group>
             <Form.Group>
-              <Button className="marg styleButton2" size="lg" variant="dark" type="submit" >
+              <Button className="marg styleButton1" size="lg" variant="outline-dark" type="submit" >
                 SignUp
               </Button>
             </Form.Group>
             <Form.Label >
               {message && <div  >{message}</div>}
             </Form.Label>
-            <div></div>
           </Form>
+          <div>
+          <Image className="loginImage1" src="https://i.ibb.co/44mBrMY/erik-mclean-qc-KAq5n-Uc-OU-unsplash.jpg" alt="logan-weaver-p-YQ2-ASycjg-I-unsplash" border="0" rounded />
+          </div>
         </div>
       ) : (
         <div>none</div>

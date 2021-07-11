@@ -1,6 +1,63 @@
 .pointer {
   cursor: pointer;
 }
+
+@media all and (min-width: 680px) {
+  .SignUp1 {
+    padding-bottom: 1rem;
+    padding-top: 0.2rem;
+  }
+  .textStyle {
+    font-weight: bold;
+    font-size: 1.9rem;
+    text-align: left;
+    font-family: Oswald;
+    padding-top: 0.2rem;
+  }
+
+  .SignUp1 form {
+    margin: 0 0;
+    border-color: #2cccc4;
+    padding: 3.5rem;
+    box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  }
+  .SignUp1 .CG form{
+  padding-top: -2rem;
+}
+  .container1 {
+    position: fixed;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 46rem;
+    top: 20%;
+    left: 20%;
+    max-height: 43rem;
+    z-index: 12;
+  }
+
+  .pointer {
+    cursor: pointer;
+  }
+
+  .loginImage1 {
+    width: 32rem;
+    height: 46rem;
+    border-radius: 0px;
+    box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  }
+
+  .styleButton1 {
+    margin-top: 0.5rem;
+    border-color: #2cccc4;
+    color: black;
+    font-weight: 400;
+  }
+}
+
 @media all and (min-width: 1175px) {
   .classImage {
     padding: 0.5rem;
@@ -63,20 +120,6 @@
     margin: 2rem;
   }
 
-  .SignUpUser {
-    margin-top: 3rem;
-    margin-left: 16rem;
-    padding-top: 2rem;
-    padding-bottom: 1rem;
-    border-radius: 0.5rem;
-    background-color: #dee2e6;
-    width: 30rem;
-    height: 39rem;
-    box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
-  }
-
   .SignUpGymCoach {
     margin-top: 2rem;
     margin-left: 16rem;
@@ -125,7 +168,7 @@
 /* ************************************************************************ */
 /*              New Style to be responsive  1175px to 1768px                */
 /* ************************************************************************ */
-@media all  and (max-width: 1175px) {
+@media all and (max-width: 1175px) {
   .classImage {
     padding: 0.1rem;
     margin: 0.5rem;
