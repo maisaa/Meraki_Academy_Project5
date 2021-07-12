@@ -1,7 +1,7 @@
 .pointer {
   cursor: pointer;
 }
-
+/* New Style only for forms */
 @media all and (min-width: 680px) {
   .SignUp1 {
     padding-bottom: 1rem;
@@ -166,7 +166,7 @@
   }
 }
 /* ************************************************************************ */
-/*              New Style to be responsive  1175px to 1768px                */
+/*              New Style to be responsive  max width 1175px                */
 /* ************************************************************************ */
 @media all and (max-width: 1175px) {
   .classImage {
