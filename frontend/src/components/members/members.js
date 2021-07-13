@@ -37,7 +37,6 @@ const Members = () => {
         <div className="allPageMember">
         <p className="titleHomeMember"> All your subscribers  </p>
         {state.members.map((ele, i) => {
-          console.log("state.members.length.....",state.members.length);
           if(state.members.length === 0) {
             return <div>
             <p className="titleHomeMember" style={{color:"#2cccc4", marginTop: "1rem"}}> You don't have any subscribers  </p>
@@ -91,6 +90,10 @@ const Members = () => {
         })}
       </div>
       ) : state.id.role == 4 ? (
+
+        // if (state.members[0].poster_id!==state.id.userId)
+
+
         <div className="allPageMember">
           <p className="titleHomeMember"> All your subscribers  </p>
           {state.members.map((ele) => {
@@ -100,7 +103,7 @@ const Members = () => {
               <p className="titleHomeMember" style={{color:"#2cccc4", marginTop: "1rem"}}> You don't have any subscribers  </p>
             </div>
             }
-            else if (state.id.userId === ele.poster_id) {
+            if (state.id.userId === ele.poster_id) {
               return (
                 <div className="allmembers">
                   <div>
