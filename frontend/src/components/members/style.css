@@ -1,6 +1,55 @@
 .allmembers {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 200px auto;
   align-items: center;
-  gap: 50px;
+  gap: 10px;
+  margin: 3rem;
+  width: 555px;
+  height: 200px;
+  box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  margin-left: 36%;
+}
+
+.nameMember {
+  display: grid;
+  grid-template-rows: auto auto;
+  align-items: left;
+  justify-content: left;
+  text-align: left;
+  gap: 10px;
+}
+
+.imageMembers {
+  margin: 1.4rem;
+}
+
+.titleMember {
+  color: #2cccc4;
+  font-weight: 300;
+  font-size: 40px;
+  font-family: Oswald, sans-serif;
+  margin-top: -2rem;
+}
+
+.styleButtonMember {
+  /* background-color: #2CCCC4; */
+  border-color: #2cccc4;
+  color: black;
+  font-weight: 600;
+  width: 6rem;
+  margin: 0.3rem;
+}
+
+.allPageMember{
+  padding-bottom: 2rem;
+}
+
+.titleHomeMember{
+  color: #2A2529;
+  font-weight: 400;
+  font-size: 60px;
+  font-family: Oswald, sans-serif;
+  text-align: center;
 }

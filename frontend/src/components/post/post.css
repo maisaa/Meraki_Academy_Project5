@@ -1,0 +1,127 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+.bntStart {
+  background-image: none;
+  letter-spacing: 3px;
+  font-size: 1rem;
+  border: 1px solid #2cccc4;
+  text-transform: uppercase;
+  margin: 20px auto 0 13px;
+  margin-bottom: 2rem;
+  color: #000 !important;
+ background-color: #fff;
+  position: relative;
+  width: 15rem;
+  height: 3rem;
+  font-weight: bold;
+  margin-left: 600px;
+  border-radius: 5px;
+}
+.bntStart:hover {
+  background-color: rgb(53, 52, 52);
+  color:#fff !important;
+}
+
+.pointer {
+  cursor: pointer;
+}
+@media all and (min-width: 480px) {
+  .addPost Form {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+  .form-group {
+    margin-bottom: 0.3rem;
+  }
+}
+
+
+ 
+
+.addPost {
+  margin-left: 30rem;
+  padding-top: 30px;
+  padding-bottom: 1rem;
+  background-color:#d4d3d3;
+  
+  width: 30rem;
+  height: 28rem;
+  box-shadow: 8px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 8px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 8px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  position:absolute;
+  z-index: 1;
+}
+
+.marg3{
+  margin-top: 0.7rem;
+  background-color: #fff;
+  color: #000;
+  border-color: #2cccc4;
+  font-weight: bold;
+}
+
+
+.tostMassage3 {
+  border-color: #eeeeee;
+  width: 30rem;
+  height: 5rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  padding-top: -2rem;
+}
+.input1 {
+  width: 20rem;
+}
+.select{
+  border: 1px solid #000;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 37.5rem;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  margin-bottom: 20px;
+  
+  
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 6px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+.post12{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+ 
+}
+.p11{
+  font-size: 30px;
+  width: 32rem;
+  text-align: center;
+  margin-left: 2.5rem;
+}
+.styleButton12{
+  height: 4rem;
+  font-weight: bolder;
+  font-size: 30px;
+}
