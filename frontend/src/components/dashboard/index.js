@@ -188,11 +188,15 @@ const Dashboard = () => {
         </Carousel>
       </div>
       <div className="QDiv">
-        <div></div>
         <div>
-        <p className="bigTittle2 place">The point is whether or not I improved over yesterday. In long-distance running the only opponent you have to beat is yourself, the way you used to be.</p>
+          <img className="quote1" src="https://i.ibb.co/zFN2g18/quote.png" alt="quote"></img>
         </div>
-        <div></div>
+        <div>
+          <p className="quoteText place">The point is whether or not I improved over yesterday. In long-distance running the only opponent you have to beat is yourself, the way you used to be.</p>
+        </div>
+        <div>
+          <img className="quote2" src="https://i.ibb.co/zFN2g18/quote.png" alt="quote"></img>
+        </div>
       </div>
       <Footer />
     </>
