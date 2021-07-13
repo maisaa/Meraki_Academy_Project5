@@ -74,7 +74,7 @@ const Navigation = () => {
 
   return (
     <>
-      <Navbar className="colorNav" expand="lg">
+      <Navbar className="colorNav" expand="lg" fixed="top">
         <Navbar.Brand href="#home">
           {" "}
           <Link to="/dashboard" style={{ color: "black"}}>
