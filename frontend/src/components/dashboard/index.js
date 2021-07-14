@@ -97,7 +97,7 @@ const Dashboard = () => {
         <div className="bigTittle">REACH YOUR GOALS‎</div>
         <div className="borderStyleT"></div>
       </div>
-      <div >
+      <div className="redBorder" >
         <Row md={3} className="g-4 padd" >
           {state.sports.map((elem, i) => (
             <Col >
@@ -228,7 +228,7 @@ const Dashboard = () => {
             </Card.Body>
           </Card>
           <Card>
-            <Card.Img variant="top"  className="ourPhoto" src="holder.js/100px160" />
+            <Card.Img variant="top"  className="ourPhoto" src="https://i.ibb.co/gjLZCB0/Whats-App-Image-2021-07-14-at-1-10-29-AM.jpg" />
             <Card.Body>
               <Card.Title>Ibrahem Tormenters</Card.Title>
               <Card.Text>

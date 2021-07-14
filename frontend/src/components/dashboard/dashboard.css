@@ -60,7 +60,9 @@
   -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
 }
-
+.redBorder{
+  border:soled red 5px;
+}
 .padd {
   width:75rem;
   margin-left: 23rem;
