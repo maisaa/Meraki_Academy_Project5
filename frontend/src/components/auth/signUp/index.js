@@ -64,9 +64,9 @@ const SignUp = ({ id }) => {
   };
   return (
 
-    <div className="SignUp1 body1">
+    <div className="SignUp1">
       {role === "user" ? (
-        <div className="container1" >
+        <div className="container1S" >
           <Form onSubmit={handelSubmit}>
             <h2 className="TextStyle"> SignUp </h2>
             <Form.Group size="lg" controlId="formFirstName">
@@ -109,7 +109,7 @@ const SignUp = ({ id }) => {
           </div>
         </div>
       ) : role === "gym" || "couch" ? (
-        <div className="container1">
+        <div className="container1S">
           <Form className="GC" onSubmit={handelSubmit}>
             <h2 className="TextStyle"> SignUp </h2>
             <Form.Group size="lg" controlId="formFirstName">
@@ -152,7 +152,7 @@ const SignUp = ({ id }) => {
             </Form.Label>
           </Form>
           <div>
-          <Image className="loginImage1" src="https://i.ibb.co/44mBrMY/erik-mclean-qc-KAq5n-Uc-OU-unsplash.jpg" alt="logan-weaver-p-YQ2-ASycjg-I-unsplash" border="0" rounded />
+          <Image className="loginImage1" src="https://i.ibb.co/dcHB41S/john-fornander-TAZo-Um-Dqz-Xk-unsplash.jpg" alt="logan-weaver-p-YQ2-ASycjg-I-unsplash" border="0" rounded />
           </div>
         </div>
       ) : (
