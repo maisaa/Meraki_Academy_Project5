@@ -4,7 +4,8 @@ import axios from "axios";
 import jwt from "jsonwebtoken";
 import { useHistory } from "react-router-dom";
 import { setPost, deletePost } from "../../reducers/post";
-
+import { Form, Button, Modal } from "react-bootstrap";
+import "./viewPost.css";
 const ViewPost = (props) => {
   const history = useHistory();
   const dispatch = useDispatch();
@@ -26,7 +27,6 @@ const ViewPost = (props) => {
       .put(`http://localhost:5000/posts/${e.target.value}`)
       .then((result) => {});
     setEdit(true);
-    // setDeletePost(false);
   };
 
   const savePost = async (elem, post, photo, video) => {
@@ -64,19 +64,20 @@ const ViewPost = (props) => {
     await axios.get(`http://localhost:5000/posts/${elem.post_id}`);
   };
 
-const returnToAllPost = () =>{
-  history.push("/posts");
-}
+  const returnToAllPost = () => {
+    history.push("/posts");
+  };
 
   return (
     <>
       {deletePost ? (
         <>
+        <div className="app12">
           {" "}
           {edit ? (
-            <div>
+            <div className="editPost">
               {state.posts.map((elem, i) => (
-                <form
+                <Form
                   key={i}
                   onSubmit={(e) => {
                     e.preventDefault();
@@ -88,64 +89,101 @@ const returnToAllPost = () =>{
                     );
                   }}
                 >
-                  <label>
-                    post :
-                    <input type="text" name="post" defaultValue={elem.post} />
-                  </label>{" "}
-                  <br />
-                  <label>
-                    url photo :
-                    <input
-                      type="text"
-                      name="photo"
-                      defaultValue={elem.photo}
-                    />{" "}
-                  </label>{" "}
-                  <br />
-                  <label>
-                    url video:
-                    <input
-                      type="text"
-                      name="video"
-                      defaultValue={elem.video}
-                    />{" "}
-                  </label>
-                  <br />
-                  <button>save post</button>
-                  {message && <div> {message} </div>}
-                </form>
+                  
+                  <h2 className="h222"> edit Post </h2>
+                  <Form.Group size="lg" controlId="formPost">
+                    <Form.Label>
+                      post :
+                      <Form.Control
+                        type="text"
+                        name="post"
+                        className="input1"
+                        defaultValue={elem.post}
+                      />
+                    </Form.Label>{" "}
+                  </Form.Group>
+                  <Form.Group size="lg" controlId="formPhoto">
+                    <Form.Label>
+                      url photo :
+                      <Form.Control
+                        type="text"
+                        name="photo"
+                        
+                        className="input1"
+                        defaultValue={elem.photo}
+                      />
+                    </Form.Label>
+                  </Form.Group>
+                  <Form.Group size="lg" controlId="formVideo">
+                    <Form.Label>
+                      url video:
+                      <Form.Control
+                        type="text"
+                        name="video"
+                        className="input1"
+                        defaultValue={elem.video}
+                      />{" "}
+                    </Form.Label>
+                  </Form.Group>
+
+                  <Form.Group>
+                    <Button
+                      className="styleButton2"
+                      className="marg1"
+                      size="lg"
+                      variant="outline-dark"
+                      type="submit"
+                    >
+                      Save changes
+                    </Button>
+                  </Form.Group>
+                  <div className="tostMassage1">
+                    <Form.Label>{message && <div>{message}</div>}</Form.Label>
+                  </div>
+
+                </Form>
               ))}
             </div>
           ) : (
-            <div>
+            
+            <div className="edit12">
               {state.posts.map((elem, i) => (
                 <div key={i}>
-                  <p> post : {elem.post}</p>
+                  <p className="p111" ><b> your post: </b>{elem.post}</p>
+                  <div className="flot12">
                   <img
                     src={elem.photo}
                     alt="post"
-                    height="100"
-                    width="100"
-                  />{" "}
-                  <br />
-                  <video width="320" height="240" controls>
+                    height="400"
+                    width="600"
+                  /></div>
+                  
+                  <div className="flot123">
+                  
+                  <video width="320" height="240" controls className="video">
                     <source src={elem.video} type="video/mp4" />
                   </video>
-                  <button onClick={editPost} value={elem.post_id}>
-                    {" "}
-                    edit post{" "}
+                  <button onClick={editPost} value={elem.post_id} className="btnPost">
+                    
+                    edit post
                   </button>
-                  <button onClick={popup}>deleted post</button>
-                  <button onClick={returnToAllPost}>return to all Post</button>
+                  <button onClick={popup} className="btnPost">deleted post</button>
+                  <button onClick={returnToAllPost} className="btnPost">return to all Post</button>
                   {message && <div> {message} </div>}
+                </div>
                 </div>
               ))}
             </div>
-          )}{" "}
+            
+          )}
+          </div>
         </>
       ) : (
-        <div>
-          {message && <div> {message} </div>}
+        
+          <div className="popupb2">
+        <div className="popup1">
+          <h1>Delete Post</h1>
+          {message && <div className="msg"> {message} </div>}
           {state.posts.map((elem, i) => (
             <form
               key={i}
@@ -154,7 +192,9 @@ const returnToAllPost = () =>{
                 deletePosta(elem);
               }}
             >
-              <button>deleted post</button>
+              <div className="flot2">
+            <button className="btnDel1">deleted Post</button>
+                  </div>
             </form>
           ))}
           {state.posts.map((elem, i) => (
@@ -165,9 +205,13 @@ const returnToAllPost = () =>{
                 cancel(elem);
               }}
             >
-              <button>cancel</button>
+              <div className="flot3">
+            <button className="btnCan1">cancel</button>
+            <br />
+          </div>
             </form>
           ))}
+          </div>
         </div>
       )}
     </>

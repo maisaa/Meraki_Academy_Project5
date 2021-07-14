@@ -1,10 +1,11 @@
 import React, { cloneElement, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
+import { Form, Button, Modal } from "react-bootstrap";
 import jwt from "jsonwebtoken";
 import { useHistory } from "react-router-dom";
 import { setPost, AddPost } from "./../../reducers/post";
-
+import "./post.css";
 const Post = () => {
   const history = useHistory();
   const dispatch = useDispatch();
@@ -15,6 +16,7 @@ const Post = () => {
   const [sport_id, setSport_id] = useState(0);
   const [message, setMessage] = useState("");
   const [addNew, setAddNew] = useState(false);
+  
   const state = useSelector((state) => {
     return {
       token: state.loginReducer.token,
@@ -92,86 +94,138 @@ const Post = () => {
       });
   };
 
- 
-
   const SportType = () => {
     axios.get("http://localhost:5000/sports").then((response) => {
       setState1(response.data);
     });
   };
 
-
   useEffect(() => {
     getAllPost();
   }, [addNew]);
 
   return (
-    <div className="App">
+    <div className="App1212">
       {addNew ? (
-        <div>
-          <form onSubmit={handelSubmit}>
+        <div className="addPost">
+          <Form onSubmit={handelSubmit}>
             <h3> Add post </h3>
-            <label>
-              <input
-                type="text"
-                placeholder="post here"
-                onChange={(e) => setPost2(e.target.value)}
-              />
-            </label>
-            <label>
-              <input
-                type="text"
-                placeholder="Url photo here"
-                onChange={(e) => setPhoto(e.target.value)}
-              />
-            </label>
-            <label>
-              <input
-                type="text"
-                placeholder="Url video here"
-                onChange={(e) => setVideo(e.target.value)}
-              />
-            </label>
-            <label>
-              <select
-                type="select"
-                onClick={async (e) => {
-                  SportType();
-                  await setSport_id(e.target.value);
-                }}
-              >
-                {}
-                {state1.map((ele, i) => {
-                  return (
-                    <option value={ele.sport_id} key={i}>
-                      {ele.type}
-                    </option>
-                  );
-                })}
-              </select>
-            </label>
+            
+              <Form.Label>
+                <Form.Control
+                  className="input"
+                  type="text"
+                  placeholder="post here"
+                  onChange={(e) => setPost2(e.target.value)}
+                />
+              </Form.Label>
+            
+            
+              <Form.Label>
+                <Form.Control
+                  className="input"
+                  type="text"
+                  placeholder="Url photo here"
+                  onChange={(e) => setPhoto(e.target.value)}
+                />
+              </Form.Label>
+            
+            
+              <Form.Label>
+                <Form.Control
+                  className="input"
+                  type="text"
+                  placeholder="Url video here"
+                  onChange={(e) => setVideo(e.target.value)}
+                />
+              </Form.Label>
+            
+              <Form.Label>
+                <select
+                  className="input select"
+                  type="select"
+                  onClick={async (e) => {
+                    SportType();
+                    await setSport_id(e.target.value);
+                  }}
+                >
+                  {}
+                  {state1.map((ele, i) => {
+                    return (
+                      <option value={ele.sport_id} key={i}>
+                        {ele.type}
+                      </option>
+                    );
+                  })}
+                </select>
+              </Form.Label>
+          
             <div>
-              <button>add post</button>
+              
+                <Button
+                  className="styleButton12"
+                  className="marg3"
+                  size="lg"
+                  variant="outline-dark"
+                  type="submit"
+                >
+                  add Post
+                </Button>
+              
             </div>
-            <div>{message && <div> {message} </div>}</div>
-          </form>
+            <div className="tostMassage3">
+              <Form.Label>{message && <div>{message}</div>}</Form.Label>
+            </div>
+          </Form>
         </div>
       ) : (
-        <div> <button onClick={()=>{setAddNew(true)}}> Add + </button> </div>
+        <div className="divbtn1">
+          {" "}
+          <button
+            onClick={() => {
+              setAddNew(true);
+            }}
+            className="bntStart"
+          >
+            
+            click to add post
+          </button>
+        </div>
       )}
-      <div>
+     <div className="post12">
         {state.posts.map((elem, i) => (
           <div key={i}>
-            <p>post :{elem.post}</p>
-            <img src={elem.photo} height="100" width="100" /> <br />
-            <video width="320" height="240" controls>
-              <source src={elem.video} type="video/mp4" />
-            </video>
-            <button onClick={viewPost} value={elem.post_id}>
-              {" "}
-              view post{" "}
-            </button>
-          </div>
+               <div class="card">  
+             <img
+                src={elem.photo}
+                height="450"
+                width="600"
+                className="imgpost"
+              />
+              <p className="p11">
+               
+                {elem.post}
+              </p>
+              <br/>
+              
+              <video width="320" height="240" controls className="video">
+                <source src={elem.video} type="video/mp4" />
+              </video>
+            
+            
+              
+
+              <Button
+                onClick={viewPost}
+                value={elem.post_id}
+                className="styleButton12"
+                variant="outline-dark"
+              >
+                view post
+              </Button>
+              </div>
+            </div>
+         
         ))}
       </div>
     </div>
