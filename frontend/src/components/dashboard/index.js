@@ -4,7 +4,7 @@ import { setSports, getSport } from "../../reducers/sports";
 import { setToken } from "../../reducers/login";
 import { useHistory } from "react-router-dom";
 import Footer from "./../footer/index";
-import { Carousel, Card, Button, Row, Col } from "react-bootstrap";
+import { CardDeck, Carousel, Card, Button, Row, Col } from "react-bootstrap";
 import jwt from "jsonwebtoken";
 import axios from "axios";
 import "./dashboard.css";
@@ -197,6 +197,46 @@ const Dashboard = () => {
         <div>
           <img className="quote2" src="https://i.ibb.co/zFN2g18/quote.png" alt="quote"></img>
         </div>
+      </div>
+      <div className="About">
+        <CardDeck>
+          <Card>
+            <Card.Img variant="top" className="ourPhoto" src="https://i.ibb.co/WFdV0xQ/Pics-Art-07-14-12-25-59.jpg" />
+            <Card.Body>
+              <Card.Title>Bayan Daboubash</Card.Title>
+              <Card.Text>
+              i have an ambition to become the best programmer in the world.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+          <Card>
+            <Card.Img variant="top" className="ourPhoto" src="https://i.ibb.co/jLbL5k1/C18-Maisaa.jpg" />
+            <Card.Body>
+              <Card.Title>Maisaa Alkhder</Card.Title>
+              <Card.Text>
+              FullStack web developer.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+          <Card>
+            <Card.Img variant="top" className="ourPhoto" src="https://f.top4top.io/p_19898rk101.jpeg" />
+            <Card.Body>
+              <Card.Title>Mohammad Alnabale</Card.Title>
+              <Card.Text>
+              i have an ambition to become the best programmer in the world.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+          <Card>
+            <Card.Img variant="top"  className="ourPhoto" src="holder.js/100px160" />
+            <Card.Body>
+              <Card.Title>Ibrahem Tormenters</Card.Title>
+              <Card.Text>
+              i have an ambition to become the best programmer in the world
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </CardDeck>
       </div>
       <Footer />
     </>

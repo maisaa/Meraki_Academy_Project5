@@ -103,9 +103,10 @@
 }
 
 .bigTittle {
+  width: 50rem;
   color: white;
-  font-weight: 600;
-  font-size: 5.9rem;
+  font-weight: 400;
+  font-size: 4.9rem;
   text-align: left;
   font-family: Oswald, sans-serif;
   padding: -30rem;
@@ -126,4 +127,16 @@
   margin-top: 3.5rem;
   width: 33rem;
   height: 1rem;
+}
+.About{
+  margin-left: 18rem;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+  height: 30rem;
+  background-color: white;
+  width: 70%;
+}
+.ourPhoto{
+  height:16rem ;
+  width: 100%;
 }
