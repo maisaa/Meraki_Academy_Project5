@@ -4,7 +4,7 @@ import { Form, Button, Modal } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { decode } from "jsonwebtoken";
-import "./normal_user.css";
+
 import { useHistory } from "react-router-dom";
 import "./normalUser.css";
 import {
