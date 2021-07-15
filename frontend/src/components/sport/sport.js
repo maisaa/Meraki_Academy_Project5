@@ -41,7 +41,7 @@ const Sport = () => {
       <div className="sportsPage">
         {state.sports.map((elem, i) => {
           return (
-            <div>
+            <div key="i">
               <section class="u-align-left u-clearfix u-section-2" id="carousel_040f">
                 <div>
                   <img src={elem.photo} height="800" width="100%"></img>
