@@ -91,10 +91,6 @@ const GymAndCouchInfo = ({ id }) => {
         <div>
           <img className='ImgCoachGym' src={state.GymOrCouch && state.GymOrCouch[0].image} alt=""></img>
         </div>
-        <div className="nameDesLabelDiv">
-          <div className="NameLabel">{state.GymOrCouch && state.GymOrCouch[0].firstName + `  ` + state.GymOrCouch[0].lastName}</div>
-          <div className="DesLabel">{state.GymOrCouch && state.GymOrCouch[0].description}</div>
-        </div>
         <div className="buttonLeft">
           <Button className="styleButton12" variant="outline-dark">video call</Button>
           <Button
@@ -108,6 +104,9 @@ const GymAndCouchInfo = ({ id }) => {
             chat
           </Button>
         </div>
+        <div></div>
+        <div className="NameLabel">{state.GymOrCouch && state.GymOrCouch[0].firstName + `  ` + state.GymOrCouch[0].lastName}</div>
+        <div className="DesLabel">{state.GymOrCouch && state.GymOrCouch[0].description}</div>
       </div>
 
 
@@ -116,64 +115,77 @@ const GymAndCouchInfo = ({ id }) => {
         <div>
           {state.allPosts &&
             state.allPosts.map((ele) => {
+            console.log('photo............',ele.photo);
               return (
-                <div>
-                  <p>{ele.post}</p>
-                  <p>
-                    Comments :{" "}
-                    {state.comments &&
-                      state.comments.map((elem) => {
-                        if (elem[0].postID === ele.post_id) {
-                          return (
-                            <div>
-                              <p>{elem[0].firstName}</p>
-                              <p>{elem[0].comment}</p>
-                            </div>
-                          );
-                        }
-                      })}
-                  </p>
-                  <input
-                    onChange={(e) => {
-                      setAComments(e.target.value);
-                    }}
-                    placeholder="comment here"
-                  ></input>
-                  <button
-                    onClick={() => {
-                      dispatch(
-                        AddComment([
-                          {
-                            postID: ele.post_id,
-                            comment: comments,
-                            // firstName: elm.firstName,
-                          },
-                        ])
-                      );
-                    }}
-                  >
-                    add commints
-                  </button>
-                  All Posts :{" "}
-                  <button
-                    onClick={async () => {
-                      const user = jwt.decode(state.token);
-                      console.log("user", user);
-                      const userID = user.userId;
-                      const postID = ele.post_id;
-                      const a = await axios.post("http://localhost:5000/favorite", {
-                        userID,
-                        postID,
-                      });
-                    }}
-                  >
-                    add to fav for posts
-                  </button>
+                <div className="postPhotoInfoPage">
+                  <div >
+                    <img alt="postPhoto" src={ele.photo} height="150" width="100%" />
+                    <Button
+                    className="styleButton12  favButton" variant="outline-dark"
+                      onClick={async () => {
+                        const user = jwt.decode(state.token);
+                        console.log("user", user);
+                        const userID = user.userId;
+                        const postID = ele.post_id;
+                        const a = await axios.post("http://localhost:5000/favorite", {
+                          userID,
+                          postID,
+                        });
+                      }}
+                    >
+                      Add to favorite
+                    </Button>
+                  </div>
+                  <div className="colPostAndComments">
+                    <div className="row1Post">
+                      <p>{ele.post}</p>
+                    </div>
+                    <div className="row2Comments">
+                      <p>
+                        Comments :{" "}
+                        {state.comments &&
+                          state.comments.map((elem) => {
+                            if (elem[0].postID === ele.post_id) {
+                              return (
+                                <div>
+                                  <p>{elem[0].firstName}</p>
+                                  <p>{elem[0].comment}</p>
+                                </div>
+                              );
+                            }
+                          })}
+                      </p>
+                    </div>
+                    <input
+                      onChange={(e) => {
+                        setAComments(e.target.value);
+                      }}
+                      placeholder="comment here"
+                    ></input>
+                    <button
+                      onClick={() => {
+                        dispatch(
+                          AddComment([
+                            {
+                              postID: ele.post_id,
+                              comment: comments,
+                              // firstName: elm.firstName,
+                            },
+                          ])
+                        );
+                      }}
+                    >
+                      add commints
+                    </button>
+                    All Posts :{" "}
+                    
+                  </div>
                 </div>
               );
             })}
         </div>
       </div>
+
       <div className="devChat">
         {messageList.map((ele, i) => {
           return (
@@ -186,7 +198,7 @@ const GymAndCouchInfo = ({ id }) => {
         <button onClick={sendMessage}>Send</button>
 
       </div>
-      <div className="hamish"></div>
+      <div className="haish"></div>
     </div>
 
 
@@ -195,3 +207,4 @@ const GymAndCouchInfo = ({ id }) => {
 };
 
 export default GymAndCouchInfo;
+
