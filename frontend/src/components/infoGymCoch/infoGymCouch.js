@@ -4,8 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { setGymOrCoach, setGymOrCoachPost } from "./../../reducers/infoGymCoch";
 import { AddComment, setComment } from "./../../reducers/commints";
 import { useHistory, useParams } from "react-router-dom";
+import { Button } from "react-bootstrap";
 import io from "socket.io-client";
 import jwt from "jsonwebtoken";
+import './infoGymCoch.css';
 let socket;
 const CONNECTION_PORT = "http://localhost:5000";
 
@@ -82,95 +84,127 @@ const GymAndCouchInfo = ({ id }) => {
   }, []);
 
   return (
+
     <div className="GymCooch">
-      
-      <img src={state.GymOrCouch && state.GymOrCouch[0].image}></img>
-      First Name : <p>{state.GymOrCouch && state.GymOrCouch[0].firstName}</p>
-      <p>add to favorite </p>
-      description : <p>{state.GymOrCouch && state.GymOrCouch[0].description}</p>
-      <button>video call</button>
-      <button
-        onClick={async () => {
-          const user = await jwt.decode(state.token);
-          console.log("user", user);
-          history.push(`/chat/${role}/${user.userId}`);
-        }}
-      >
-        chat
-      </button>
-      <div>
-        {state.allPosts &&
-          state.allPosts.map((ele) => {
-            return (
-              <div>
-                <p>{ele.post}</p>
-                <p>
-                  Comments :{" "}
-                  {state.comments &&
-                    state.comments.map((elem) => {
-                      if (elem[0].postID === ele.post_id) {
-                        return (
-                          <div>
-                            <p>{elem[0].firstName}</p>
-                            <p>{elem[0].comment}</p>
-                          </div>
-                        );
-                      }
-                    })}
-                </p>
-                <input
-                  onChange={(e) => {
-                    setAComments(e.target.value);
-                  }}
-                  placeholder="comment here"
-                ></input>
-                <button
-                  onClick={() => {
-                    dispatch(
-                      AddComment([
-                        {
-                          postID: ele.post_id,
-                          comment: comments,
-                          // firstName: elm.firstName,
-                        },
-                      ])
-                    );
-                  }}
-                >
-                  add commints
-                </button>
-                All Posts :{" "}
-                <button
-                  onClick={async () => {
-                    const user = jwt.decode(state.token);
-                    console.log("user", user);
-                    const userID = user.userId;
-                    const postID = ele.post_id;
-                    const a = await axios.post("http://localhost:5000/favorite", {
-                      userID,
-                      postID,
-                    });
-                  }}
-                >
-                  add to fav
-                </button>
-              </div>
-            );
-          })}
+      <div className="hamish"></div>
+      <div className="devDes">
+        <div>
+          <img className='ImgCoachGym' src={state.GymOrCouch && state.GymOrCouch[0].image} alt=""></img>
+        </div>
+        <div className="buttonLeft">
+          <Button className="styleButton12" variant="outline-dark">video call</Button>
+          <Button
+            className="styleButton12" variant="outline-dark"
+            onClick={async () => {
+              const user = await jwt.decode(state.token);
+              console.log("user", user);
+              history.push(`/chat/${role}/${user.userId}`);
+            }}
+          >
+            chat
+          </Button>
+        </div>
+        <div></div>
+        <div className="NameLabel">{state.GymOrCouch && state.GymOrCouch[0].firstName + `  ` + state.GymOrCouch[0].lastName}</div>
+        <div className="DesLabel">{state.GymOrCouch && state.GymOrCouch[0].description}</div>
       </div>
-      <br></br>
-      <br></br>
-      {messageList.map((ele, i) => {
-        return (
-          <h3 key={i}>
-            {ele.author} {ele.message}
-          </h3>
-        );
-      })}
-      <textarea type="text" placeholder="Write your message here ..." onChange={(e) => setMessage(e.target.value)} />
-      <button onClick={sendMessage}>Send</button>
+
+
+      <div className="devPosts">
+
+        <div>
+          {state.allPosts &&
+            state.allPosts.map((ele) => {
+            console.log('photo............',ele.photo);
+              return (
+                <div className="postPhotoInfoPage">
+                  <div >
+                    <img alt="postPhoto" src={ele.photo} height="150" width="100%" />
+                    <Button
+                    className="styleButton12  favButton" variant="outline-dark"
+                      onClick={async () => {
+                        const user = jwt.decode(state.token);
+                        console.log("user", user);
+                        const userID = user.userId;
+                        const postID = ele.post_id;
+                        const a = await axios.post("http://localhost:5000/favorite", {
+                          userID,
+                          postID,
+                        });
+                      }}
+                    >
+                      Add to favorite
+                    </Button>
+                  </div>
+                  <div className="colPostAndComments">
+                    <div className="row1Post">
+                      <p>{ele.post}</p>
+                    </div>
+                    <div className="row2Comments">
+                      <p>
+                        Comments :{" "}
+                        {state.comments &&
+                          state.comments.map((elem) => {
+                            if (elem[0].postID === ele.post_id) {
+                              return (
+                                <div>
+                                  <p>{elem[0].firstName}</p>
+                                  <p>{elem[0].comment}</p>
+                                </div>
+                              );
+                            }
+                          })}
+                      </p>
+                    </div>
+                    <input
+                      onChange={(e) => {
+                        setAComments(e.target.value);
+                      }}
+                      placeholder="comment here"
+                    ></input>
+                    <button
+                      onClick={() => {
+                        dispatch(
+                          AddComment([
+                            {
+                              postID: ele.post_id,
+                              comment: comments,
+                              // firstName: elm.firstName,
+                            },
+                          ])
+                        );
+                      }}
+                    >
+                      add commints
+                    </button>
+                    All Posts :{" "}
+                    
+                  </div>
+                </div>
+              );
+            })}
+        </div>
+      </div>
+
+      <div className="devChat">
+        {messageList.map((ele, i) => {
+          return (
+            <h3 key={i}>
+              {ele.author} {ele.message}
+            </h3>
+          );
+        })}
+        <textarea type="text" placeholder="Write your message here ..." onChange={(e) => setMessage(e.target.value)} />
+        <button onClick={sendMessage}>Send</button>
+
+      </div>
+      <div className="haish"></div>
     </div>
+
+
+
   );
 };
 
 export default GymAndCouchInfo;
+

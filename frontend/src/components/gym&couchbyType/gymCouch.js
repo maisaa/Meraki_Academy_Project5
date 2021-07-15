@@ -51,7 +51,7 @@ const GymAndCouch = ({ id }) => {
                   style={divStyle}
                 ></div>
                 <div class="card1__content">
-                  <h3 class="card1__category">Rate : {ele.rate} /5</h3>
+                  {/* <h3 class="card1__category">Rate : {ele.rate} /5</h3> */}
                   <h3 class="card1__heading"> {ele.firstName}</h3>
                 </div>
               </Link>
