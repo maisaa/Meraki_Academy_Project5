@@ -7,8 +7,8 @@ import "./sport.css";
 import "./nicepage.css";
 import "./Page-6.css";
 
-import img from "./images/aa.jpg";
-import img1 from "./images/athlete-black-and-white-boxer-boxing-290416.jpg";
+import img1 from "./images/gym.jpg";
+import img from "./images/113299.jpg";
 import Button from "react-bootstrap/Button";
 import img3 from "./images/action-activity-adult-attack-260447.jpg";
 import img4 from "./images/52f8dc4b-dc0c-5220-3dbf-3ab6e4921ae6.jpg";
@@ -29,6 +29,15 @@ const Sport = () => {
 
   const getSportByType = (e) => {
     history.push(`/type/${e.target.value}`);
+  };
+
+  const getSportByTypeImage = (e) => {
+    axios.get(`http://localhost:5000/sport/Tines`).then((result) => {
+      // setType(e.target.alt);
+      dispatch(setSports(result.data));
+      history.push(`/sports/type`);
+      console.log("result.data....dashboard....", result.data);
+    });
   };
 
   return (
@@ -97,7 +106,7 @@ const Sport = () => {
                       <div class="u-align-center u-container-style u-list-item u-repeater-item">
                         <div class="u-container-layout u-similar-container u-valign-top u-container-layout-2">
                           <img src={img1} alt="" class="u-expanded-width u-image u-image-default u-image-2"></img>
-                          <h5 class="u-text u-text-4">Private Couch</h5>
+                          <h5 class="u-text u-text-4">Private Coach</h5>
                           <p class="u-text u-text-grey-40 u-text-5">
                             Sample text. Click to select the text box. Click again or double click to start editing the
                             text.
@@ -153,22 +162,24 @@ const Sport = () => {
                             <path d="m326 271c24.813 0 45-20.187 45-45s-20.187-45-45-45-45 20.187-45 45 20.187 45 45 45zm0-60c8.271 0 15 6.729 15 15s-6.729 15-15 15-15-6.729-15-15 6.729-15 15-15z"></path>
                           </g>
                         </span>
-                        <h4 class="u-text u-text-3">Traveller Tours</h4>
-                        <p class="u-text u-text-4">Sample text. Click to select the text box.</p>
+                        <h4 class="u-text u-text-3">Football Sport</h4>
+                        <p class="u-text u-text-4">Click to select the Football Sport Page.</p>
                       </div>
                     </div>
                     <div class="u-align-center u-container-style u-grey-5 u-list-item u-repeater-item u-video-cover">
                       <div class="u-container-layout u-similar-container u-valign-top u-container-layout-3">
                         <span class="u-icon u-icon-circle u-icon-2"></span>
-                        <h4 class="u-text u-text-5">Explore The World</h4>
-                        <p class="u-text u-text-6">Sample text. Click to select the text box.</p>
+                        <h4 onClick={getSportByTypeImage} value="Tines" class="u-text u-text-5">
+                          Tines Sport
+                        </h4>
+                        <p class="u-text u-text-6">Click to select the Tines Sport Page.</p>
                       </div>
                     </div>
                     <div class="u-align-center u-container-style u-grey-5 u-list-item u-repeater-item u-video-cover">
                       <div class="u-container-layout u-similar-container u-valign-top u-container-layout-4">
                         <span class="u-icon u-icon-circle u-icon-3"></span>
-                        <h4 class="u-text u-text-7">Adventure Vacations</h4>
-                        <p class="u-text u-text-8">Sample text. Click to select the text box.</p>
+                        <h4 class="u-text u-text-7">basketball Sport</h4>
+                        <p class="u-text u-text-8">Click to select the basketball Sport Page.</p>
                       </div>
                     </div>
                     <div class="u-align-center u-container-style u-grey-5 u-list-item u-repeater-item u-video-cover">
@@ -187,8 +198,8 @@ const Sport = () => {
                             <path d="m241 278.878h30v30h-30z"></path>
                           </g>
                         </span>
-                        <h4 class="u-text u-text-9">Luxurious Hotels</h4>
-                        <p class="u-text u-text-10">Sample text. Click to select the text box.</p>
+                        <h4 class="u-text u-text-9">Yoga Sport</h4>
+                        <p class="u-text u-text-10">Click to select the Yoga Sport Page.</p>
                       </div>
                     </div>
                   </div>

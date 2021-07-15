@@ -3,15 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { decode } from "jsonwebtoken";
 import { setSearch111 } from "./../../reducers/search";
-import {
-  FormControl,
-  Form,
-  Navbar,
-  Nav,
-  NavDropdown,
-  Button,
-  Image,
-} from "react-bootstrap";
+import { FormControl, Form, Navbar, Nav, NavDropdown, Button, Image } from "react-bootstrap";
 import axios from "axios";
 import "./navigation.css";
 
@@ -70,15 +62,15 @@ const Navigation = () => {
     if (state.token) {
       getName();
     }
-  }, [show]);
+  }, []);
 
   return (
     <>
       <Navbar className="colorNav" expand="lg">
         <Navbar.Brand href="#home">
           {" "}
-          <Link to="/dashboard" style={{ color: "black"}}>
-            <Image src="https://i.ibb.co/k94s0qF/Screenshot-1.png" alt="logo" className="logo"/>
+          <Link to="/dashboard" style={{ color: "black" }}>
+            <Image src="https://i.ibb.co/k94s0qF/Screenshot-1.png" alt="logo" className="logo" />
           </Link>{" "}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -131,9 +123,9 @@ const Navigation = () => {
               type="text"
               placeholder="Search"
               className="mr-sm-2"
-              style={{width: "20rem"}}
+              style={{ width: "20rem" }}
             />
-            <Button className="styleButton" onClick={searchFun}  variant="outline-dark">
+            <Button className="styleButton" onClick={searchFun} variant="outline-dark">
               Search
             </Button>
           </Form>

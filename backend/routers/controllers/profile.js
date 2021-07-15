@@ -129,6 +129,18 @@ const deleteProfile = (req, res) => {
   });
 };
 
+const deleteProfile1 = (req, res) => {
+  const userId = req.body.userId;
+  const postId = req.body.postId;
+  const data = [userId, postId];
+  const command = `UPDATE users_posts SET is_deleted =1 WHERE user_id= ? AND post_id =?;`;
+  db.query(command, data, (err, results) => {
+    if (err) return res.status(500);
+    res.json("This user is delete successful");
+    res.status(201);
+  });
+};
+
 const deleteFromUserPosts = (req, res) => {
   const { userId, postId } = req.body;
   const command = `UPDATE users_posts SET is_deleted =1 where user_id =? AND post_id = ?`;
@@ -152,4 +164,5 @@ module.exports = {
   getAllUsers1,
   getProfileFirstName,
   getAllChats,
+  deleteProfile1,
 };
