@@ -94,7 +94,7 @@ const Dashboard = () => {
       <Images />
       <div className="borderStyleAll">
         <div className="bigTittle2"> m o v e d &nbsp; &nbsp; c l u b</div>
-        <div className="bigTittle">REACH YOUR GOALS‎</div>
+        <div className="bigTittle">REACH YOUR <br/> GOALS‎</div>
         <div className="borderStyleT"></div>
       </div>
       <div className="redBorder">
@@ -211,22 +211,25 @@ const Dashboard = () => {
           <Card>
             <Card.Img variant="top" className="ourPhoto" src="https://i.ibb.co/WFdV0xQ/Pics-Art-07-14-12-25-59.jpg" />
             <Card.Body>
-              <Card.Title>Bayan Daboubash</Card.Title>
-              <Card.Text>i have an ambition to become the best programmer in the world.</Card.Text>
+              <Card.Title style={{fontWeight: "600"}}>Bayan Daboubash</Card.Title>
+              <Card.Text style={{height: "10"}}>I have an ambition to become the best programmer in the world.</Card.Text>
+              <Card.Text>bayan.daboubash2000@gmail.com</Card.Text>
             </Card.Body>
           </Card>
           <Card>
             <Card.Img variant="top" className="ourPhoto" src="https://i.ibb.co/jLbL5k1/C18-Maisaa.jpg" />
             <Card.Body>
-              <Card.Title>Maisaa Alkhder</Card.Title>
-              <Card.Text>FullStack web developer.</Card.Text>
+              <Card.Title style={{fontWeight: "600"}}>Maisaa Alkhder</Card.Title>
+              <Card.Text style={{height: "10"}}>I have an ambition to become the best programmer in the world.</Card.Text>
+              <Card.Text>maisaa.alkhedr@gmail.com</Card.Text>
             </Card.Body>
           </Card>
           <Card>
             <Card.Img variant="top" className="ourPhoto" src="https://f.top4top.io/p_19898rk101.jpeg" />
             <Card.Body>
-              <Card.Title>Mohammad Alnabale</Card.Title>
-              <Card.Text>i have an ambition to become the best programmer in the world.</Card.Text>
+              <Card.Title style={{fontWeight: "600"}}>Mohammad Alnabale</Card.Title>
+              <Card.Text style={{height: "10"}}>I have an ambition to become the best programmer in the world.</Card.Text>
+              <Card.Text>nabali@gmail.com</Card.Text>
             </Card.Body>
           </Card>
           <Card>
@@ -236,8 +239,9 @@ const Dashboard = () => {
               src="https://i.ibb.co/gjLZCB0/Whats-App-Image-2021-07-14-at-1-10-29-AM.jpg"
             />
             <Card.Body>
-              <Card.Title>Ibrahem Tormenters</Card.Title>
-              <Card.Text>i have an ambition to become the best programmer in the world</Card.Text>
+              <Card.Title style={{fontWeight: "600"}}>Ibrahem Tormenters</Card.Title>
+              <Card.Text style={{height: "10"}}>I have an ambition to become the best programmer in the world</Card.Text>
+              <Card.Text>ibrahim@gmail.com</Card.Text>
             </Card.Body>
           </Card>
         </CardDeck>

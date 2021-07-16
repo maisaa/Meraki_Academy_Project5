@@ -103,6 +103,7 @@ const Post = () => {
   return (
     <div className="App1212">
       {addNew ? (
+        <div className="allAddPost">
         <div className="addPost">
           <Form onSubmit={handelSubmit}>
             <h3> Add post </h3>
@@ -154,7 +155,7 @@ const Post = () => {
             </Form.Label>
 
             <div>
-              <Button className="styleButton12" className="marg3" size="lg" variant="outline-dark" type="submit">
+              <Button className="styleButton12 marg3"  size="lg" variant="outline-dark" type="submit">
                 add Post
               </Button>
             </div>
@@ -163,6 +164,10 @@ const Post = () => {
             </div>
           </Form>
         </div>
+        <div>
+        <img src="https://i.ibb.co/LQ1P3yD/dmitrii-vaccinium-By-UAo3-Rp-A6c-unsplash.jpg" className="imageAddPosts" />
+        </div>
+      </div>
       ) : (
         <div className="divbtn1">
           {" "}
@@ -170,7 +175,7 @@ const Post = () => {
             onClick={() => {
               setAddNew(true);
             }}
-            className="bntStart"
+            className="bntStart "
           >
             click to add post
           </button>
@@ -178,20 +183,14 @@ const Post = () => {
       )}
       <div className="post12">
         {state.posts.map((elem, i) => (
-          <div key={i}>
-            <div class="card">
-              <img src={elem.photo} height="450" width="600" className="imgpost" />
+          <div key={i} class="card1Post"> 
+              <img src={elem.photo} className="imagePosts" />
               <p className="p11">{elem.post}</p>
-              <br />
-
-              <video width="320" height="240" controls className="video">
-                <source src={elem.video} type="video/mp4" />
-              </video>
-
-              <Button onClick={viewPost} value={elem.post_id} className="styleButton12" variant="outline-dark">
-                view post
+              <div className="divButtonViewPost">
+              <Button onClick={viewPost} value={elem.post_id} className="styleButton12"  variant="outline-dark">
+                view 
               </Button>
-            </div>
+              </div>
           </div>
         ))}
       </div>
