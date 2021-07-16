@@ -12,6 +12,11 @@ import img from "./images/113299.jpg";
 import Button from "react-bootstrap/Button";
 import img3 from "./images/action-activity-adult-attack-260447.jpg";
 import img4 from "./images/52f8dc4b-dc0c-5220-3dbf-3ab6e4921ae6.jpg";
+import coaches from "./images/coaches.jpg";
+import gym from "./images/gym.jpg";
+import footer1 from "./images/footer.jpg";
+import footer2 from "./images/footer2.jpg";
+
 const Sport = () => {
   const history = useHistory();
   const dispatch = useDispatch();
@@ -45,7 +50,7 @@ const Sport = () => {
       <div className="sportsPage">
         {state.sports.map((elem, i) => {
           return (
-            <div>
+            <div key="i">
               <section class="u-align-left u-clearfix u-section-2" id="carousel_040f">
                 <div>
                   <img src={elem.photo} height="950" width="100%"></img>
@@ -85,8 +90,8 @@ const Sport = () => {
                       <div class="u-align-center u-container-style u-list-item u-repeater-item">
                         <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
                           <img
-                            src={img}
-                            alt=""
+                            src={gym}
+                            alt="gym"
                             class="u-expanded-width u-image u-image-default u-image-1"
                             data-image-width="810"
                             data-image-height="1080"
@@ -105,8 +110,8 @@ const Sport = () => {
                       </div>
                       <div class="u-align-center u-container-style u-list-item u-repeater-item">
                         <div class="u-container-layout u-similar-container u-valign-top u-container-layout-2">
-                          <img src={img1} alt="" class="u-expanded-width u-image u-image-default u-image-2"></img>
-                          <h5 class="u-text u-text-4">Private Coach</h5>
+                          <img src={coaches} alt="" class="u-expanded-width u-image u-image-default u-image-2"></img>
+                          <h5 class="u-text u-text-4">Private Couch</h5>
                           <p class="u-text u-text-grey-40 u-text-5">
                             Sample text. Click to select the text box. Click again or double click to start editing the
                             text.
@@ -150,7 +155,8 @@ const Sport = () => {
                   class="u-expanded-width u-image u-image-1"
                   data-image-width="1920"
                   data-image-height="972"
-                  src={img4}
+                  src={footer2}
+                  alt="aa"
                 />
                 <div class="u-layout-grid u-list u-list-1">
                   <div class="u-repeater u-repeater-1">

@@ -26,15 +26,17 @@
   .SignUp1 .CG form{
   padding-top: -2rem;
 }
-  .container1 {
+  .container1S {
     position: fixed;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 46rem;
+    grid-gap: 0px;
     top: 20%;
     left: 20%;
     max-height: 43rem;
     z-index: 12;
+    margin-top: -4rem;
   }
 
   .pointer {
@@ -43,7 +45,7 @@
 
   .loginImage1 {
     width: 32rem;
-    height: 46rem;
+    height: 45.9rem;
     border-radius: 0px;
     box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
@@ -104,7 +106,7 @@
     box-shadow: 1px 4px 8px -12px rgb(0 0 0 / 75%);
     -webkit-box-shadow: 1px 8px 34px -12px rgb(0 0 0 / 75%);
     -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
-    background-image: url("https://i.ibb.co/Bn1qmJ9/ishan-seefromthesky-Kg-Cbv-OWYu-U0-unsplash.jpg");
+    background-image: url("https://i.ibb.co/MhYz3Zw/spikeball-kx-Ejm9s21bg-unsplash.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
     position: fixed;
@@ -114,8 +116,17 @@
     top: 25%;
     left: 20%;
     z-index: 12;
+    margin-top: -1rem;
   }
-
+  .style{
+    width: 45rem;
+    height:30rem ;
+  }
+.Shadow{
+  box-shadow: 1px 4px 8px -12px rgb(0 0 0 / 75%);
+    -webkit-box-shadow: 1px 8px 34px -12px rgb(0 0 0 / 75%);
+    -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+}
   .CardDeckMarg {
     margin: 2rem;
   }
@@ -208,19 +219,20 @@
     border-radius: 0.5rem;
   } */
   .SignUpSelect {
-    background-color: #2cccc4;
+    /* background-color: #2cccc4; */
     /* width: 80rem; */
     /* height: 10rem; */
     box-shadow: 1px 4px 8px -12px rgb(0 0 0 / 75%);
     -webkit-box-shadow: 1px 8px 34px -12px rgb(0 0 0 / 75%);
     -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
-    /* background-image: url("https://i.ibb.co/Bn1qmJ9/ishan-seefromthesky-Kg-Cbv-OWYu-U0-unsplash.jpg"); */
-    /* background-repeat: no-repeat; */
-    /* background-size: 100%; */
+    background-image: url("https://i.ibb.co/Bn1qmJ9/ishan-seefromthesky-Kg-Cbv-OWYu-U0-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
     position: fixed;
     display: grid;
     max-width: 65.5rem;
-    padding: 0px 0px;
+    padding: 10px 10px;
+    margin-bottom: 5rem;
     top: 10rem;
     left: 2rem;
     z-index: 12;

@@ -3,7 +3,7 @@
     padding-bottom: 20rem;
     padding-top: 5rem;
   }
-  .textStyle{
+  .textStyle {
     font-weight: bold;
     font-size: 1.9rem;
     text-align: left;
@@ -20,37 +20,37 @@
     -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
   }
-  
-  .container {
+
+  .containerL1 {
     position: fixed;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 30rem;
-  max-width: 59rem;
-  padding: 0px 0px;
-  top: 25%;
-  left: 23%;
-  z-index: 12;
-}
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 30rem;
+    grid-gap: 0px;
+    max-width: 59rem;
+    padding: 0px 0px;
+    top: 25%;
+    left: 23%;
+    z-index: 12;
+  }
 
-.pointer {
-  cursor: pointer;
-}
+  .pointer {
+    cursor: pointer;
+  }
 
-.loginImage {
-  width: 555px;
-  height: 480px;
-  border-radius: 0px;
-  box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
-}
+  .loginImage {
+    width: 555px;
+    height: 480px;
+    border-radius: 0px;
+    box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  }
 
-.styleButton1 {
-  margin-top:0.5rem ;
-  border-color: #2cccc4;
-  color: black;
-  font-weight: 400;
-}
-
+  .styleButton1 {
+    margin-top: 0.5rem;
+    border-color: #2cccc4;
+    color: black;
+    font-weight: 400;
+  }
 }

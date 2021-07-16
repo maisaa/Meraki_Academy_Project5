@@ -1,0 +1,165 @@
+* {
+  padding: 0%;
+  margin: 0%;
+}
+.video {
+  display: none;
+}
+
+.pointer {
+  cursor: pointer;
+}
+@media all and (min-width: 480px) {
+  .editPost Form {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+  .form-group {
+    margin-bottom: 0.3rem;
+  }
+}
+.editPost {
+  margin-left: 30rem;
+  padding-top: 30px;
+  padding-bottom: 1rem;
+  background-color: #fff;
+  width: 30rem;
+  height: 28rem;
+  box-shadow: 8px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 8px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 8px 8px 34px -12px rgba(0, 0, 0, 0.75);
+}
+.app12 {
+  background-image: url("https://images.unsplash.com/photo-1617646339087-654bc92e57c7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80");
+  width: auto;
+  height: 800px;
+  display: flex;
+  background-size: 100% 100%;
+}
+
+.marg1 {
+  margin-top: 0.7rem;
+  background-color: #2cccc4;
+  color: #fff;
+  border-color: #2cccc4;
+  font-weight: bold;
+}
+
+.tostMassage1 {
+  border-color: #eeeeee;
+  width: 30rem;
+  height: 5rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  padding-top: -2rem;
+}
+.input1 {
+  width: 20rem;
+}
+.btnPost {
+  color: white;
+  background-color: #2cccc4;
+  text-align: center;
+  cursor: pointer;
+  border: #2cccc4;
+  height: 2.5rem;
+  width: 10rem;
+
+  margin-top: 2rem;
+}
+.btnPost:hover {
+  background-color: #000;
+}
+
+.btnDel1 {
+  color: white;
+  background-color: #2cccc4;
+  text-align: center;
+  cursor: pointer;
+  border: #007bff;
+  height: 2.5rem;
+  width: 10rem;
+  margin-left: 2rem;
+  margin-top: 0.5rem;
+  padding-right: 0.8rem;
+}
+.btnDel1:hover {
+  background-color: #000;
+}
+.btnCan1 {
+  color: white;
+  background-color: #43474b;
+  text-align: center;
+  cursor: pointer;
+  border: #2cccc4;
+  height: 2.5rem;
+  width: 7rem;
+  margin-left: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.8rem;
+}
+.btnCan1:hover {
+  background-color: #75797e;
+}
+
+.popup1 {
+  width: 450px;
+  height: 250px;
+  background-color: aliceblue;
+  margin-left: 470px;
+  justify-content: center;
+  margin-top: 180px;
+  padding-left: 45px;
+  padding-top: 20px;
+  box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+}
+.p11 {
+  text-align: justify;
+  color: #000;
+}
+
+.popupb2 {
+  margin-top: 0%;
+  margin-bottom: 0%;
+  width: auto;
+  display: flex;
+  background-size: 100% 100%;
+  height: 700px;
+}
+.msg {
+  font-size: 20px;
+}
+
+.flot123{
+  width: 50px;
+  height: 400px;
+  margin-left: 50px;
+  float: left;
+  margin-top: 40px;
+  
+  
+}
+.p111 {
+  color: #fff;
+  margin-left: 55px;
+  margin-top: 250px;
+  width: 600px;
+  margin-left: 250px;
+}
+.flot12{
+  
+  width: 600px;
+  height: 420px;
+  float: left;
+  margin-top: 20px;
+  margin-left: 250px;
+  
+  
+  
+}
+.edit12 {
+  margin-top: 120px;
+  
+}

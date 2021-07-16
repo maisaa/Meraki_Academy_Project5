@@ -66,7 +66,7 @@ const Navigation = () => {
 
   return (
     <>
-      <Navbar ar className="colorNav" expand="lg">
+      <Navbar className="colorNav" expand="lg" fixed="top">
         <Navbar.Brand href="#home">
           {" "}
           <Link to="/" style={{ color: "black" }}>

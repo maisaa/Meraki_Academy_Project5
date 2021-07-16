@@ -9,11 +9,12 @@
 }
 
 .borderCopyRight {
-  margin-top: -4px;
+  margin-bottom: 0px;
   border-color:#2A2529;
   background-color: #2A2529;
   color: white;
   padding: 1em;
   text-align: center;
   height: 15rem;
+  margin-top: 0rem;
 }

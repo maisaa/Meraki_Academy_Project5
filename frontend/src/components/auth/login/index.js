@@ -71,7 +71,7 @@ const Login = () => {
   return (
     <>
       <div className="Login body1">
-        <div className="container">
+        <div className="containerL1">
           <Form onSubmit={handleSubmit}>
             <h2 className="TextStyle">Login</h2>
             <Form.Group size="lg" controlId="formBasicEmail">

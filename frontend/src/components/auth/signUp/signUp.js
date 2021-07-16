@@ -23,16 +23,16 @@ const BeforeSignUp = () => {
   return (
     <div className="SignUpSelect">
       <h2 className="RegisterSelectSignUp"> Join us </h2>
-      <CardDeck className='CardDeckMarg row row-cols-1 row-cols-md-3' style={{ width: "65rem" }}>
-        <div className="col mb-1" style={{ width: "45rem" , height:"30rem" }}>
-          <Card className="h-10">
+      <CardDeck className=' CardDeckMarg row row-cols-1 row-cols-md-3' style={{ width: "65rem" }}>
+        <div className="col mb-1 style">
+          <Card className="h-10 Shadow">
             <Card.Img variant="top" className="imageCard pointer" src="https://i.ibb.co/2SjTSgD/man-2.png" alt="user"
               rounded
               onClick={stateForSignUpImages} />
             <Card.Body className="card-body">
               <Card.Title className="card-title">User</Card.Title>
               <Card.Text className="card-text">
-                register with us to get the pest experience from our professional coaches and private subscriptions from top Gyms.
+              register in our private subscriptions to get the best experience with our professional coaches at Elite Gyms.
               </Card.Text>
               <Button variant="outline-dark" className="buttonStyleHome" value="user" onClick={stateForSignUp}>join </Button>
             </Card.Body>
@@ -41,8 +41,8 @@ const BeforeSignUp = () => {
             </Card.Footer>
           </Card>
         </div>
-        <div className="col mb-1" style={{ width: "45rem" , height:"30rem" }}>
-          <Card className="h-10">
+        <div className="col mb-1 style" >
+          <Card className="h-10 Shadow">
             <Card.Img variant="top" className="imageCard pointer c" src="https://i.ibb.co/sKdMB2g/coach-1.png" alt="coach"
               rounded
               onClick={stateForSignUpImages} />
@@ -58,8 +58,8 @@ const BeforeSignUp = () => {
             </Card.Footer>
           </Card>
         </div>
-        <div className="col mb-1" style={{ width: "45rem" , height:"30rem" }}>
-          <Card className="h-10">
+        <div className="col mb-1 style">
+          <Card className="h-10 Shadow">
             <Card.Img variant="top" className="imageCard pointer c" src="https://i.ibb.co/Bz92vLs/gym-3.png" alt="gym"
               rounded
               onClick={stateForSignUpImages} />

@@ -4,7 +4,7 @@ import { setSports, getSport } from "../../reducers/sports";
 import { setToken } from "../../reducers/login";
 import { useHistory } from "react-router-dom";
 import Footer from "./../footer/index";
-import { Carousel, Card, Button, Row, Col } from "react-bootstrap";
+import { CardDeck, Carousel, Card, Button, Row, Col } from "react-bootstrap";
 import jwt from "jsonwebtoken";
 import axios from "axios";
 import "./dashboard.css";
@@ -60,6 +60,15 @@ const Dashboard = () => {
       });
   };
 
+  const getSportByTypeButton = (e) => {
+    axios.get(`http://localhost:5000/sport/${e.target.value}`).then((result) => {
+      setType(e.target.value);
+      dispatch(setSports(result.data));
+      history.push(`/sports`);
+      console.log("result.data....dashboard....", result.data);
+    });
+  };
+
   const getSportByType = (e) => {
     axios.get(`http://localhost:5000/sport/${e.target.id}`).then((result) => {
       setType(e.target.id);
@@ -88,11 +97,11 @@ const Dashboard = () => {
         <div className="bigTittle">REACH YOUR GOALS‎</div>
         <div className="borderStyleT"></div>
       </div>
-      <div className="padd">
-        <Row md={3} className="g-4" style={{ padding: "0rem", margin: "2rem" }}>
+      <div className="redBorder" >
+        <Row md={3} className="g-4 padd" >
           {state.sports.map((elem, i) => (
-            <Col>
-              <Card style={{ width: "28rem", margin: "2rem", height: "25rem" }} className="newMarg">
+            <Col >
+              <Card style={{ width: "22rem", marginButton: "0rem", height: "22rem" }} className="newMarg">
                 <Card.Img
                   variant="top"
                   src={icons[i]}
@@ -105,7 +114,7 @@ const Dashboard = () => {
                     {elem.type}
                   </Card.Title>
                   <Card.Text className="descriptionStyle">{elem.description}</Card.Text>
-                  <Button variant="outline-dark" className="buttonStyleHome" onClick={getSportByType}>
+                  <Button variant="outline-dark" value={elem.type} className="buttonStyleHome" onClick={getSportByTypeButton}>
                     more{" "}
                   </Button>
                 </Card.Body>
@@ -114,70 +123,122 @@ const Dashboard = () => {
           ))}
         </Row>
       </div>
+      <div className="slideshowDiv">
+        <Carousel fade>
+          <Carousel.Item>
+            <img
+              className="d-block imgH"
+              src="https://www.davidlloyd.co.uk/cms/images/softwire-david-lloyd/image/upload/f_auto/v1/Tennis/tennis-hero.jpg"
+              alt="Tennis"
+            />
+            <Carousel.Caption>
+              <h3>Tennis</h3>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block imgH"
+              src="https://www.tributeboxing.com.au/uploads/slideshow/1536301415qkedwof37eb8x3o8qejg0s80h2s4kd.jpg"
+              alt="Boxing"
+            />
+            <Carousel.Caption>
+              <h3>Boxing</h3>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block  imgH"
+              src="https://www.runtastic.com/blog/wp-content/uploads/2018/05/thumbnail_1200x800-1-1024x683.jpg"
+              alt="Running"
+            />
+            <Carousel.Caption>
+              <h3>Running</h3>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block imgH"
+              src="https://www1.health.gov.au/internet/main/publishing.nsf/AttachmentsByTitle/sport-national-integrity-of-sport-unit-carousel-images/$FILE/10612%20Sport%20images19.jpg"
+              alt="Swimming"
+            />
+            <Carousel.Caption>
+              <h3>Swimming</h3>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block  imgH"
+              src="https://www.polar.com/sites/default/files/static/categories/team_sports-desktop.jpg"
+              alt="Football"
+            />
+            <Carousel.Caption>
+              <h3>Football</h3>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block  imgH"
+              src="https://cdn.workgreat.orchardroad.org/wp-content/uploads/2018/04/Battle-Ropes-900x450.jpg"
+              alt="Gym"
+            />
+            <Carousel.Caption>
+              <h3>Gym</h3>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
+      </div>
+      <div className="QDiv">
+        <div>
+          <img className="quote1" src="https://i.ibb.co/zFN2g18/quote.png" alt="quote"></img>
+        </div>
+        <div>
+          <p className="quoteText place">The point is whether or not I improved over yesterday. In long-distance running the only opponent you have to beat is yourself, the way you used to be.</p>
+        </div>
+        <div>
+          <img className="quote2" src="https://i.ibb.co/zFN2g18/quote.png" alt="quote"></img>
+        </div>
+      </div>
+      <div className="About">
+        <CardDeck>
+          <Card>
+            <Card.Img variant="top" className="ourPhoto" src="https://i.ibb.co/WFdV0xQ/Pics-Art-07-14-12-25-59.jpg" />
+            <Card.Body>
+              <Card.Title>Bayan Daboubash</Card.Title>
+              <Card.Text>
+              i have an ambition to become the best programmer in the world.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+          <Card>
+            <Card.Img variant="top" className="ourPhoto" src="https://i.ibb.co/jLbL5k1/C18-Maisaa.jpg" />
+            <Card.Body>
+              <Card.Title>Maisaa Alkhder</Card.Title>
+              <Card.Text>
+              FullStack web developer.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+          <Card>
+            <Card.Img variant="top" className="ourPhoto" src="https://f.top4top.io/p_19898rk101.jpeg" />
+            <Card.Body>
+              <Card.Title>Mohammad Alnabale</Card.Title>
+              <Card.Text>
+              i have an ambition to become the best programmer in the world.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+          <Card>
+            <Card.Img variant="top"  className="ourPhoto" src="https://i.ibb.co/gjLZCB0/Whats-App-Image-2021-07-14-at-1-10-29-AM.jpg" />
+            <Card.Body>
+              <Card.Title>Ibrahem Tormenters</Card.Title>
+              <Card.Text>
+              i have an ambition to become the best programmer in the world
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </CardDeck>
+      </div>
       <Footer />
-
-      {/* <Carousel fade>
-        <Carousel.Item>
-          <img
-            className="d-block w-100 imgH"
-            src="https://www.davidlloyd.co.uk/cms/images/softwire-david-lloyd/image/upload/f_auto/v1/Tennis/tennis-hero.jpg"
-            alt="Tennis"
-          />
-          <Carousel.Caption>
-            <h3>Tennis</h3>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100 imgH"
-            src="https://www.tributeboxing.com.au/uploads/slideshow/1536301415qkedwof37eb8x3o8qejg0s80h2s4kd.jpg"
-            alt="Boxing"
-          />
-          <Carousel.Caption>
-            <h3>Boxing</h3>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100 imgH"
-            src="https://www.runtastic.com/blog/wp-content/uploads/2018/05/thumbnail_1200x800-1-1024x683.jpg"
-            alt="Running"
-          />
-          <Carousel.Caption>
-            <h3>Running</h3>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100 imgH"
-            src="https://www1.health.gov.au/internet/main/publishing.nsf/AttachmentsByTitle/sport-national-integrity-of-sport-unit-carousel-images/$FILE/10612%20Sport%20images19.jpg"
-            alt="Swimming"
-          />
-          <Carousel.Caption>
-            <h3>Swimming</h3>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100 imgH"
-            src="https://www.polar.com/sites/default/files/static/categories/team_sports-desktop.jpg"
-            alt="Football"
-          />
-          <Carousel.Caption>
-            <h3>Football</h3>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100 imgH"
-            src="https://cdn.workgreat.orchardroad.org/wp-content/uploads/2018/04/Battle-Ropes-900x450.jpg"
-            alt="Gym"
-          />
-          <Carousel.Caption>
-            <h3>Gym</h3>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel> */}
     </>
   );
 };

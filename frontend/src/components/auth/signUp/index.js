@@ -63,9 +63,9 @@ const SignUp = ({ id }) => {
     });
   };
   return (
-    <div className="SignUp1 body1">
+  <div className="SignUp1">
       {role === "user" ? (
-        <div className="container1">
+        <div className="container1S" >
           <Form onSubmit={handelSubmit}>
             <h2 className="TextStyle"> SignUp </h2>
             <Form.Group size="lg" controlId="formFirstName">
@@ -141,7 +141,7 @@ const SignUp = ({ id }) => {
           </div>
         </div>
       ) : role === "gym" || "couch" ? (
-        <div className="container1">
+        <div className="container1S">
           <Form className="GC" onSubmit={handelSubmit}>
             <h2 className="TextStyle"> SignUp </h2>
             <Form.Group size="lg" controlId="formFirstName">
@@ -230,6 +230,7 @@ const SignUp = ({ id }) => {
               border="0"
               rounded
             />
+
           </div>
         </div>
       ) : (

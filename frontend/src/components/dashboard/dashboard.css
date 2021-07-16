@@ -1,24 +1,71 @@
 .imgH {
-  height: 55rem;
+  height: 30rem;
+  width:74rem;
+  margin-left: 23rem;
+  margin-top: 6.5rem;
+}
+.slideshowDiv{
+  height: 40rem;
+  background-color: white;
+}
+.QDiv{
+  height: 40rem;
+  background-color: #2cccc4;
+}
+.quote1{
+  width:4rem;
+  height:4rem;
+  margin-left: 19rem;
+  margin-top: 6.5rem;
+}
+.quote2{
+  width:4rem;
+  height:4rem;
+  margin-left: 92rem;
+}
+.quoteText{
+  width: 70rem;
+  color: white;
+  font-weight: 200;
+  font-size: 2.5rem;
+  text-align: left;
+  font-family: Oswald, sans-serif;
+  justify-content: center;
+  text-align: center;
+  padding-top: 2rem;
 }
 
+.place{
+  margin-left: 23rem;
+  margin-top: 20rem;
+}
 .imageCard {
-  width: 10rem;
-  height: 10rem;
+  width: 7rem;
+  height: 7rem;
   padding-top: 1.5rem;
   padding-left: 1.5rem;
 }
+.colGap{
+  padding-right: 0px;
+    padding-left: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+
+}
 
 .newMarg {
-  margin: 2rem;
-  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+  padding: -4rem;
   box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
 }
-
+.redBorder{
+  border:soled red 5px;
+}
 .padd {
-  margin-left: 5rem;
+  width:75rem;
+  margin-left: 23rem;
   margin-top: 3rem;
 }
 
@@ -35,12 +82,12 @@
 
 .boldStyle {
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 1.5rem;
 }
 
 .descriptionStyle {
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .borderStyleAll {
@@ -58,9 +105,10 @@
 }
 
 .bigTittle {
+  width: 50rem;
   color: white;
-  font-weight: 600;
-  font-size: 5.9rem;
+  font-weight: 400;
+  font-size: 4.9rem;
   text-align: left;
   font-family: Oswald, sans-serif;
   padding: -30rem;
@@ -81,4 +129,16 @@
   margin-top: 3.5rem;
   width: 33rem;
   height: 1rem;
+}
+.About{
+  margin-left: 18rem;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+  height: 30rem;
+  background-color: white;
+  width: 70%;
+}
+.ourPhoto{
+  height:16rem ;
+  width: 100%;
 }
