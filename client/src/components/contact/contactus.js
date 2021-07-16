@@ -52,7 +52,7 @@ const ContactUs = () => {
             <button onClick={emailSend}>send</button>
           </td>
         </div>
-        {message ? <p>successfully send </p> : <p></p>}
+        {message ? <p>Message Successfully send </p> : <p></p>}
       </div>
     </div>
   );
