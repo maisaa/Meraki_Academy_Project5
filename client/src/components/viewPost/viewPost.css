@@ -1,7 +1,3 @@
-* {
-  padding: 0%;
-  margin: 0%;
-}
 .video {
   display: none;
 }
@@ -10,25 +6,11 @@
   cursor: pointer;
 }
 @media all and (min-width: 480px) {
-  .editPost Form {
-    margin: 0 auto;
-    max-width: 320px;
-  }
   .form-group {
     margin-bottom: 0.3rem;
   }
 }
-.editPost {
-  margin-left: 30rem;
-  padding-top: 30px;
-  padding-bottom: 1rem;
-  background-color: #fff;
-  width: 30rem;
-  height: 28rem;
-  box-shadow: 8px 8px 34px -12px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 8px 8px 34px -12px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 8px 8px 34px -12px rgba(0, 0, 0, 0.75);
-}
+
 .app12 {
   /* background-image: url(""); */
   width: auto;
@@ -37,39 +19,7 @@
   background-size: 100% 100%;
 }
 
-.marg1 {
-  margin-top: 0.7rem;
-  background-color: #2cccc4;
-  color: #fff;
-  border-color: #2cccc4;
-  font-weight: bold;
-}
 
-.tostMassage1 {
-  border-color: #eeeeee;
-  width: 30rem;
-  height: 5rem;
-  border-bottom-left-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
-  padding-top: -2rem;
-}
-.input1 {
-  width: 20rem;
-}
-.btnPost {
-  color: white;
-  background-color: #2cccc4;
-  text-align: center;
-  cursor: pointer;
-  border: #2cccc4;
-  height: 2.5rem;
-  width: 10rem;
-
-  margin-top: 2rem;
-}
-.btnPost:hover {
-  background-color: #000;
-}
 
 .btnDel1 {
   color: white;
@@ -132,33 +82,96 @@
   font-size: 20px;
 }
 
-.flot123{
-  width: 50px;
-  height: 400px;
-  margin-left: 50px;
-  float: left;
-  margin-top: 40px;
-  
-  
-}
-
-.flot12{
-  
-  width: 600px;
-  height: 420px;
-  float: left;
-  margin-top: 20px;
-  margin-left: 250px;
-  
-  
-  
-}
-.edit12 {
-  margin-top: 120px;
-  
-}
 
 .editPostStyle1{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns:40rem 1fr ;
+}
+
+
+.ImageEditPostStyle1{
+  box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);  
+}
+
+.TextEditPostStyle1{
+  box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);  
+  width: 40rem;
+  padding-left: 3rem;
+  padding-top: 4rem;
+}
+
+.topEditPostStyle1{
+  margin-top: 15.5rem;
+  margin-left: 26rem;
+}
+
+.sizeImageEditPostStyle1{
+  width: 40rem;
+  height: 35rem;
+}
+
+.textPostEditPostStyle1{
+  font-size: 1.6rem;
+  font-weight: 200;
+  font-family: arial;
+  width: 30rem;
+  height: 18rem;
+  padding-bottom: 2rem;
+}
+
+.buttonStyleEditPost2{
+  margin-bottom: 1rem;
+}
+
+.buttonStyleEditPost3{
+  background-color: #fff;
+  border-color: #2cccc4;
+  font-weight: bold;
+  border-radius: 0;
+  width: 11rem;
+  height: 4rem;
+  font-size: 1.4rem;
+  margin-right: 1rem;
+}
+
+.titleEditPostStyle4{
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.allEditEditPostStyle1{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  margin-top: 16.5rem;
+  margin-left: 32rem;
+height: 30rem;
+}
+
+.editEditPostStyle5{
+  box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);  
+  padding-top: 3rem;
+  padding-left: 3rem;
+}
+
+.editImageEditPostStyle5{
+  box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);  
+  width: 40rem;
+}
+
+.sizeImageEditEditPostStyle6{
+  height: 100%;
+  width: 100%;
+}
+
+.margButton{
+  margin-top: 3rem;
 }

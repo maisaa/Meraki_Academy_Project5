@@ -73,71 +73,86 @@ const ViewPost = (props) => {
           <div className="app12">
             {" "}
             {edit ? (
-              <div className="editPost">
+              <div className="allEditEditPostStyle1">
+                <div className="editEditPostStyle5"> 
                 {state.posts.map((elem, i) => (
                   <Form
                     key={i}
                     onSubmit={(e) => {
                       e.preventDefault();
-                      savePost(elem, e.target.post.value, e.target.photo.value, e.target.video.value);
+                      savePost(
+                        elem,
+                        e.target.post.value,
+                        e.target.photo.value,
+                      );
                     }}
                   >
-                    <h2 className="h222"> edit Post </h2>
+                    <h2> edit Post </h2>
                     <Form.Group size="lg" controlId="formPost">
                       <Form.Label>
                         post :
-                        <Form.Control type="text" name="post" className="input1" defaultValue={elem.post} />
+                        <Form.Control
+                          type="text"
+                          name="post"
+                          defaultValue={elem.post}
+                        />
                       </Form.Label>{" "}
                     </Form.Group>
                     <Form.Group size="lg" controlId="formPhoto">
                       <Form.Label>
                         url photo :
-                        <Form.Control type="text" name="photo" className="input1" defaultValue={elem.photo} />
+                        <Form.Control
+                          type="text"
+                          name="photo"
+                          defaultValue={elem.photo}
+                        />
                       </Form.Label>
                     </Form.Group>
-                    <Form.Group size="lg" controlId="formVideo">
-                      <Form.Label>
-                        url video:
-                        <Form.Control type="text" name="video" className="input1" defaultValue={elem.video} />{" "}
-                      </Form.Label>
-                    </Form.Group>
-
                     <Form.Group>
-                      <Button className="styleButton2" className="marg1" size="lg" variant="outline-dark" type="submit">
+                      <Button
+                        size="lg"
+                        variant="outline-dark"
+                        type="submit"
+                        className="buttonStyleEditPost3 margButton"
+                      >
                         Save changes
                       </Button>
                     </Form.Group>
-                    <div className="tostMassage1">
+                    <div>
                       <Form.Label>{message && <div>{message}</div>}</Form.Label>
                     </div>
                   </Form>
                 ))}
+                </div>
+                <div className="editImageEditPostStyle5"> 
+                <img src="https://i.ibb.co/FK473Rs/alexander-redl-d3b-Ymn-Z0ank-unsplash-1.jpg" alt="post" className="sizeImageEditEditPostStyle6"/>
+                </div>
               </div>
             ) : (
-              <div className="edit12">
+              <div className="topEditPostStyle1">
                 {state.posts.map((elem, i) => (
                   <div key={i} className="editPostStyle1">
-                    <div className="ImageEditPostStyle1 flot12">
-                    <img src={elem.photo} alt="post" height="400" width="600" />
+                    <div className="ImageEditPostStyle1">
+                      <img src={elem.photo} alt="post" className="sizeImageEditPostStyle1"/>
                     </div>
                     <div className="TextEditPostStyle1">
-                    <div className="">
-                      {elem.post}
+                      <div className="titleEditPostStyle4"> 
+                        Post
+                      </div>
+                      <div className="textPostEditPostStyle1">{elem.post}</div>
+                      <div>
+                        <div className="buttonStyleEditPost2">
+                        <Button onClick={editPost} variant="outline-dark" value={elem.post_id} className="buttonStyleEditPost3">
+                          Edit 
+                        </Button>
+                        <Button onClick={popup} variant="outline-dark" className="buttonStyleEditPost3">Deleted </Button>
+                        <Button onClick={returnToAllPost} variant="outline-dark" className="buttonStyleEditPost3">
+                          Cancel
+                        </Button>
+                        </div>
+                        {message && <div> {message} </div>}
+                      </div>
                     </div>
-                    <div className="flot123">
-                      <Button onClick={editPost} value={elem.post_id} className="btnPost">
-                        edit post
-                      </Button>
-                      <Button onClick={popup} className="btnPost">
-                        deleted post
-                      </Button>
-                      <Button onClick={returnToAllPost} className="btnPost">
-                        return to all Post
-                      </Button>
-                      {message && <div> {message} </div>}
-                    </div>
-                    </div>
-
                   </div>
                 ))}
               </div>
