@@ -53,8 +53,12 @@ const Login = () => {
           localStorage.setItem("token", result.data);
           setMessage("The user has been loggedIn successfully ");
           setTimeout(function () {
-            history.push("/dashboard");
-            window.location.reload();
+            if (user.roleId == 3 || user.roleId == 4) {
+              history.push("/posts");
+            } else {
+              history.push("/dashboard");
+              window.location.reload();
+            }
           }, 0);
         } else {
           setMessage("Error happened while login, please try again");
