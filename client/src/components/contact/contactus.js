@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
+import "./concat.css";
 
-import {Form} from "react-bootstrap/Form";
+import { Form } from "react-bootstrap";
 
 const ContactUs = () => {
   const [name, setName] = useState("");
@@ -29,15 +30,11 @@ const ContactUs = () => {
 
   return (
     <div>
-      <div>
+      <div className="concat">
         <h1>Contact US </h1>
         <div>
           <div>
-            <input
-              type="text"
-              placeholder="First Name"
-              onChange={(e) => setName(e.target.value)}
-            />
+            <input type="text" placeholder="First Name" onChange={(e) => setName(e.target.value)} />
             <input
               type="text"
               placeholder="Last Name"
@@ -46,22 +43,10 @@ const ContactUs = () => {
               }}
             />
           </div>
-          <input
-            type="email"
-            placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Subject"
-            onChange={(e) => setSubject(e.target.value)}
-          />
+          <input type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
+          <input type="text" placeholder="Subject" onChange={(e) => setSubject(e.target.value)} />
           <td>
-            <textarea
-              name="message"
-              placeholder="message"
-              onChange={(e) => setTheMessage(e.target.value)}
-            />
+            <textarea name="message" placeholder="message" onChange={(e) => setTheMessage(e.target.value)} />
           </td>
           <td>
             <button onClick={emailSend}>send</button>
