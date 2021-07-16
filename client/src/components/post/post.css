@@ -12,18 +12,17 @@
   margin: 20px auto 0 13px;
   margin-bottom: 2rem;
   color: #000 !important;
- background-color: #fff;
+  background-color: #fff;
   position: relative;
   width: 22rem;
   height: 4.3rem;
   font-weight: bold;
   margin-left: 54rem;
-  border-radius: 5px;
 }
 
 .bntStart:hover {
   background-color: rgb(53, 52, 52);
-  color:#fff !important;
+  color: #fff !important;
 }
 
 .pointer {
@@ -39,19 +38,24 @@
   }
 }
 
-
- 
-
-
-
-.marg3{
-  margin-top: 0.7rem;
+.marg32 {
   background-color: #fff;
   color: #000;
   border-color: #2cccc4;
   font-weight: bold;
+  border-radius: 0;
 }
 
+.marg32B {
+  background-color: #fff;
+  color: #000;
+  border-color: #2cccc4;
+  font-weight: bold;
+  border-radius: 0;
+  padding: 0.6rem;
+  margin-left: -22rem;
+  width: 6rem;
+}
 
 .tostMassage3 {
   border-color: #eeeeee;
@@ -64,7 +68,7 @@
 .input1 {
   width: 20rem;
 }
-.select{
+.select {
   border: 1px solid #000;
 }
 
@@ -79,67 +83,71 @@
   margin-top: 2rem;
 }
 
-
-button:hover, a:hover {
+button:hover,
+a:hover {
   opacity: 0.7;
 }
-.post12{
+.post12 {
   display: grid;
-  grid-template-columns:  1fr 1fr 1fr ;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 5rem;
   width: 80%;
   margin-left: 6rem;
 }
-.p11{
+.p11 {
   font-size: 25px;
   width: 25rem;
   height: 10rem;
   text-align: center;
   margin-left: 2.5rem;
 }
-.styleButton12{
-  font-size: 1.8rem;
+.styleButton12AddPost {
+  font-size: 1.6rem;
   font-family: arial;
 }
 
-.App1212{
+.App1212 {
   margin-top: 8.5rem;
 }
 
-.imagePosts{
+.imagePosts {
   height: 450px;
   width: 100%;
 }
 
-.divButtonViewPost{
-  margin-left: -18rem;
 
-}
-
-.allAddPost{
+.allAddPost {
   display: grid;
-  grid-template-columns:1fr 6fr 2fr 1fr;
+  grid-template-columns: 1fr 6fr 2fr 1fr;
   position: relative;
   z-index: 10;
   background: rgb(255, 255, 255);
   /* filter: blur(20px) grayscale(20%); */
-  height:55rem;
-  padding-top: 12rem;
+  height: 60rem;
+  padding-top: 8rem;
 }
 
 .addPost {
   margin-left: 35rem;
-  padding-top: 30px;
+  padding-top: 3rem;
   padding-bottom: 1rem;
-  background-color:#ffffff;
+  background-color: #ffffff;
   width: 30rem;
-  height: 28rem;
+  height: 32rem;
   box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
 }
 
-.imageAddPosts{
+.imageAddPosts {
   width: 30rem;
-  height: 28rem;
+  height: 32rem;
+  box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+}
+
+.titleAddPost{
+  font-weight: 400;
+  font-size: 1.5rem;
 }

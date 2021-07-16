@@ -116,30 +116,28 @@ const ViewPost = (props) => {
             ) : (
               <div className="edit12">
                 {state.posts.map((elem, i) => (
-                  <div key={i}>
-                    <p className="p111">
-                      <b> your post: </b>
-                      {elem.post}
-                    </p>
-                    <div className="flot12">
-                      <img src={elem.photo} alt="post" height="400" width="600" />
+                  <div key={i} className="editPostStyle1">
+                    <div className="ImageEditPostStyle1 flot12">
+                    <img src={elem.photo} alt="post" height="400" width="600" />
                     </div>
-
+                    <div className="TextEditPostStyle1">
+                    <div className="">
+                      {elem.post}
+                    </div>
                     <div className="flot123">
-                      <video width="320" height="240" controls className="video">
-                        <source src={elem.video} type="video/mp4" />
-                      </video>
-                      <button onClick={editPost} value={elem.post_id} className="btnPost">
+                      <Button onClick={editPost} value={elem.post_id} className="btnPost">
                         edit post
-                      </button>
-                      <button onClick={popup} className="btnPost">
+                      </Button>
+                      <Button onClick={popup} className="btnPost">
                         deleted post
-                      </button>
-                      <button onClick={returnToAllPost} className="btnPost">
+                      </Button>
+                      <Button onClick={returnToAllPost} className="btnPost">
                         return to all Post
-                      </button>
+                      </Button>
                       {message && <div> {message} </div>}
                     </div>
+                    </div>
+
                   </div>
                 ))}
               </div>

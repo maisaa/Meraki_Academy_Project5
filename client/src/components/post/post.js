@@ -106,35 +106,33 @@ const Post = () => {
         <div className="allAddPost">
         <div className="addPost">
           <Form onSubmit={handelSubmit}>
-            <h3> Add post </h3>
-            <Form.Label>
+            <h3> Add New Post </h3>
+
+            <Form.Group size="lg" controlId="formBasicEmail">
+              <Form.Label className="titleAddPost">Post : </Form.Label>
               <Form.Control
                 className="input"
                 type="text"
                 placeholder="post here"
                 onChange={(e) => setPost2(e.target.value)}
+                required
               />
-            </Form.Label>
+            </Form.Group>
 
-            <Form.Label>
+            <Form.Group size="lg" controlId="formBasicEmail">
+              <Form.Label className="titleAddPost">Image : </Form.Label>
               <Form.Control
                 className="input"
                 type="text"
                 placeholder="Url photo here"
                 onChange={(e) => setPhoto(e.target.value)}
+                required
               />
-            </Form.Label>
+            </Form.Group>
 
-            <Form.Label>
-              <Form.Control
-                className="input"
-                type="text"
-                placeholder="Url video here"
-                onChange={(e) => setVideo(e.target.value)}
-              />
-            </Form.Label>
-
-            <Form.Label>
+            <Form.Group size="lg" controlId="formBasicEmail">
+              <Form.Label className="titleAddPost">Sports Type : </Form.Label>
+              <Form.Label>
               <select
                 className="input select"
                 type="select"
@@ -153,9 +151,11 @@ const Post = () => {
                 })}
               </select>
             </Form.Label>
+            </Form.Group>
 
+            
             <div>
-              <Button className="styleButton12 marg3"  size="lg" variant="outline-dark" type="submit">
+              <Button className="styleButton12AddPost marg32"  size="lg" variant="outline-dark" type="submit">
                 add Post
               </Button>
             </div>
@@ -186,11 +186,9 @@ const Post = () => {
           <div key={i} class="card1Post"> 
               <img src={elem.photo} className="imagePosts" />
               <p className="p11">{elem.post}</p>
-              <div className="divButtonViewPost">
-              <Button onClick={viewPost} value={elem.post_id} className="styleButton12"  variant="outline-dark">
+              <Button onClick={viewPost} value={elem.post_id} className="styleButton12AddPost marg32B"  variant="outline-dark">
                 view 
               </Button>
-              </div>
           </div>
         ))}
       </div>

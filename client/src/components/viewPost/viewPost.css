@@ -30,7 +30,7 @@
   -moz-box-shadow: 8px 8px 34px -12px rgba(0, 0, 0, 0.75);
 }
 .app12 {
-  background-image: url("https://images.unsplash.com/photo-1617646339087-654bc92e57c7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80");
+  /* background-image: url(""); */
   width: auto;
   height: 800px;
   display: flex;
@@ -141,13 +141,7 @@
   
   
 }
-.p111 {
-  color: #fff;
-  margin-left: 55px;
-  margin-top: 250px;
-  width: 600px;
-  margin-left: 250px;
-}
+
 .flot12{
   
   width: 600px;
@@ -162,4 +156,9 @@
 .edit12 {
   margin-top: 120px;
   
+}
+
+.editPostStyle1{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
