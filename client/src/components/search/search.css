@@ -2,8 +2,11 @@
   padding-left: 15px;
   margin-top: 123px;
 }
+.ser {
+  display: flex;
+}
 .p1 {
-  color: #617dd8;
+  color: #2cccc4;
   font-weight: bolder;
   font-size: 25px;
 }
@@ -13,14 +16,15 @@
   font-weight: bold;
 }
 .p3 {
-  color: #617dd8;
+  display: flex;
+  color: #000000;
   font-weight: bolder;
   font-size: 40px;
   margin-left: 10px;
   cursor: pointer;
 }
 .p3 img {
-  width: 100px;
-  height: 90px;
+  width: 202px;
+  height: 157px;
   padding-right: 20px;
 }

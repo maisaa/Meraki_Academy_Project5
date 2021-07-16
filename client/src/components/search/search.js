@@ -17,20 +17,24 @@ const Search = () => {
         state.Search.map((ele) => {
           console.log("ele", ele);
           return (
-            <p
+            <div
+              className="ser"
               onClick={() => {
                 history.push(`info/${ele.user_id}`);
               }}
             >
-              <p className="p3">
+              <div className="p3">
                 <img src={ele.image} />
-                {ele.firstName} {ele.lastName}
-              </p>
-              <hr></hr>
-            </p>
+                <div>
+                  Name : {ele.firstName} {ele.lastName}
+                  {ele.role_id === 4 ? <div>Type : Gym</div> : <div>Type : Couch</div>}
+                </div>
+              </div>
+            </div>
           );
         })
       )}
+      <hr></hr>
     </div>
   );
 };
