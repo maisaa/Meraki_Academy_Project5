@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import "./search.css"
+import "./search.css";
 const Search = () => {
   const history = useHistory();
   const state = useSelector((state) => {
@@ -12,23 +12,29 @@ const Search = () => {
     <div className="Search">
       <p className="p2">Search Results :</p>
       {!state.Search ? (
-        <p className="p1">no search Results  please insert what you want Search </p>
+        <p className="p1">no search Results please insert what you want Search </p>
       ) : (
         state.Search.map((ele) => {
+          console.log("ele", ele);
           return (
-            <p
-          
+            <div
+              className="ser"
               onClick={() => {
                 history.push(`info/${ele.user_id}`);
               }}
             >
-              <p className="p3"><img src={ele.image}/>{ele.firstName}<br/></p>
-             
-
-            </p>
+              <div className="p3">
+                <img src={ele.image} />
+                <div>
+                  Name : {ele.firstName} {ele.lastName}
+                  {ele.role_id === 4 ? <div>Type : Gym</div> : <div>Type : Couch</div>}
+                </div>
+              </div>
+            </div>
           );
         })
       )}
+      <hr></hr>
     </div>
   );
 };

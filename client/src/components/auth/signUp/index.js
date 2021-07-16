@@ -8,7 +8,7 @@ const SignUp = ({ id }) => {
   const role = useParams().id;
   const history = useHistory();
   let role_id;
-  role === "user" ? (role_id = 2) : role === "gym" ? (role_id = 3) : (role_id = 4);
+  role === "user" ? (role_id = 2) : role === "gym" ? (role_id = 4) : (role_id = 3);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [age, setAge] = useState(0);

@@ -136,6 +136,7 @@ const Footer = () => {
                           Submit
                         </a>
                         <input type="submit" value="submit" class="u-form-control-hidden" />
+                        {message ? <p>Message Successfully send </p> : ""}
                       </div>
                       <div class="u-form-send-message u-form-send-success">Thank you! Your message has been sent.</div>
                       <div class="u-form-send-error u-form-send-message">
