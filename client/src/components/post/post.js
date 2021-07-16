@@ -103,6 +103,7 @@ const Post = () => {
   return (
     <div className="App1212">
       {addNew ? (
+        <div className="allAddPost">
         <div className="addPost">
           <Form onSubmit={handelSubmit}>
             <h3> Add post </h3>
@@ -163,6 +164,10 @@ const Post = () => {
             </div>
           </Form>
         </div>
+        <div>
+        <img src="https://i.ibb.co/LQ1P3yD/dmitrii-vaccinium-By-UAo3-Rp-A6c-unsplash.jpg" className="imageAddPosts" />
+        </div>
+      </div>
       ) : (
         <div className="divbtn1">
           {" "}
@@ -170,7 +175,7 @@ const Post = () => {
             onClick={() => {
               setAddNew(true);
             }}
-            className="bntStart"
+            className="bntStart "
           >
             click to add post
           </button>
@@ -178,13 +183,14 @@ const Post = () => {
       )}
       <div className="post12">
         {state.posts.map((elem, i) => (
-          <div key={i} class="card"> 
+          <div key={i} class="card1Post"> 
               <img src={elem.photo} className="imagePosts" />
               <p className="p11">{elem.post}</p>
-              <br />
-              <Button onClick={viewPost} value={elem.post_id} className="styleButton12" style={{width: "300"}} variant="outline-dark">
-                view post
+              <div className="divButtonViewPost">
+              <Button onClick={viewPost} value={elem.post_id} className="styleButton12"  variant="outline-dark">
+                view 
               </Button>
+              </div>
           </div>
         ))}
       </div>
