@@ -154,7 +154,7 @@ const Post = () => {
             </Form.Label>
 
             <div>
-              <Button className="styleButton12" className="marg3" size="lg" variant="outline-dark" type="submit">
+              <Button className="styleButton12 marg3"  size="lg" variant="outline-dark" type="submit">
                 add Post
               </Button>
             </div>
@@ -178,20 +178,13 @@ const Post = () => {
       )}
       <div className="post12">
         {state.posts.map((elem, i) => (
-          <div key={i}>
-            <div class="card">
-              <img src={elem.photo} height="450" width="600" className="imgpost" />
+          <div key={i} class="card"> 
+              <img src={elem.photo} className="imagePosts" />
               <p className="p11">{elem.post}</p>
               <br />
-
-              <video width="320" height="240" controls className="video">
-                <source src={elem.video} type="video/mp4" />
-              </video>
-
-              <Button onClick={viewPost} value={elem.post_id} className="styleButton12" variant="outline-dark">
+              <Button onClick={viewPost} value={elem.post_id} className="styleButton12" style={{width: "300"}} variant="outline-dark">
                 view post
               </Button>
-            </div>
           </div>
         ))}
       </div>
