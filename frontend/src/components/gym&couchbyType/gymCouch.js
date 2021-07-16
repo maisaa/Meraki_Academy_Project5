@@ -3,6 +3,7 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setAllGymOrCoach } from "./../../reducers/gym&couch";
 import { useHistory, useParams } from "react-router-dom";
+import { setSports } from "./../../reducers/sports";
 import Accordion from "react-bootstrap/Accordion";
 import { Link } from "react-router-dom";
 import "./gym.css";

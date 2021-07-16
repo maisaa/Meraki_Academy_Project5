@@ -54,7 +54,8 @@ const Login = () => {
           setMessage("The user has been loggedIn successfully ");
           setTimeout(function () {
             history.push("/dashboard");
-          }, 2000);
+            window.location.reload();
+          }, 0);
         } else {
           setMessage("Error happened while login, please try again");
         }
@@ -94,12 +95,7 @@ const Login = () => {
               />
             </Form.Group>
             <Form.Group>
-              <Button
-                size="lg"
-                variant="outline-dark"
-                type="submit"
-                className="styleButton1"
-                >
+              <Button size="lg" variant="outline-dark" type="submit" className="styleButton1">
                 Login
               </Button>
             </Form.Group>
@@ -111,12 +107,16 @@ const Login = () => {
               cookiePolicy={"single_host_origin"}
               className="pointer marg styleButton1"
             />
-            <Form.Label >
-              {message && <div  >{message}</div>}
-            </Form.Label>
+            <Form.Label>{message && <div>{message}</div>}</Form.Label>
           </Form>
           <div>
-          <Image className="loginImage" src="https://i.ibb.co/QdMHGDn/logan-weaver-p-YQ2-ASycjg-I-unsplash.jpg" alt="logan-weaver-p-YQ2-ASycjg-I-unsplash" border="0" rounded />
+            <Image
+              className="loginImage"
+              src="https://i.ibb.co/QdMHGDn/logan-weaver-p-YQ2-ASycjg-I-unsplash.jpg"
+              alt="logan-weaver-p-YQ2-ASycjg-I-unsplash"
+              border="0"
+              rounded
+            />
           </div>
         </div>
       </div>

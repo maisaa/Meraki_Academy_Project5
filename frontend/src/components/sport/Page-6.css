@@ -68,6 +68,7 @@
   letter-spacing: 3px;
   font-weight: 400;
   margin: 20px 0 0;
+  cursor: pointer;
 }
 
 .u-section-1 .u-text-4 {
@@ -86,6 +87,7 @@
 }
 
 .u-section-1 .u-text-5 {
+  cursor: pointer;
   text-transform: uppercase;
   font-size: 1.25rem;
   letter-spacing: 3px;
@@ -109,6 +111,7 @@
 }
 
 .u-section-1 .u-text-7 {
+  cursor: pointer;
   text-transform: uppercase;
   font-size: 1.25rem;
   letter-spacing: 3px;
@@ -117,6 +120,8 @@
 }
 
 .u-section-1 .u-text-8 {
+  cursor: pointer;
+
   margin: 20px 1px 0;
 }
 
@@ -132,6 +137,7 @@
 }
 
 .u-section-1 .u-text-9 {
+  cursor: pointer;
   text-transform: uppercase;
   font-size: 1.25rem;
   letter-spacing: 3px;
@@ -172,21 +178,29 @@
   }
 
   .u-section-1 .u-text-4 {
+    cursor: pointer;
+
     margin-left: 0;
     margin-right: 0;
   }
 
   .u-section-1 .u-text-6 {
+    cursor: pointer;
+
     margin-left: 0;
     margin-right: 0;
   }
 
   .u-section-1 .u-text-8 {
+    cursor: pointer;
+
     margin-left: 0;
     margin-right: 0;
   }
 
   .u-section-1 .u-text-10 {
+    cursor: pointer;
+
     margin-left: 0;
     margin-right: 0;
   }

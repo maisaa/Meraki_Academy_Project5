@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import { Form, Button,Image } from 'react-bootstrap';
+import { Form, Button, Image } from "react-bootstrap";
 import axios from "axios";
 import "./signUp.css";
 
@@ -63,19 +63,30 @@ const SignUp = ({ id }) => {
     });
   };
   return (
-
-    <div className="SignUp1">
+  <div className="SignUp1">
       {role === "user" ? (
         <div className="container1S" >
           <Form onSubmit={handelSubmit}>
             <h2 className="TextStyle"> SignUp </h2>
             <Form.Group size="lg" controlId="formFirstName">
               <Form.Label>First Name</Form.Label>
-              <Form.Control type="text" placeholder="Enter First Name" name="firstName" onChange={(e) => setFirstName(e.target.value)} required />
+              <Form.Control
+                type="text"
+                placeholder="Enter First Name"
+                name="firstName"
+                onChange={(e) => setFirstName(e.target.value)}
+                required
+              />
             </Form.Group>
             <Form.Group size="lg" controlId="formLastName">
               <Form.Label>Last Name</Form.Label>
-              <Form.Control type="text" placeholder="Enter Last Name" name="lastName" onChange={(e) => setLastName(e.target.value)} required />
+              <Form.Control
+                type="text"
+                placeholder="Enter Last Name"
+                name="lastName"
+                onChange={(e) => setLastName(e.target.value)}
+                required
+              />
             </Form.Group>
             <Form.Group size="lg" controlId="formAge">
               <Form.Label>Age</Form.Label>
@@ -83,29 +94,50 @@ const SignUp = ({ id }) => {
             </Form.Group>
             <Form.Group size="lg" controlId="formCountry">
               <Form.Label>Country</Form.Label>
-              <Form.Control type="text" placeholder="Enter Country" name="Country" onChange={(e) => setCountry(e.target.value)} required />
+              <Form.Control
+                type="text"
+                placeholder="Enter Country"
+                name="Country"
+                onChange={(e) => setCountry(e.target.value)}
+                required
+              />
             </Form.Group>
             <Form.Group size="lg" controlId="formEmail">
               <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" name="email" onChange={(e) => setEmail(e.target.value)} required />
+              <Form.Control
+                type="email"
+                placeholder="Enter email"
+                name="email"
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
             </Form.Group>
             <Form.Group size="lg" controlId="formPassword">
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" name="password" onChange={(e) => setPassword(e.target.value)} />
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                name="password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </Form.Group>
             <Form.Group>
-              <Button className="marg styleButton1" size="lg" variant="outline-dark" type="submit" >
+              <Button className="marg styleButton1" size="lg" variant="outline-dark" type="submit">
                 SignUp
               </Button>
             </Form.Group>
-            <div className="tostMassage" >
-              <Form.Label >
-                {message && <div  >{message}</div>}
-              </Form.Label>
+            <div className="tostMassage">
+              <Form.Label>{message && <div>{message}</div>}</Form.Label>
             </div>
           </Form>
           <div>
-          <Image className="loginImage1" src="https://i.ibb.co/44mBrMY/erik-mclean-qc-KAq5n-Uc-OU-unsplash.jpg" alt="logan-weaver-p-YQ2-ASycjg-I-unsplash" border="0" rounded />
+            <Image
+              className="loginImage1"
+              src="https://i.ibb.co/44mBrMY/erik-mclean-qc-KAq5n-Uc-OU-unsplash.jpg"
+              alt="logan-weaver-p-YQ2-ASycjg-I-unsplash"
+              border="0"
+              rounded
+            />
           </div>
         </div>
       ) : role === "gym" || "couch" ? (
@@ -114,11 +146,23 @@ const SignUp = ({ id }) => {
             <h2 className="TextStyle"> SignUp </h2>
             <Form.Group size="lg" controlId="formFirstName">
               <Form.Label>First Name</Form.Label>
-              <Form.Control type="text" placeholder="Enter First Name" name="firstName" onChange={(e) => setFirstName(e.target.value)} required />
+              <Form.Control
+                type="text"
+                placeholder="Enter First Name"
+                name="firstName"
+                onChange={(e) => setFirstName(e.target.value)}
+                required
+              />
             </Form.Group>
             <Form.Group size="lg" controlId="formLastName">
               <Form.Label>Last Name</Form.Label>
-              <Form.Control type="text" placeholder="Enter Last Name" name="lastName" onChange={(e) => setLastName(e.target.value)} required />
+              <Form.Control
+                type="text"
+                placeholder="Enter Last Name"
+                name="lastName"
+                onChange={(e) => setLastName(e.target.value)}
+                required
+              />
             </Form.Group>
             <Form.Group size="lg" controlId="formAge">
               <Form.Label>Age</Form.Label>
@@ -126,33 +170,67 @@ const SignUp = ({ id }) => {
             </Form.Group>
             <Form.Group size="lg" controlId="formCountry">
               <Form.Label>Country</Form.Label>
-              <Form.Control type="text" placeholder="Enter Country" name="Country" onChange={(e) => setCountry(e.target.value)} required />
+              <Form.Control
+                type="text"
+                placeholder="Enter Country"
+                name="Country"
+                onChange={(e) => setCountry(e.target.value)}
+                required
+              />
             </Form.Group>
             <Form.Group size="lg" controlId="formEmail">
               <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" name="email" onChange={(e) => setEmail(e.target.value)} required />
+              <Form.Control
+                type="email"
+                placeholder="Enter email"
+                name="email"
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
             </Form.Group>
             <Form.Group size="lg" controlId="formPassword">
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" name="password" onChange={(e) => setPassword(e.target.value)} />
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                name="password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlSelect1">
               <Form.Label>Sport Type select</Form.Label>
-              <Form.Control as="select" onClick={async (e) => { SportType(); await setSport_id(e.target.value); }}>
-                {state1.map((ele, i) => { return <option key={i} value={ele.sport_id}>{ele.type}</option>; })}
+              <Form.Control
+                as="select"
+                onClick={async (e) => {
+                  SportType();
+                  await setSport_id(e.target.value);
+                }}
+              >
+                {state1.map((ele, i) => {
+                  return (
+                    <option key={i} value={ele.sport_id}>
+                      {ele.type}
+                    </option>
+                  );
+                })}
               </Form.Control>
             </Form.Group>
             <Form.Group>
-              <Button className="marg styleButton1" size="lg" variant="outline-dark" type="submit" >
+              <Button className="marg styleButton1" size="lg" variant="outline-dark" type="submit">
                 SignUp
               </Button>
             </Form.Group>
-            <Form.Label >
-              {message && <div  >{message}</div>}
-            </Form.Label>
+            <Form.Label>{message && <div>{message}</div>}</Form.Label>
           </Form>
           <div>
-          <Image className="loginImage1" src="https://i.ibb.co/dcHB41S/john-fornander-TAZo-Um-Dqz-Xk-unsplash.jpg" alt="logan-weaver-p-YQ2-ASycjg-I-unsplash" border="0" rounded />
+            <Image
+              className="loginImage1"
+              src="https://i.ibb.co/44mBrMY/erik-mclean-qc-KAq5n-Uc-OU-unsplash.jpg"
+              alt="logan-weaver-p-YQ2-ASycjg-I-unsplash"
+              border="0"
+              rounded
+            />
+
           </div>
         </div>
       ) : (

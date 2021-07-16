@@ -3,15 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { decode } from "jsonwebtoken";
 import { setSearch111 } from "./../../reducers/search";
-import {
-  FormControl,
-  Form,
-  Navbar,
-  Nav,
-  NavDropdown,
-  Button,
-  Image,
-} from "react-bootstrap";
+import { FormControl, Form, Navbar, Nav, NavDropdown, Button, Image } from "react-bootstrap";
 import axios from "axios";
 import "./navigation.css";
 
@@ -77,8 +69,8 @@ const Navigation = () => {
       <Navbar className="colorNav" expand="lg" fixed="top">
         <Navbar.Brand href="#home">
           {" "}
-          <Link to="/dashboard" style={{ color: "black"}}>
-            <Image src="https://i.ibb.co/k94s0qF/Screenshot-1.png" alt="logo" className="logo"/>
+          <Link to="/" style={{ color: "black" }}>
+            <Image src="https://i.ibb.co/k94s0qF/Screenshot-1.png" alt="logo" className="logo" />
           </Link>{" "}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -105,7 +97,15 @@ const Navigation = () => {
             {state.token ? (
               <NavDropdown title={name} id="basic-nav-dropdown">
                 {/* <NavDropdown.Item >{state.token ? <Link to="/dashboard" style={{color:"black"}}>Dashboard</Link> : ""}</NavDropdown.Item> */}
-                <NavDropdown.Item>Profile</NavDropdown.Item>
+                {user && user.roleId === 2 ? (
+                  <NavDropdown.Item>
+                    <Link to="/user">profile</Link>
+                  </NavDropdown.Item>
+                ) : (
+                  <NavDropdown.Item>
+                    <Link to="/profile">profile</Link>
+                  </NavDropdown.Item>
+                )}
                 <NavDropdown.Divider />
                 <NavDropdown.Item>Favorite</NavDropdown.Item>
                 <NavDropdown.Divider />
@@ -124,6 +124,12 @@ const Navigation = () => {
             )}
           </Nav>
           <Form inline>
+            <Navbar.Brand href="#home">
+              {" "}
+              <Link to="/contactUs" style={{ color: "black" }}>
+                Contact us
+              </Link>{" "}
+            </Navbar.Brand>
             <FormControl
               onChange={(e) => {
                 setSearch(e.target.value);
@@ -131,9 +137,9 @@ const Navigation = () => {
               type="text"
               placeholder="Search"
               className="mr-sm-2"
-              style={{width: "20rem"}}
+              style={{ width: "20rem" }}
             />
-            <Button className="styleButton" onClick={searchFun}  variant="outline-dark">
+            <Button className="styleButton" onClick={searchFun} variant="outline-dark">
               Search
             </Button>
           </Form>
