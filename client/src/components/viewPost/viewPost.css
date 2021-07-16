@@ -21,46 +21,15 @@
 
 
 
-.btnDel1 {
-  color: white;
-  background-color: #2cccc4;
-  text-align: center;
-  cursor: pointer;
-  border: #007bff;
-  height: 2.5rem;
-  width: 10rem;
-  margin-left: 2rem;
-  margin-top: 0.5rem;
-  padding-right: 0.8rem;
-}
-.btnDel1:hover {
-  background-color: #000;
-}
-.btnCan1 {
-  color: white;
-  background-color: #43474b;
-  text-align: center;
-  cursor: pointer;
-  border: #2cccc4;
-  height: 2.5rem;
-  width: 7rem;
-  margin-left: 3rem;
-  margin-top: 0.5rem;
-  margin-right: 0.8rem;
-}
-.btnCan1:hover {
-  background-color: #75797e;
-}
+
 
 .popup1 {
-  width: 450px;
-  height: 250px;
-  background-color: aliceblue;
-  margin-left: 470px;
+  width: 60rem;
+  height: 30rem;
+  margin-left: 35rem;
   justify-content: center;
-  margin-top: 180px;
-  padding-left: 45px;
-  padding-top: 20px;
+  padding-top: 6rem;
+  margin-top: 15rem;
   box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
@@ -174,4 +143,27 @@ height: 30rem;
 
 .margButton{
   margin-top: 3rem;
+}
+
+.justifyText1{
+  position: relative;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.buttonStylePadding{
+  padding-top: 2rem;
+}
+
+.buttonStyleEditPost32{
+  background-color: #fff;
+  border-color: #2cccc4;
+  font-weight: bold;
+  border-radius: 0;
+  width: 11rem;
+  height: 4rem;
+  font-size: 1.4rem;
+  margin-right: 1rem;
+  border: solid 1px #2cccc4;
 }

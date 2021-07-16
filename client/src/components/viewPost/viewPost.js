@@ -161,7 +161,7 @@ const ViewPost = (props) => {
         </>
       ) : (
         <div className="popupb2">
-          <div className="popup1">
+          <div className="popup1 justifyText1">
             <h1>Delete Post</h1>
             {message && <div className="msg"> {message} </div>}
             {state.posts.map((elem, i) => (
@@ -172,8 +172,8 @@ const ViewPost = (props) => {
                   deletePosta(elem);
                 }}
               >
-                <div className="flot2">
-                  <button className="btnDel1">deleted Post</button>
+                <div className="buttonStylePadding">
+                  <button  variant="outline-dark" className="buttonStyleEditPost32">Deleted</button>
                 </div>
               </form>
             ))}
@@ -185,8 +185,8 @@ const ViewPost = (props) => {
                   cancel(elem);
                 }}
               >
-                <div className="flot3">
-                  <button className="btnCan1">cancel</button>
+                <div className="buttonStylePadding">
+                  <button variant="outline-dark" className="buttonStyleEditPost32">Cancel</button>
                   <br />
                 </div>
               </form>
