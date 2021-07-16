@@ -42,6 +42,7 @@ const App = () => {
       <Route exact path="/chat/:gym/:user" component={chat} />
       <Route exact path="/chat" component={chat} />
       <Route exact path="/search" component={Search} />
+      <Route exact path="/profile" component={Profile} />
     </div>
   );
 };

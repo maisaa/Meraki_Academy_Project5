@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { setSports } from "../../reducers/sports";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./sport.css";
 import "./nicepage.css";
 import "./Page-6.css";
@@ -48,7 +48,7 @@ const Sport = () => {
             <div>
               <section class="u-align-left u-clearfix u-section-2" id="carousel_040f">
                 <div>
-                  <img src={elem.photo} height="800" width="100%"></img>
+                  <img src={elem.photo} height="950" width="100%"></img>
                 </div>
               </section>
               <section class="u-align-left u-clearfix u-section-2" id="sec-5747">
@@ -162,23 +162,33 @@ const Sport = () => {
                             <path d="m326 271c24.813 0 45-20.187 45-45s-20.187-45-45-45-45 20.187-45 45 20.187 45 45 45zm0-60c8.271 0 15 6.729 15 15s-6.729 15-15 15-15-6.729-15-15 6.729-15 15-15z"></path>
                           </g>
                         </span>
-                        <h4 class="u-text u-text-3">Football Sport</h4>
+                        <a href="https://en.wikipedia.org/wiki/soccer">
+                          <h4 onClick={() => {}} class="u-text u-text-9">
+                            Football Sport
+                          </h4>
+                        </a>
                         <p class="u-text u-text-4">Click to select the Football Sport Page.</p>
                       </div>
                     </div>
                     <div class="u-align-center u-container-style u-grey-5 u-list-item u-repeater-item u-video-cover">
                       <div class="u-container-layout u-similar-container u-valign-top u-container-layout-3">
                         <span class="u-icon u-icon-circle u-icon-2"></span>
-                        <h4 onClick={getSportByTypeImage} value="Tines" class="u-text u-text-5">
-                          Tines Sport
-                        </h4>
+                        <a href="https://en.wikipedia.org/wiki/Tennis">
+                          <h4 onClick={() => {}} class="u-text u-text-9">
+                            Tines Sport
+                          </h4>
+                        </a>
                         <p class="u-text u-text-6">Click to select the Tines Sport Page.</p>
                       </div>
                     </div>
                     <div class="u-align-center u-container-style u-grey-5 u-list-item u-repeater-item u-video-cover">
                       <div class="u-container-layout u-similar-container u-valign-top u-container-layout-4">
                         <span class="u-icon u-icon-circle u-icon-3"></span>
-                        <h4 class="u-text u-text-7">basketball Sport</h4>
+                        <a href="https://en.wikipedia.org/wiki/Basketball">
+                          <h4 onClick={() => {}} class="u-text u-text-9">
+                            BASKETBALL
+                          </h4>
+                        </a>{" "}
                         <p class="u-text u-text-8">Click to select the basketball Sport Page.</p>
                       </div>
                     </div>
@@ -198,7 +208,11 @@ const Sport = () => {
                             <path d="m241 278.878h30v30h-30z"></path>
                           </g>
                         </span>
-                        <h4 class="u-text u-text-9">Yoga Sport</h4>
+                        <a href="https://en.wikipedia.org/wiki/Yoga">
+                          <h4 onClick={() => {}} class="u-text u-text-9">
+                            Yoga Sports
+                          </h4>
+                        </a>
                         <p class="u-text u-text-10">Click to select the Yoga Sport Page.</p>
                       </div>
                     </div>

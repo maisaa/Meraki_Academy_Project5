@@ -83,7 +83,6 @@ const GymAndCouchInfo = ({ id }) => {
 
   return (
     <div className="GymCooch">
-      
       <img src={state.GymOrCouch && state.GymOrCouch[0].image}></img>
       First Name : <p>{state.GymOrCouch && state.GymOrCouch[0].firstName}</p>
       <p>add to favorite </p>

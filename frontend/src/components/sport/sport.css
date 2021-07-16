@@ -551,3 +551,7 @@ body {
   margin-right: 20%;
   border: 2px solid rgb(172, 34, 34);
 }
+
+a {
+  text-decoration: none !important;
+}
