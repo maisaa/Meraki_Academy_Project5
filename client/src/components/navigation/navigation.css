@@ -1,0 +1,24 @@
+.colorNav {
+  background-color: #ffffff !important;
+  height: 6rem;
+  font-family: Oswald, sans-serif;
+  font-size: 1.5rem;
+  color: black;
+  text-decoration: none;
+  box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.50);
+  -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.50);
+  -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.50);
+  /* Add box shadow */
+}
+
+.styleButton{
+  /* background-color: #2CCCC4; */
+  border-color: #2CCCC4;
+  color:black;
+  font-weight: 400;
+  width: 6rem;
+}
+
+.logo{
+  width: 8rem;
+}

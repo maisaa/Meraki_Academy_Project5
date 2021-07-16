@@ -1,0 +1,242 @@
+import React, { useState, useEffect } from "react";
+import { useHistory, useParams } from "react-router-dom";
+import { Form, Button, Image } from "react-bootstrap";
+import axios from "axios";
+import "./signUp.css";
+
+const SignUp = ({ id }) => {
+  const role = useParams().id;
+  const history = useHistory();
+  let role_id;
+  role === "user" ? (role_id = 2) : role === "gym" ? (role_id = 3) : (role_id = 4);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [age, setAge] = useState(0);
+  const [country, setCountry] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+  const [sport_id, setSport_id] = useState(0);
+  const [state1, setState1] = useState([]);
+  const state = localStorage.getItem("status");
+
+  async function addNewUser() {
+    try {
+      const newUser = {
+        firstName,
+        lastName,
+        age,
+        country,
+        email,
+        password,
+        role_id,
+        sport_id,
+      };
+      //client validation
+      if (!firstName || !lastName || !country || !age || !email || !password) {
+        setMessage("Please fill all the info");
+      } else {
+        await axios.post("/register", newUser).then((response) => {
+          if (response) {
+            setMessage("The user has been created successfully ");
+            setTimeout(function () {
+              history.push("/login");
+            }, 2000);
+          } else {
+            setMessage("Error happened while register, please try again");
+          }
+        });
+      }
+    } catch (error) {
+      setMessage("Error 5000 happened while register, please try again");
+      throw error;
+    }
+  }
+  const handelSubmit = (e) => {
+    e.preventDefault();
+    addNewUser();
+  };
+
+  const SportType = () => {
+    axios.get("/sports").then((response) => {
+      setState1(response.data);
+    });
+  };
+  return (
+    <div className="SignUp1">
+      {role === "user" ? (
+        <div className="container1S">
+          <Form onSubmit={handelSubmit}>
+            <h2 className="TextStyle"> SignUp </h2>
+            <Form.Group size="lg" controlId="formFirstName">
+              <Form.Label>First Name</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter First Name"
+                name="firstName"
+                onChange={(e) => setFirstName(e.target.value)}
+                required
+              />
+            </Form.Group>
+            <Form.Group size="lg" controlId="formLastName">
+              <Form.Label>Last Name</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter Last Name"
+                name="lastName"
+                onChange={(e) => setLastName(e.target.value)}
+                required
+              />
+            </Form.Group>
+            <Form.Group size="lg" controlId="formAge">
+              <Form.Label>Age</Form.Label>
+              <Form.Control type="Number" placeholder="Enter Age" name="age" onChange={(e) => setAge(e.target.value)} />
+            </Form.Group>
+            <Form.Group size="lg" controlId="formCountry">
+              <Form.Label>Country</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter Country"
+                name="Country"
+                onChange={(e) => setCountry(e.target.value)}
+                required
+              />
+            </Form.Group>
+            <Form.Group size="lg" controlId="formEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Enter email"
+                name="email"
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </Form.Group>
+            <Form.Group size="lg" controlId="formPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                name="password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group>
+              <Button className="marg styleButton1" size="lg" variant="outline-dark" type="submit">
+                SignUp
+              </Button>
+            </Form.Group>
+            <div className="tostMassage">
+              <Form.Label>{message && <div>{message}</div>}</Form.Label>
+            </div>
+          </Form>
+          <div>
+            <Image
+              className="loginImage1"
+              src="https://i.ibb.co/44mBrMY/erik-mclean-qc-KAq5n-Uc-OU-unsplash.jpg"
+              alt="logan-weaver-p-YQ2-ASycjg-I-unsplash"
+              border="0"
+              rounded
+            />
+          </div>
+        </div>
+      ) : role === "gym" || "couch" ? (
+        <div className="container1S">
+          <Form className="GC" onSubmit={handelSubmit}>
+            <h2 className="TextStyle"> SignUp </h2>
+            <Form.Group size="lg" controlId="formFirstName">
+              <Form.Label>First Name</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter First Name"
+                name="firstName"
+                onChange={(e) => setFirstName(e.target.value)}
+                required
+              />
+            </Form.Group>
+            <Form.Group size="lg" controlId="formLastName">
+              <Form.Label>Last Name</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter Last Name"
+                name="lastName"
+                onChange={(e) => setLastName(e.target.value)}
+                required
+              />
+            </Form.Group>
+            <Form.Group size="lg" controlId="formAge">
+              <Form.Label>Age</Form.Label>
+              <Form.Control type="Number" placeholder="Enter Age" name="age" onChange={(e) => setAge(e.target.value)} />
+            </Form.Group>
+            <Form.Group size="lg" controlId="formCountry">
+              <Form.Label>Country</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter Country"
+                name="Country"
+                onChange={(e) => setCountry(e.target.value)}
+                required
+              />
+            </Form.Group>
+            <Form.Group size="lg" controlId="formEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Enter email"
+                name="email"
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </Form.Group>
+            <Form.Group size="lg" controlId="formPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                name="password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group controlId="exampleForm.ControlSelect1">
+              <Form.Label>Sport Type select</Form.Label>
+              <Form.Control
+                as="select"
+                onClick={async (e) => {
+                  SportType();
+                  await setSport_id(e.target.value);
+                }}
+              >
+                {state1.map((ele, i) => {
+                  return (
+                    <option key={i} value={ele.sport_id}>
+                      {ele.type}
+                    </option>
+                  );
+                })}
+              </Form.Control>
+            </Form.Group>
+            <Form.Group>
+              <Button className="marg styleButton1" size="lg" variant="outline-dark" type="submit">
+                SignUp
+              </Button>
+            </Form.Group>
+            <Form.Label>{message && <div>{message}</div>}</Form.Label>
+          </Form>
+          <div>
+            <Image
+              className="loginImage1"
+              src="https://i.ibb.co/44mBrMY/erik-mclean-qc-KAq5n-Uc-OU-unsplash.jpg"
+              alt="logan-weaver-p-YQ2-ASycjg-I-unsplash"
+              border="0"
+              rounded
+            />
+          </div>
+        </div>
+      ) : (
+        <div>none</div>
+      )}
+    </div>
+  );
+};
+
+export default SignUp;
