@@ -47,6 +47,7 @@ const Members = () => {
                 </div>
               );
             }
+
             if (state.id.userId === ele.poster_id) {
               return (
                 <div className="allmembers">
