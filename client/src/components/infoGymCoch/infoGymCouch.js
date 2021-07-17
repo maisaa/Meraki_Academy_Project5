@@ -3,7 +3,7 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setGymOrCoach, setGymOrCoachPost } from "./../../reducers/infoGymCoch";
 import { AddComment, setComment } from "./../../reducers/commints";
-import { useHistory, useParams } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import jwt, { decode } from "jsonwebtoken";
 import io from "socket.io-client";
@@ -16,6 +16,7 @@ socket = io(CONNECTION_PORT);
 const GymAndCouchInfo = ({ id }) => {
   const [comments, setAComments] = useState("");
   const [message, setMessage] = useState("");
+
   const [messageList, setMessageList] = useState([]);
   // const decoratedOnClick = useAccordionToggle(eventKey, onClick);
   const history = useHistory();
@@ -79,7 +80,7 @@ const GymAndCouchInfo = ({ id }) => {
     };
 
     socket.emit("send_message", messageContent); //raise event
-    setMessageList([...messageList, messageContent.content]);
+    console.log("messageContent", messageContent);
     setMessage("");
   };
 
@@ -125,7 +126,6 @@ const GymAndCouchInfo = ({ id }) => {
             variant="outline-dark"
             onClick={async () => {
               const user = await jwt.decode(state.token);
-              console.log("user", user);
               history.push(`/chat/${role}/${user.userId}`);
             }}
           >
@@ -151,7 +151,6 @@ const GymAndCouchInfo = ({ id }) => {
                       variant="outline-dark"
                       onClick={async () => {
                         const user = jwt.decode(state.token);
-                        console.log("user", user);
                         const userID = user.userId;
                         const postID = ele.post_id;
                         const a = await axios.post("/favorite", {
@@ -219,6 +218,36 @@ const GymAndCouchInfo = ({ id }) => {
                         add comments
                       </Button>
                     </div>
+                    <input
+                      value={comments}
+                      onChange={(e) => {
+                        setAComments(e.target.value);
+                      }}
+                      placeholder="Comment here"
+                    ></input>
+                    <button
+                      onClick={async () => {
+                        dispatch(
+                          AddComment([
+                            {
+                              postID: ele.post_id,
+                              comment: comments,
+                              firstName: user.firstName,
+                            },
+                          ])
+                        );
+                        setAComments("");
+                        await axios.post("/comments", {
+                          comment: comments,
+                          post_id: ele.post_id,
+                          commenter_id: user.userId,
+                        });
+                      }}
+                    >
+                      add commints
+                    </button>
+                    All Posts :{" "}
+
                   </div>
                 </div>
               );
@@ -227,7 +256,7 @@ const GymAndCouchInfo = ({ id }) => {
       </div>
 
       <div className="devChat">
-        <div className="publicChatStyle1">
+                <div className="publicChatStyle1">
           {messageList.map((ele, i) => {
             console.log(".....elemant.....", ele);
             return (
