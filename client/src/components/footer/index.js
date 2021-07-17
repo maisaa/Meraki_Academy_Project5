@@ -132,9 +132,7 @@ const Footer = () => {
                         ></textarea>
                       </div>
                       <div onClick={emailSend} class="u-align-left u-form-group u-form-submit u-form-group-4">
-                        <a href="#" class="u-btn u-btn-submit u-button-style u-white u-btn-1">
-                          Submit
-                        </a>
+                        <button class="styleButton">Submit</button>
                         <input type="submit" value="submit" class="u-form-control-hidden" />
                         {message ? <p>Message Successfully send </p> : ""}
                       </div>
