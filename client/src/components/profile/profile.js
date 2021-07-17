@@ -161,7 +161,6 @@ const Profile = () => {
                         />
                       </Form.Label>
                     </Form.Group>
-                    {/* hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh */}
                     <Form.Group size="lg" controlId="formAge">
                       <Form.Label>
                         age:
@@ -195,13 +194,13 @@ const Profile = () => {
               ))}
             </div>
           ) : (
-            <div>
+            <div className="imageProfileCoachStyle1 body123">
               {state.profile.map((elem, i) => {})}
               {state.profile.map((elem, i) => (
                 <div key={i}>
                   <div className="body">
                     <h1 className="herderProfile">{elem.firstName} Profile</h1>
-                    <div className="container">
+                    <div className="container12Profile">
                       <div className="divImg">
                         <img
                           src={elem.image}
@@ -242,14 +241,14 @@ const Profile = () => {
                         value={elem.user_id}
                         className="btn1"
                       >
-                        edit profile
+                        Edit 
                       </button>
                       <button
                         onClick={popup}
                         value={elem.user_id}
                         className="btn1"
                       >
-                        deleted profile
+                        Deleted 
                       </button>
                     </div>
                   </div>

@@ -19,6 +19,7 @@ const login = (req, res) => {
             userId: result[0].user_id,
             roleId: result[0].role_id,
             firstName: result[0].firstName,
+            image: result[0].image,
           };
           const options = {
             expiresIn: "60m",
