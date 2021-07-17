@@ -68,11 +68,13 @@ const GymAndCouchInfo = ({ id }) => {
 
   const sendMessage = () => {
     const user = jwt.decode(state.token);
+    console.log("....user....",user);
     const messageContent = {
       role,
       content: {
         author: user.firstName,
         message,
+        authorPhoto: user.image,
       },
     };
 
@@ -135,7 +137,7 @@ const GymAndCouchInfo = ({ id }) => {
       <div className="devPosts">
         <div>
           {state.allPosts &&
-            state.allPosts.map((ele) => {
+            state.allPosts.map((ele , a) => {
               return (
                 <div className="postPhotoInfoPage">
                   <div className="backgroundPhotoCard">
@@ -225,19 +227,42 @@ const GymAndCouchInfo = ({ id }) => {
       </div>
 
       <div className="devChat">
-        {messageList.map((ele, i) => {
-          return (
-            <h3 key={i}>
-              {ele.author} {ele.message}
-            </h3>
-          );
-        })}
-        <textarea
-          type="text"
-          placeholder="Write your message here ..."
-          onChange={(e) => setMessage(e.target.value)}
-        />
-        <button onClick={sendMessage}>Send</button>
+        <div className="publicChatStyle1">
+          {messageList.map((ele, i) => {
+            console.log(".....elemant.....", ele);
+            return (
+              <div className="liveChatGridStyle1">
+                <div>
+                  <img
+                    src={ele.authorPhoto}
+                    className="imageLiveChatStyle1"
+                    alt=" "
+                  />
+                </div>
+                <div key={i} className="allStyle1">
+                  <div className="liveChatAutherNameStyle1">
+                    [ {ele.author} ]
+                  </div>
+                  <div className="liveChatAutherMessageStyle1">
+                    {ele.message}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <div className="textereaChatStyle1">
+          <input
+            value={message}
+            className="textereaBoxStyle1"
+            type="text"
+            placeholder="Write your message here ..."
+            onChange={(e) => setMessage(e.target.value)}
+          />
+          <Button  variant="outline-dark" className="buttonTextereaStyle1" onClick={sendMessage}>
+            Send
+          </Button>
+        </div>
       </div>
       <div className="haish"></div>
     </div>
