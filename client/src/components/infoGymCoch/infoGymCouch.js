@@ -3,10 +3,10 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setGymOrCoach, setGymOrCoachPost } from "./../../reducers/infoGymCoch";
 import { AddComment, setComment } from "./../../reducers/commints";
-import { useHistory, useParams } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import io from "socket.io-client";
-import jwt from "jsonwebtoken";
+import jwt, { decode } from "jsonwebtoken";
 import "./infoGymCoch.css";
 let socket;
 const CONNECTION_PORT = "http://localhost:5000";
@@ -16,6 +16,7 @@ socket = io(CONNECTION_PORT);
 const GymAndCouchInfo = ({ id }) => {
   const [comments, setAComments] = useState("");
   const [message, setMessage] = useState("");
+
   const [messageList, setMessageList] = useState([]);
   // const decoratedOnClick = useAccordionToggle(eventKey, onClick);
   const history = useHistory();
@@ -29,6 +30,8 @@ const GymAndCouchInfo = ({ id }) => {
       comments: state.commentsReducer.comments,
     };
   });
+  const user = decode(state.token);
+  console.log("usdddddddddddddder", user);
 
   const getSportByType = () => {
     axios.get(`/usersInfo/${role}`).then((result) => {
@@ -68,7 +71,7 @@ const GymAndCouchInfo = ({ id }) => {
     };
 
     socket.emit("send_message", messageContent); //raise event
-    setMessageList([...messageList, messageContent.content]);
+    console.log("messageContent", messageContent);
     setMessage("");
   };
 
@@ -92,14 +95,13 @@ const GymAndCouchInfo = ({ id }) => {
         </div>
         <div className="buttonLeft">
           <Button className="styleButton12" variant="outline-dark">
-            video call
+            <a href="http://localhost:3032/">video</a>
           </Button>
           <Button
             className="styleButton12"
             variant="outline-dark"
             onClick={async () => {
               const user = await jwt.decode(state.token);
-              console.log("user", user);
               history.push(`/chat/${role}/${user.userId}`);
             }}
           >
@@ -117,7 +119,6 @@ const GymAndCouchInfo = ({ id }) => {
         <div>
           {state.allPosts &&
             state.allPosts.map((ele) => {
-              console.log("photo............", ele.photo);
               return (
                 <div className="postPhotoInfoPage">
                   <div>
@@ -127,7 +128,6 @@ const GymAndCouchInfo = ({ id }) => {
                       variant="outline-dark"
                       onClick={async () => {
                         const user = jwt.decode(state.token);
-                        console.log("user", user);
                         const userID = user.userId;
                         const postID = ele.post_id;
                         const a = await axios.post("/favorite", {
@@ -160,22 +160,29 @@ const GymAndCouchInfo = ({ id }) => {
                       </p>
                     </div>
                     <input
+                      value={comments}
                       onChange={(e) => {
                         setAComments(e.target.value);
                       }}
-                      placeholder="comment here"
+                      placeholder="Comment here"
                     ></input>
                     <button
-                      onClick={() => {
+                      onClick={async () => {
                         dispatch(
                           AddComment([
                             {
                               postID: ele.post_id,
                               comment: comments,
-                              // firstName: elm.firstName,
+                              firstName: user.firstName,
                             },
                           ])
                         );
+                        setAComments("");
+                        await axios.post("/comments", {
+                          comment: comments,
+                          post_id: ele.post_id,
+                          commenter_id: user.userId,
+                        });
                       }}
                     >
                       add commints
@@ -190,6 +197,7 @@ const GymAndCouchInfo = ({ id }) => {
 
       <div className="devChat">
         {messageList.map((ele, i) => {
+          console.log("ele", ele);
           return (
             <h3 key={i}>
               {ele.author} {ele.message}
