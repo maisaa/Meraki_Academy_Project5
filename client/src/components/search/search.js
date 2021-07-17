@@ -10,15 +10,14 @@ const Search = () => {
   console.log(state.Search);
   return (
     <div className="Search">
-      <p className="p2">Search Results :</p>
+      <div className="titleSearchStyle1">Search Results :</div>
       {!state.Search ? (
-        <p className="p1">no search Results please insert what you want Search </p>
+        <div className="noResultStyle1">no search Results please insert what you want Search </div>
       ) : (
         state.Search.map((ele) => {
           console.log("ele", ele);
           return (
             <div
-              className="ser"
               onClick={() => {
                 history.push(`info/${ele.user_id}`);
               }}
@@ -26,15 +25,15 @@ const Search = () => {
               <div className="p3">
                 <img src={ele.image} />
                 <div>
-                  Name : {ele.firstName} {ele.lastName}
-                  {ele.role_id === 4 ? <div>Type : Gym</div> : <div>Type : Couch</div>}
+                   <span className="titleName123">{ele.firstName} {ele.lastName} </span>
+                  {ele.role_id === 4 ? <div className="nameNameStyle1">Gym</div> : <div className="nameNameStyle1">Couch</div>}
                 </div>
               </div>
+              <div className="hrStyleSearch1"> </div>
             </div>
           );
         })
       )}
-      <hr></hr>
     </div>
   );
 };
