@@ -224,10 +224,6 @@ const Profile = () => {
                           <b>phone : </b>
                           {elem.phone}
                         </p>
-                        <p>
-                          <b> Rate : </b>
-                          {elem.rate}
-                        </p>
 
                         <p>
                           {" "}

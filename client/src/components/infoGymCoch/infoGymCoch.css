@@ -252,3 +252,31 @@
 .aHrefStyle{
   color:white;
 }
+
+.joinUsAndRegisterButton{
+  background-color: #2A2529;
+  color: white;
+  border-color: #2cccc4;
+  font-weight: 400;
+  font-size: 2rem;
+  border-radius: 0;
+  width: 20rem;
+  height: 6rem;
+  margin-top: -55rem;
+  margin-right: 2rem;
+  margin-left: 6rem;
+}
+
+.joinUsAndRegisterButton2{
+  background-color: #2A2529;
+  color: white;
+  border-color: #2cccc4;
+  font-weight: 400;
+  font-size: 2rem;
+  border-radius: 0;
+  width: 20rem;
+  height: 6rem;
+  margin-top: -35rem;
+  margin-right: 2rem;
+  margin-left: 6rem;
+}

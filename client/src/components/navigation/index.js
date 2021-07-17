@@ -98,17 +98,39 @@ const Navigation = () => {
               <NavDropdown title={name} id="basic-nav-dropdown">
                 {/* <NavDropdown.Item >{state.token ? <Link to="/dashboard" style={{color:"black"}}>Dashboard</Link> : ""}</NavDropdown.Item> */}
                 {user && user.roleId === 2 ? (
+                  <div>
                   <NavDropdown.Item>
-                    <Link to="/user">profile</Link>
+                    <Link to="/user" style={{color: "black"}}>profile</Link>
                   </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  </div>
                 ) : (
+                  <div> 
                   <NavDropdown.Item>
-                    <Link to="/profile">profile</Link>
+                    <Link to="/profile" style={{color: "black"}}>profile</Link>
                   </NavDropdown.Item>
+                  </div>
                 )}
-                <NavDropdown.Divider />
-                <NavDropdown.Item>Favorite</NavDropdown.Item>
-                <NavDropdown.Divider />
+                {user && user.roleId === 2 ? (
+                  <div> 
+                  <NavDropdown.Item>
+                    <Link to="/user" style={{color: "black"}}>About us</Link>
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  </div>
+                ) : (
+                  <div>
+                    <NavDropdown.Divider />
+                  <NavDropdown.Item>
+                    <Link to="/posts" style={{color: "black"}}>My Posts</Link>
+                  </NavDropdown.Item>
+                    <NavDropdown.Divider />
+                  <NavDropdown.Item>
+                    <Link to="/allmembers" style={{color: "black"}}>All Members</Link>
+                  </NavDropdown.Item>
+                    <NavDropdown.Divider />
+                  </div>
+                )}
                 <NavDropdown.Item>
                   {state.token ? (
                     <Link to="/login" style={{ color: "black" }}>
@@ -124,12 +146,6 @@ const Navigation = () => {
             )}
           </Nav>
           <Form inline>
-            <Navbar.Brand href="#home">
-              {" "}
-              <Link to="/contactUs" style={{ color: "black" }}>
-                Contact us
-              </Link>{" "}
-            </Navbar.Brand>
             <FormControl
               onChange={(e) => {
                 setSearch(e.target.value);

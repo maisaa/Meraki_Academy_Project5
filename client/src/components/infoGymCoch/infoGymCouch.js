@@ -68,7 +68,7 @@ const GymAndCouchInfo = ({ id }) => {
 
   const sendMessage = () => {
     const user = jwt.decode(state.token);
-    console.log("....user....",user);
+    console.log("....user....", user);
     const messageContent = {
       role,
       content: {
@@ -118,7 +118,9 @@ const GymAndCouchInfo = ({ id }) => {
         </div>
         <div className="buttonLeft">
           <Button className="styleButton123" variant="outline-dark">
-          <a href="http://localhost:3032/" className="aHrefStyle">video  </a>
+            <a href="http://localhost:3032/" className="aHrefStyle">
+              video
+            </a>
           </Button>
           <Button
             className="styleButton123"
@@ -137,7 +139,7 @@ const GymAndCouchInfo = ({ id }) => {
       <div className="devPosts">
         <div>
           {state.allPosts &&
-            state.allPosts.map((ele , a) => {
+            state.allPosts.map((ele, a) => {
               return (
                 <div className="postPhotoInfoPage">
                   <div className="backgroundPhotoCard">
@@ -186,39 +188,43 @@ const GymAndCouchInfo = ({ id }) => {
                           })}
                       </div>
                     </div>
-                    <div className="inpitAndButtonStyle1">
-                      <input
-                        className="inputStyle1"
-                        value={comments}
-                        onChange={(e) => {
-                          setAComments(e.target.value);
-                        }}
-                        placeholder="comment here"
-                      ></input>
-                      <Button
-                        variant="outline-dark"
-                        className="buttonStyleAddComment5"
-                        onClick={async () => {
-                          dispatch(
-                            AddComment([
-                              {
-                                postID: ele.post_id,
-                                comment: comments,
-                                firstName: user.firstName,
-                              },
-                            ])
-                          );
-                          setAComments("");
-                          await axios.post("/comments", {
-                            comment: comments,
-                            post_id: ele.post_id,
-                            commenter_id: user.userId,
-                          });
-                        }}
-                      >
-                        add comments
-                      </Button>
-                    </div>
+                    {state.token ? (
+                      <div className="inpitAndButtonStyle1">
+                        <input
+                          className="inputStyle1"
+                          value={comments}
+                          onChange={(e) => {
+                            setAComments(e.target.value);
+                          }}
+                          placeholder="comment here"
+                        ></input>
+                        <Button
+                          variant="outline-dark"
+                          className="buttonStyleAddComment5"
+                          onClick={async () => {
+                            dispatch(
+                              AddComment([
+                                {
+                                  postID: ele.post_id,
+                                  comment: comments,
+                                  firstName: user.firstName,
+                                },
+                              ])
+                            );
+                            setAComments("");
+                            await axios.post("/comments", {
+                              comment: comments,
+                              post_id: ele.post_id,
+                              commenter_id: user.userId,
+                            });
+                          }}
+                        >
+                          add comments
+                        </Button>
+                      </div>
+                    ) : (
+                      <div> </div>
+                    )}
                   </div>
                 </div>
               );
@@ -237,7 +243,7 @@ const GymAndCouchInfo = ({ id }) => {
                     src={ele.authorPhoto}
                     className="imageLiveChatStyle1"
                     alt=" "
-                  />
+                    />
                 </div>
                 <div key={i} className="allStyle1">
                   <div className="liveChatAutherNameStyle1">
@@ -251,6 +257,7 @@ const GymAndCouchInfo = ({ id }) => {
             );
           })}
         </div>
+          {state.token ? 
         <div className="textereaChatStyle1">
           <input
             value={message}
@@ -258,11 +265,33 @@ const GymAndCouchInfo = ({ id }) => {
             type="text"
             placeholder="Write your message here ..."
             onChange={(e) => setMessage(e.target.value)}
-          />
-          <Button  variant="outline-dark" className="buttonTextereaStyle1" onClick={sendMessage}>
+            />
+          <Button
+            variant="outline-dark"
+            className="buttonTextereaStyle1"
+            onClick={sendMessage}
+            >
             Send
           </Button>
         </div>
+      : <div> 
+        <Button
+            variant="outline-dark"
+            className="joinUsAndRegisterButton"
+            onClick={ () =>{
+              history.push("/register")
+            }}
+            >
+            Join Us Now
+          </Button>
+          <Button
+            variant="outline-dark"
+            className="joinUsAndRegisterButton2"
+            onClick={() =>{ history.push("/login")}}
+            >
+            Login
+          </Button>
+        </div>}
       </div>
       <div className="haish"></div>
     </div>
