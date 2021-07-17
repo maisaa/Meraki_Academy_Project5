@@ -118,8 +118,8 @@ const GymAndCouchInfo = ({ id }) => {
           </div>
         </div>
         <div className="buttonLeft">
-          <Button className="styleButton12" variant="outline-dark">
-            <a href="http://localhost:3032/">video</a>
+          <Button className="styleButton123" variant="outline-dark">
+          <a href="http://localhost:3032/" className="aHrefStyle">video  </a>
           </Button>
           <Button
             className="styleButton123"
