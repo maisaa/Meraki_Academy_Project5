@@ -4,10 +4,11 @@
   width: 113rem;
 }
 
-.p1 {
-  color: #2cccc4;
-  font-weight: bolder;
-  font-size: 25px;
+.noResultStyle1 {
+  font-weight: 200;
+  font-size: 1.5rem;
+  padding-left: 0.6rem;
+  margin-top: -2rem;
 }
 .titleSearchStyle1 {
   padding-left: 0.6rem;
@@ -15,16 +16,21 @@
   font-size: 2.5rem;
   font-weight: 400;
   font-family: Oswald, sans-serif;
+  padding-bottom: 3.5rem;
 }
 .p3 {
   display: flex;
-  color: #000000;
-  font-weight: bolder;
-  font-size: 40px;
+  
   margin-left: 10px;
   cursor: pointer;
   margin-bottom: 1rem;
 }
+
+.titleName123{
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+
 .p3 img {
   width: 202px;
   height: 157px;
@@ -34,6 +40,13 @@
 .hrStyleSearch1{
   width: 100%;
   background-color:rgb(223, 223, 223) ;
-  border: solid rgb(223, 223, 223) 0.5px;
-  margin-bottom: 1rem;
+  border: solid rgb(223, 223, 223) 0.3px;
+  margin-bottom: 3.5rem;
+  margin-top: 3.5rem;
 }
+
+.nameNameStyle1{
+  font-weight: 400;
+  font-size: 2rem;
+}
+
