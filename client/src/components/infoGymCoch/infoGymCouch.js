@@ -5,8 +5,8 @@ import { setGymOrCoach, setGymOrCoachPost } from "./../../reducers/infoGymCoch";
 import { AddComment, setComment } from "./../../reducers/commints";
 import { useHistory, useParams } from "react-router-dom";
 import { Button } from "react-bootstrap";
+import jwt, { decode } from "jsonwebtoken";
 import io from "socket.io-client";
-import jwt from "jsonwebtoken";
 import "./infoGymCoch.css";
 let socket;
 const CONNECTION_PORT = "http://localhost:5000";
@@ -29,6 +29,7 @@ const GymAndCouchInfo = ({ id }) => {
       comments: state.commentsReducer.comments,
     };
   });
+  const user = decode(state.token);
 
   const getSportByType = () => {
     axios.get(`/usersInfo/${role}`).then((result) => {
@@ -41,7 +42,15 @@ const GymAndCouchInfo = ({ id }) => {
       result.data.map((ele) => {
         axios.get(`/comments/${ele.post_id}/`).then((result) => {
           result.data.map((elm) => {
-            dispatch(setComment([{ postID: ele.post_id, comment: elm.comment, firstName: elm.firstName }]));
+            dispatch(
+              setComment([
+                {
+                  postID: ele.post_id,
+                  comment: elm.comment,
+                  firstName: elm.firstName,
+                },
+              ])
+            );
           });
         });
       });
@@ -88,14 +97,29 @@ const GymAndCouchInfo = ({ id }) => {
       <div className="hamish"></div>
       <div className="devDes">
         <div>
-          <img className="ImgCoachGym" src={state.GymOrCouch && state.GymOrCouch[0].image} alt=""></img>
+          <img
+            className="ImgCoachGym"
+            src={state.GymOrCouch && state.GymOrCouch[0].image}
+            alt=""
+          ></img>
+        </div>
+        <div>
+          <div className="NameLabel">
+            {state.GymOrCouch &&
+              state.GymOrCouch[0].firstName +
+                `  ` +
+                state.GymOrCouch[0].lastName}
+          </div>
+          <div className="DesLabel">
+            {state.GymOrCouch && state.GymOrCouch[0].description}
+          </div>
         </div>
         <div className="buttonLeft">
-          <Button className="styleButton12" variant="outline-dark">
+          <Button className="styleButton123" variant="outline-dark">
             video call
           </Button>
           <Button
-            className="styleButton12"
+            className="styleButton123"
             variant="outline-dark"
             onClick={async () => {
               const user = await jwt.decode(state.token);
@@ -106,24 +130,22 @@ const GymAndCouchInfo = ({ id }) => {
             chat
           </Button>
         </div>
-        <div></div>
-        <div className="NameLabel">
-          {state.GymOrCouch && state.GymOrCouch[0].firstName + `  ` + state.GymOrCouch[0].lastName}
-        </div>
-        <div className="DesLabel">{state.GymOrCouch && state.GymOrCouch[0].description}</div>
       </div>
 
       <div className="devPosts">
         <div>
           {state.allPosts &&
             state.allPosts.map((ele) => {
-              console.log("photo............", ele.photo);
               return (
                 <div className="postPhotoInfoPage">
-                  <div>
-                    <img alt="postPhoto" src={ele.photo} height="150" width="100%" />
+                  <div className="backgroundPhotoCard">
+                    <img
+                      alt="postPhoto"
+                      src={ele.photo}
+                      className="photoPostSlider"
+                    />
                     <Button
-                      className="styleButton12  favButton"
+                      className="styleButton123  favButton"
                       variant="outline-dark"
                       onClick={async () => {
                         const user = jwt.decode(state.token);
@@ -143,44 +165,58 @@ const GymAndCouchInfo = ({ id }) => {
                     <div className="row1Post">
                       <p>{ele.post}</p>
                     </div>
-                    <div className="row2Comments">
-                      <p>
-                        Comments :{" "}
+                    <div>
+                      <div className="titleCommentStyle1"> Comments </div>
+                      <div className="row2Comments">
                         {state.comments &&
                           state.comments.map((elem) => {
                             if (elem[0].postID === ele.post_id) {
                               return (
-                                <div>
-                                  <p>{elem[0].firstName}</p>
-                                  <p>{elem[0].comment}</p>
+                                <div className="borderCommentStyle9">
+                                  <span className="nameUserAddCommentStyle1">
+                                    {elem[0].firstName} :{" "}
+                                  </span>{" "}
+                                  &nbsp;
+                                  <span>{elem[0].comment}</span>
                                 </div>
                               );
                             }
                           })}
-                      </p>
+                      </div>
                     </div>
-                    <input
-                      onChange={(e) => {
-                        setAComments(e.target.value);
-                      }}
-                      placeholder="comment here"
-                    ></input>
-                    <button
-                      onClick={() => {
-                        dispatch(
-                          AddComment([
-                            {
-                              postID: ele.post_id,
-                              comment: comments,
-                              // firstName: elm.firstName,
-                            },
-                          ])
-                        );
-                      }}
-                    >
-                      add commints
-                    </button>
-                    All Posts :{" "}
+                    <div className="inpitAndButtonStyle1">
+                      <input
+                        className="inputStyle1"
+                        value={comments}
+                        onChange={(e) => {
+                          setAComments(e.target.value);
+                        }}
+                        placeholder="comment here"
+                      ></input>
+                      <Button
+                        variant="outline-dark"
+                        className="buttonStyleAddComment5"
+                        onClick={async () => {
+                          dispatch(
+                            AddComment([
+                              {
+                                postID: ele.post_id,
+                                comment: comments,
+                                firstName: user.firstName,
+                              },
+                            ])
+                          );
+                          setAComments("");
+                          await axios.post("/comments", {
+                            comment: comments,
+                            post_id: ele.post_id,
+                            commenter_id: user.userId,
+                          });
+                        }}
+                      >
+                        add comments
+                      </Button>
+                    </div>
                   </div>
                 </div>
               );
@@ -196,7 +232,11 @@ const GymAndCouchInfo = ({ id }) => {
             </h3>
           );
         })}
-        <textarea type="text" placeholder="Write your message here ..." onChange={(e) => setMessage(e.target.value)} />
+        <textarea
+          type="text"
+          placeholder="Write your message here ..."
+          onChange={(e) => setMessage(e.target.value)}
+        />
         <button onClick={sendMessage}>Send</button>
       </div>
       <div className="haish"></div>

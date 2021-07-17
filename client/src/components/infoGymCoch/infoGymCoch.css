@@ -1,43 +1,56 @@
 .GymCooch {
   display: grid;
-  grid-template-columns: 20px 2fr 4fr 2fr 20px;
-  /* gap: 2rem; */
-  border: solid red;
+  grid-template-columns: 20px 1fr 4fr 2fr 20px;
+  gap: 0rem;
+  /* border: solid red; */
   margin-top: 6.5rem;
+  
 }
 
 .devDes {
-  border: solid black;
-  height: 100%;
   width: 25rem;
-  margin-bottom: 2rem;
-  /* box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75); */
+  background-color: #2A2529;
+  color: white;
+  margin-top: 1.5rem;
 }
 
 .devPosts {
-  border: solid black;
-  height: 90%;
+  /* border: solid black; */
+  height: 50rem;
+  overflow: auto;
+  margin-top: 1.5rem;
 }
 
 .devChat {
-  border: solid black;
+  /* border: solid black; */
   height: 90%;
 }
 
 .ImgCoachGym {
-  width: 20rem;
+  width: 100%;
   height: 20rem;
   display: inline;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
   margin-bottom: 2rem;
+  box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
 }
 
 .hamish {
   padding: 0.5rem;
+}
+
+.styleButton123 {
+  margin-top: 0.5rem;
+  border-color: #2cccc4;
+  color: white;
+  font-weight: 600;
+  width: 9rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  margin-left: 0.7rem;
 }
 
 .styleButton12 {
@@ -47,16 +60,15 @@
   font-weight: 600;
   width: 9rem;
   margin-left: 0.2rem;
-  /* margin-right: 2rem; */
   padding: 0.5rem;
   margin-bottom: 2rem;
 }
 .buttonLeft {
-  margin-left: 0.7rem;
+  margin-left: 2.5rem;
 }
 .favButton {
-  margin-top: 1.5rem;
-  margin-left: 1.7rem;
+  margin-top: 3.3rem;
+  margin-left: 2.7rem;
 }
 
 .NameLabel {
@@ -64,37 +76,107 @@
   font-family: Oswald, sans-serif;
   width: 30rem;
   font-size: 2.5rem;
+  padding-left:3rem;
+  margin-top: 1rem;
 }
 .DesLabel {
   font-size: 1.5rem;
   font-weight: 400;
   margin-top: 1rem;
   width: 20rem;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
+  padding-left: 3rem;
+  height: 10rem;
 }
 .nameDesLabelDiv {
   /* margin-left: 5.5rem; */
 }
 
-.devPosts {
+.backgroundPhotoCard{
+  background-color: #2A2529;
 }
+
 .postPhotoInfoPage {
   display: grid;
   grid-template-columns: 1fr 3fr;
   /* gap: 2rem; */
-  border: solid green;
-  margin-top: 1.5rem;
+  /* border: solid green; */
+  box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  width: 90%;
+  margin-left: 3rem;
+  margin-bottom: 1.5rem;
 }
 .colPostAndComments {
-  border: solid orange;
+  margin-top: 1.2rem;
+  margin-left: 4rem;
+  /* border: solid orange; */
 }
 .row1Post {
-  border: solid yellow;
+  /* border: solid yellow; */
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 400;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  width: 35rem;
+  height: 7rem;
 }
 .row2Comments {
-  border: solid yellow;
+  overflow: auto;
+  height: 8rem;
+  /* border: solid yellow; */
+}
+
+.photoPostSlider{
+  width: 100%;
+  height: 14rem;
+  box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  margin-bottom: 2rem;
+}
+
+.titleCommentStyle1{
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.nameUserAddCommentStyle1{
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: black;
+  }
+
+.borderCommentStyle9{
+  border: solid 2px #2cccc4;
+  width: 33rem;
+  height: 3rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.inputStyle1{
+  width: 23.5rem;
+  margin-right: 1rem;
+  height: 2.5rem;
+  border: solid 2px black;
+  padding-left: 0.5rem;
+}
+
+.inpitAndButtonStyle1{
+  width: 35rem;
+  height: 4rem;
+  padding-top: 1rem;
+  padding-bottom: 5.5rem;
+}
+
+.buttonStyleAddComment5{
+  background-color: #fff;
+  color: #000;
+  border-color: #2cccc4;
+  font-weight: bold;
+  border-radius: 0;
+  margin-top: -0.3rem;
+  
 }

@@ -1,20 +1,14 @@
-* {
-  padding: 0;
-  margin: 0;
-}
-.body {
-  margin-top: 0%;
-  margin-bottom: 0%;
+.body123 {
   width: auto;
-  height: 800px;
   background-image: url("./images/ttttt-min.jpg");
   background-size: 100% 100%;
+  height: 60rem;
+  min-height: 1%;
 }
-.container {
+.container12Profile {
   display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-gap: 10px;
-  margin-right: 2rem;
+  grid-template-columns: 20rem auto auto auto;
+  margin-left: 44rem;
 }
 .psImg {
   width: 250px;
@@ -46,7 +40,8 @@
   background-color: black;
 }
 .divbtn {
-  margin-left: 40rem;
+  margin-left: 46rem;
+  margin-top: 2rem;
 }
 .Info {
   font-size: 30px;
@@ -241,4 +236,8 @@ h4 {
   border-color: #2cccc4;
   color: black;
   font-weight: 400;
+}
+
+.imageProfileCoachStyle1{
+  margin-top: 6rem;
 }
