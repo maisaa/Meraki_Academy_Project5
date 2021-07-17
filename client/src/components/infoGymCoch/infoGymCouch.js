@@ -67,20 +67,22 @@ const GymAndCouchInfo = ({ id }) => {
   };
 
   const sendMessage = () => {
-    const user = jwt.decode(state.token);
-    console.log("....user....", user);
-    const messageContent = {
-      role,
-      content: {
-        author: user.firstName,
-        message,
-        authorPhoto: user.image,
-      },
-    };
-
-    socket.emit("send_message", messageContent); //raise event
-    setMessageList([...messageList, messageContent.content]);
-    setMessage("");
+    if(message){
+      const user = jwt.decode(state.token);
+      console.log("....user....", user);
+      const messageContent = {
+        role,
+        content: {
+          author: user.firstName,
+          message,
+          authorPhoto: user.image,
+        },
+      };
+      
+      socket.emit("send_message", messageContent); //raise event
+      setMessageList([...messageList, messageContent.content]);
+      setMessage("");
+    }
   };
 
   const addToFav = async () => {
@@ -116,6 +118,7 @@ const GymAndCouchInfo = ({ id }) => {
             {state.GymOrCouch && state.GymOrCouch[0].description}
           </div>
         </div>
+        {state.token ? 
         <div className="buttonLeft">
           <Button className="styleButton123" variant="outline-dark">
             <a href="http://localhost:3032/" className="aHrefStyle">
@@ -130,10 +133,11 @@ const GymAndCouchInfo = ({ id }) => {
               console.log("user", user);
               history.push(`/chat/${role}/${user.userId}`);
             }}
-          >
+            >
             chat
           </Button>
         </div>
+            : <div> </div>}
       </div>
 
       <div className="devPosts">
@@ -148,22 +152,24 @@ const GymAndCouchInfo = ({ id }) => {
                       src={ele.photo}
                       className="photoPostSlider"
                     />
+                    {state.token ? 
                     <Button
-                      className="styleButton123  favButton"
-                      variant="outline-dark"
-                      onClick={async () => {
-                        const user = jwt.decode(state.token);
-                        console.log("user", user);
-                        const userID = user.userId;
-                        const postID = ele.post_id;
-                        const a = await axios.post("/favorite", {
-                          userID,
-                          postID,
-                        });
-                      }}
+                    className="styleButton123  favButton"
+                    variant="outline-dark"
+                    onClick={async () => {
+                      const user = jwt.decode(state.token);
+                      console.log("user", user);
+                      const userID = user.userId;
+                      const postID = ele.post_id;
+                      const a = await axios.post("/favorite", {
+                        userID,
+                        postID,
+                      });
+                    }}
                     >
                       Add to favorite
                     </Button>
+                      : <div> </div>}
                   </div>
                   <div className="colPostAndComments">
                     <div className="row1Post">
@@ -265,6 +271,7 @@ const GymAndCouchInfo = ({ id }) => {
             type="text"
             placeholder="Write your message here ..."
             onChange={(e) => setMessage(e.target.value)}
+            required
             />
           <Button
             variant="outline-dark"
