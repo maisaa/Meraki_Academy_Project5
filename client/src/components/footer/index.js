@@ -15,8 +15,8 @@ const Footer = () => {
   const template_id = "template_3vpb3q2";
   const user_id = "user_EEJqUUgmDQTKCfowbJZ1T";
   const contactDetails = {
-    name: name,
-    email: email,
+    to_name: name,
+    from_name: email,
     subject: subject,
     message: theMessage,
   };
