@@ -98,30 +98,26 @@ const Navigation = () => {
               <NavDropdown title={name} id="basic-nav-dropdown">
                 {/* <NavDropdown.Item >{state.token ? <Link to="/dashboard" style={{color:"black"}}>Dashboard</Link> : ""}</NavDropdown.Item> */}
                 {user && user.roleId === 2 ? (
+                  <div></div>
+                ) : (
                   <div>
                   <NavDropdown.Item>
-                    <Link to="/user" style={{color: "black"}}>profile</Link>
+                    <Link to="/posts" style={{color: "black"}}>My Posts</Link>
+                  </NavDropdown.Item>
+                    <NavDropdown.Divider />
+                  </div>
+                )}
+                {user && user.roleId === 2 ? (
+                  <div>
+                  <NavDropdown.Item>
+                    <Link to="/user" style={{color: "black"}}>Profile</Link>
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
                   </div>
                 ) : (
                   <div> 
                   <NavDropdown.Item>
-                    <Link to="/profile" style={{color: "black"}}>profile</Link>
-                  </NavDropdown.Item>
-                  </div>
-                )}
-                {user && user.roleId === 2 ? (
-                  <div></div>
-                ) : (
-                  <div>
-                    <NavDropdown.Divider />
-                  <NavDropdown.Item>
-                    <Link to="/posts" style={{color: "black"}}>My Posts</Link>
-                  </NavDropdown.Item>
-                    <NavDropdown.Divider />
-                  <NavDropdown.Item>
-                    <Link to="/allmembers" style={{color: "black"}}>All Members</Link>
+                    <Link to="/profile" style={{color: "black"}}>Profile</Link>
                   </NavDropdown.Item>
                     <NavDropdown.Divider />
                   </div>
