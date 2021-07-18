@@ -87,6 +87,10 @@
   margin-bottom: 1rem;
 }
 
+/* font-weight: 800;
+  font-family: Oswald, sans-serif;
+  font-size: 3rem; */
+
 .desLabelUser123 {
   color: white;
   font-size: 1.6rem;
@@ -209,4 +213,162 @@
   width: 17.8rem;
   margin-left: 3.9rem;
   margin-top: 1rem;
+}
+
+.allDevStyleGymProfile1{
+  margin-left: 25.7rem;
+  margin-top: 7.8rem;
+  width: 60%;
+  height: 48rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr 3rem;
+}
+
+.imageProfileGym1{
+  width: 30rem;
+  background-color: #2A2529;
+  color: white;
+}
+
+.infoProfileGym1{
+  box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+
+}
+
+.imageSizeProfileGym1{
+  width: 100%;
+  height: 35rem;
+  margin-bottom: 5.5rem;
+}
+
+.buttonEditProfileGym1{
+  background-color: #2A2529;
+  color: white;
+  border-color: #2cccc4;
+  font-weight: 400;
+  font-size: 1.5rem;
+  width: 10rem;
+  margin-left: 4.5rem;
+  margin-right: 1rem;
+}
+
+.buttonDeleteProfileGym1{
+  background-color: #2A2529;
+  color: white;
+  border-color: #2cccc4;
+  font-weight: 400;
+  font-size: 1.5rem;
+  width: 10rem;
+}
+
+.nameEditGymProfile{
+  font-weight: 800;
+  font-family: Oswald, sans-serif;
+  font-size: 4rem;
+  margin-left:10rem;
+  margin-top: 12rem;
+  margin-bottom: 3rem;
+}
+
+.textEditGymProfile {
+  font-size:2rem;
+  font-weight: 400;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  height: 8rem;
+  margin-left:10rem;
+}
+
+.paddingGymProfile{
+  padding-bottom: 1rem;
+}
+
+.nameLabelUser1234{
+  font-weight: 800;
+  font-family: Oswald, sans-serif;
+  font-size: 3rem;
+  padding-left:14rem;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.desLabelUser1234 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  padding-left: 14rem;
+  padding-bottom: 0.3rem;
+}
+
+.marginFormControlUserProfile14{
+  margin-top: 0.2rem;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.buttonSaveEditProfileUser14{
+  border-color: #2cccc4;
+  font-weight: 400;
+  font-size: 1.5rem;
+  width: 17.8rem;
+  margin-left: 13.8rem;
+  margin-top: 1rem;
+}
+
+.styleMessageProfileSave14{
+  padding-left: 19rem;
+}
+
+.imageSizeProfileGym14{
+  width: 100%;
+  height: 48rem;
+}
+
+.nameLabelDeleteProfileUser11{
+  font-weight: 800;
+  font-family: Oswald, sans-serif;
+  font-size: 4rem;
+  padding-left:4rem;
+  padding-top: 10rem;
+  margin-bottom: 2.5rem;
+}
+
+.messageDeleteProfile12{
+  font-size: 1.6rem;
+  font-weight: 400;
+  padding-left: 4rem;
+  padding-bottom: 0.3rem;
+  width: 25rem;
+  text-align: center;
+}
+
+.ButtonDeleteProfileUser111{
+  background-color: white;
+  border: solid 2px #2cccc4;
+  font-weight: 400;
+  font-size: 1.5rem;
+  width: 17.8rem;
+  margin-left: 5.8rem;
+  margin-top: 3rem;
+  height: 3.5rem;
+  border-radius: 0.2rem;
+}
+
+.ButtonDeleteProfileUser123{
+  background-color: white;
+  border: solid 2px #2cccc4;
+  font-weight: 400;
+  font-size: 1.5rem;
+  width: 17.8rem;
+  margin-left: 5.8rem;
+  margin-top: 2rem;
+  height: 3.5rem;
+  border-radius: 0.2rem;
+}
+
+.paddingStyleGym{
+  padding-left: 6.8rem;
+  margin-top: 2rem;
 }

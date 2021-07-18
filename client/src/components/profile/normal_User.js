@@ -156,7 +156,7 @@ const User = () => {
 
                     <Form.Group>
                       <Button  size="lg" variant="outline-dark" type="submit" className="buttonSaveEditProfileUser1">
-                        Save changes
+                        Save Changes
                       </Button>
                     </Form.Group>
 
@@ -258,7 +258,7 @@ const User = () => {
                                 setState1(!state);
                               }}
                               >
-                              Remove
+                              Remove 
                             </Button>
                           </div>
                         </div>
