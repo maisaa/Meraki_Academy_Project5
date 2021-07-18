@@ -1,243 +1,212 @@
-.body123 {
-  width: auto;
-  background-image: url("./images/ttttt-min.jpg");
-  background-size: 100% 100%;
-  height: 60rem;
-  min-height: 1%;
-}
-.container12Profile {
-  display: grid;
-  grid-template-columns: 20rem auto auto auto;
-  margin-left: 44rem;
-}
-.psImg {
-  width: 250px;
-  height: 250px;
-  border-radius: 10rem;
-  border: 0.5rem solid snow;
-  background-position: 50% 50%;
-  margin: 15px;
-  border-color: #ffffff;
-  margin-top: 6rem;
-}
-.btn1 {
-  background-image: none;
-  letter-spacing: 3px;
-  font-size: 1rem;
-  border-style: none;
-  text-transform: uppercase;
-  margin: 20px auto 0 13px;
-  margin-bottom: 2rem;
-  color: #ffffff !important;
-  background-color: #2cccc4;
-  position: relative;
-  width: 15rem;
-  height: 3rem;
-  font-weight: bold;
-}
-.btn1:hover {
-  cursor: pointer;
-  background-color: black;
-}
-.divbtn {
-  margin-left: 46rem;
-  margin-top: 2rem;
-}
-.Info {
-  font-size: 30px;
-  margin-top: 5rem;
-}
-.herderProfile {
-  color: #2cccc4;
-  text-align: center;
-  font-size: 4rem;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  padding-top: 3rem;
-}
-h4 {
-  color: #2cccc4;
-}
-.post {
-  width: auto;
-  height: 800px;
-  background-size: 100% 100%;
-  background-image: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.55),
-      rgba(0, 0, 0, 0.55)
-    ),
-    url("./images/ttttt-min.jpg");
-  color: aliceblue;
-  font-size: 30px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 50px;
-}
-.post img {
-  height: 320px;
-  width: 439px;
-}
-.postInfo {
-  padding-top: 150px;
-  margin-left: 150px;
-}
-.btn2 {
-  background-image: none;
-  letter-spacing: 3px;
-  font-size: 1rem;
-  border-style: none;
-  text-transform: uppercase;
-  margin: 20px auto 0 0px;
-  margin-bottom: 2rem;
-  color: #ffffff !important;
-  background-color: #2cccc4;
-  position: relative;
-  width: 25rem;
-  height: 3rem;
-  font-weight: bold;
-}
-.btn2:hover {
-  cursor: pointer;
-  background-color: black;
-}
-#h1 {
-  color: whitesmoke;
-  display: block;
-  font-size: 2.54rem;
-  margin-left: 150px;
-  margin-bottom: 0px;
-}
-.pointer {
-  cursor: pointer;
-}
-@media all and (min-width: 480px) {
-  .edit_padding {
-    padding: 70px 0;
-    margin-top: 0%;
-    margin-bottom: 0%;
-    width: auto;
-
-    background-image: url("./images/ttttt-min.jpg");
-    background-size: 100% 100%;
-  }
-  .edit Form {
-    margin: 0 auto;
-    max-width: 320px;
-  }
-  .form-group {
-    margin-bottom: 0.3rem;
-  }
-}
-.edit {
-  margin-left: 30rem;
-  padding-top: 30px;
-  padding-bottom: 1rem;
-
-  background-color: #ffffff;
-  width: 30rem;
-  height: 35rem;
-  box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
-}
-
-.marg {
-  margin-top: 0.7rem;
-  background-color: #2cccc4;
-  color: #fff;
-  border-color: #2cccc4;
-  font-weight: bold;
-}
-
-.tostMassage {
-  border-color: #eeeeee;
-  width: 30rem;
-  height: 5rem;
-  border-bottom-left-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
-  padding-top: -2rem;
-}
-.input {
-  width: 20rem;
-}
-.btnDel {
-  color: white;
-  background-color: #2cccc4;
-
-  text-align: center;
-  cursor: pointer;
-  border: #007bff;
-  height: 2.5rem;
-  width: 10rem;
-  margin-left: 2rem;
-  margin-top: .5rem;
-  padding-right: 0.8rem;
-}
-.btnDel:hover {
-  background-color: #000;
-}
-.btnCan {
-  color: white;
-  background-color: #43474b;
-
-  text-align: center;
-  cursor: pointer;
-  border: #2cccc4;
-  height: 2.5rem;
-  width: 7rem;
+.marginTopProfile{
+  margin-top: 7.5rem;
   margin-left: 3rem;
-  margin-top: .5rem;
-  margin-right: 0.8rem;
-}
-.btnCan:hover {
-  background-color: #75797e;
 }
 
-.popup {
-  width: 450px;
-  height: 250px;
-  background-color: aliceblue;
-  margin-left: 470px;
+.gridProfileStyle1{
+  display: grid;
+  grid-template-columns: 1fr 3fr 3rem;
+}
+
+.myProfileInUserProfileDev{
+  background-color: #2A2529;
+  height: 50rem;
+}
+
+.myPostInUserProfileDev{
+  padding-left: 3rem;
+}
+
+.ImageProfileUserStyle{
+  width: 100%;
+  height: 25rem;
+  display: inline;
   justify-content: center;
-  margin-top: 180px;
-  padding-left: 45px;
-  padding-top: 20px;
+  align-items: center;
+  margin-bottom: 2rem;
   box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
 }
-.popupb1 {
-  margin-top: 0%;
-  margin-bottom: 0%;
-  width: auto;
-  display: flex;
-  background-image: url("./images/ttttt-min.jpg");
-  background-size: 100% 100%;
-  height: 700px;
-}
-.msg {
-  font-size: 25px;
+
+.nameLabelUser1{
+  color: white;
+  font-weight: 800;
+  font-family: Oswald, sans-serif;
+  font-size: 3rem;
+  padding-left:4rem;
 }
 
-.flot2 {
-  width: 6rem;
-  float: left;
-  margin-left: 10px;
+.desLabelUser1 {
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  padding-left: 4rem;
+  height: 8rem;
 }
 
-.flot1 {
-  width: 9rem;
-  float: left;
-  margin-right: 25px;
-}
-.styleButton1 {
-  margin-top:0.5rem ;
+.ButtonProfileUser1{
+  background-color: #2A2529;
+  color: white;
   border-color: #2cccc4;
-  color: black;
+  font-weight: 400;
+  font-size: 1.5rem;
+  width: 10rem;
+}
+
+.ButtonProfileUser2{
+  background-color: #2A2529;
+  color: white;
+  border-color: #2cccc4;
+  font-weight: 400;
+  margin-left: 1rem;
+  font-size: 1.5rem;
+  width: 10rem;
+}
+
+.styleButtonProfile5{
+  padding-left: 4rem;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+}
+
+.editProfileUserStyle12{
+  padding-left: 2rem;
+  margin-top: 2rem;
+  color: white;
+}
+
+.nameLabelUser123{
+  color: white;
+  font-weight: 800;
+  font-family: Oswald, sans-serif;
+  font-size: 3rem;
+  padding-left:4rem;
+  margin-bottom: 1rem;
+}
+
+.desLabelUser123 {
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 400;
+  padding-left: 4rem;
+  padding-bottom: 0.3rem;
+}
+
+.marginFormControlUserProfile1{
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1.5rem;
   font-weight: 400;
 }
 
-.imageProfileCoachStyle1{
-  margin-top: 6rem;
+.buttonSaveEditProfileUser1{
+  background-color: #2A2529;
+  color: white;
+  border-color: #2cccc4;
+  font-weight: 400;
+  font-size: 1.5rem;
+  width: 17.8rem;
+  margin-left: 3.8rem;
+  margin-top: 1rem;
+}
+
+.styleMessageProfileSave1{
+  padding-left: 9rem;
+}
+
+.nameLabelDeleteProfileUser1{
+  color: white;
+  font-weight: 800;
+  font-family: Oswald, sans-serif;
+  font-size: 3rem;
+  padding-left:6.5rem;
+  padding-top: 10rem;
+  margin-bottom: 3rem;
+}
+
+.messageDeleteProfile1{
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 400;
+  padding-left: 4rem;
+  padding-bottom: 0.3rem;
+  width: 25rem;
+  text-align: center;
+}
+
+.ButtonDeleteProfileUser1{
+  border: solid 2px #2cccc4;
+  background-color: #2A2529;
+  color: white;
+  font-weight: 400;
+  font-size: 1.5rem;
+  width: 17.8rem;
+  margin-left: 5.8rem;
+  margin-top: 3rem;
+  height: 3.5rem;
+  border-radius: 0.2rem;
+}
+
+.ButtonDeleteProfileUser12{
+  border: solid 2px #2cccc4;
+  background-color: #2A2529;
+  color: white;
+  font-weight: 400;
+  font-size: 1.5rem;
+  width: 17.8rem;
+  margin-left: 5.8rem;
+  margin-top: 2rem;
+  height: 3.5rem;
+  border-radius: 0.2rem;
+}
+
+.gridPostFavUserProfile{
+  display: grid;
+  grid-template-columns: 0.8fr 2fr 3rem;
+  box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 8px 34px -12px rgba(0, 0, 0, 0.75);
+  margin-bottom: 2.5rem;
+  margin-top: 0.8rem;
+  width: 80rem;
+  height: 15rem;
+}
+
+.imagePostFavUser1{
+  width: 100%;
+  height: 15rem;
+}
+
+.scrollUserProfile1{
+  height: 42rem;
+  overflow: auto;
+}
+
+.nameLabelPostFavUser1{
+  font-weight: 800;
+  font-family: Oswald, sans-serif;
+  font-size: 3rem;
+  margin-bottom: 1.6rem;
+}
+
+.textPostFavUserProfile12{
+  font-size: 1.8rem;
+  font-weight: 400;
+  padding-left: 4rem;
+  width: 50rem;
+  height: 10rem;
+  padding-top: 0.6rem;
+}
+
+.buttonDeletePostFavUser1{
+  background-color: #fff;
+  border-color: #2cccc4;
+  font-weight: 400;
+  font-size: 1.5rem;
+  width: 17.8rem;
+  margin-left: 3.9rem;
+  margin-top: 1rem;
 }
