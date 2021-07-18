@@ -95,12 +95,15 @@ const User = () => {
 
   return (
     <>
+    <div className="marginTopProfile">
+      <div className="gridProfileStyle1">
+      <div className="myProfileInUserProfileDev">
       {deleteProfile ? (
         <div>
           {edit ? (
-            <div className="edit_padding">
+            <div className="editProfileUserStyle12">
               {state.profile.map((elem, i) => (
-                <div className="edit">
+                <div>
                   <Form
                     key={i}
                     onSubmit={(e) => {
@@ -112,52 +115,52 @@ const User = () => {
                         e.target.image.value,
                         e.target.phone.value,
                         e.target.age.value
-                      );
-                    }}
-                  >
-                    <h2 className="h22"> edit profile </h2>
+                        );
+                      }}
+                      >
+                    <div className="nameLabelUser123"> Edit Profile </div>
                     <Form.Group size="lg" controlId="formImage">
-                      <Form.Label>
-                        image:
-                        <Form.Control type="text" name="image" className="input" defaultValue={elem.image} />
+                      <Form.Label className="desLabelUser123">
+                        Image 
+                        <Form.Control type="text" name="image" defaultValue={elem.image} className="marginFormControlUserProfile1" />
                       </Form.Label>
                     </Form.Group>
 
                     <Form.Group size="lg" controlId="formFirstName">
-                      <Form.Label>
-                        firstName :
-                        <Form.Control type="text" name="firstName" className="input" defaultValue={elem.firstName} />
+                      <Form.Label className="desLabelUser123">
+                        First Name 
+                        <Form.Control type="text" name="firstName"  defaultValue={elem.firstName} className="marginFormControlUserProfile1" />
                       </Form.Label>
                     </Form.Group>
 
                     <Form.Group size="lg" controlId="formLastName">
-                      <Form.Label>
-                        lastName :
-                        <Form.Control type="text" name="lastName" className="input" defaultValue={elem.lastName} />
+                      <Form.Label className="desLabelUser123">
+                        Last Name 
+                        <Form.Control type="text" name="lastName"  defaultValue={elem.lastName} className="marginFormControlUserProfile1" />
                       </Form.Label>
                     </Form.Group>
 
                     <Form.Group size="lg" controlId="formPhone">
-                      <Form.Label>
-                        phone:
-                        <Form.Control type="text" name="phone" className="input" defaultValue={elem.phone} />
+                      <Form.Label className="desLabelUser123">
+                        Phone 
+                        <Form.Control type="text" name="phone"  defaultValue={elem.phone} className="marginFormControlUserProfile1"/>
                       </Form.Label>
                     </Form.Group>
 
                     <Form.Group size="lg" controlId="formAge">
-                      <Form.Label>
-                        age:
-                        <Form.Control type="text" name="age" className="input" defaultValue={elem.age} />
+                      <Form.Label className="desLabelUser123">
+                        Age 
+                        <Form.Control type="text" name="age"  defaultValue={elem.age} className="marginFormControlUserProfile1" />
                       </Form.Label>
                     </Form.Group>
 
                     <Form.Group>
-                      <Button className="styleButton1" className="marg" size="lg" variant="outline-dark" type="submit">
+                      <Button  size="lg" variant="outline-dark" type="submit" className="buttonSaveEditProfileUser1">
                         Save changes
                       </Button>
                     </Form.Group>
 
-                    <div className="tostMassage">
+                    <div className="styleMessageProfileSave1">
                       <Form.Label>{message && <div>{message}</div>}</Form.Label>
                     </div>
                   </Form>
@@ -168,56 +171,82 @@ const User = () => {
             <div>
               {state.profile.map((elem, i) => (
                 <div key={i}>
-                  <div className="body">
-                    <h1 className="herderProfile">{elem.firstName} Profile</h1>
-                    <div className="container">
-                      <div className="divImg">
-                        <img src={elem.image} height="100" width="100" className="psImg" /> <br />
+                  <div>
+                    <img src={elem.image} className="ImageProfileUserStyle"/>
+                    <div>
+                      <div>
+                    <div className="nameLabelUser1">{elem.firstName} Profile</div>
                       </div>
-                      <div className="Info">
-                        <p>
-                          <b>firstName : </b> {elem.firstName}
-                        </p>
-                        <p>
-                          <b> lastName : </b>
-                          {elem.lastName}
-                        </p>
-
-                        <p>
-                          {" "}
-                          <b>phone : </b>
-                          {elem.phone}
-                        </p>
-                        <p>
-                          {" "}
-                          <b>age :</b> {elem.age}
-                        </p>
+                      <div className="desLabelUser1">
+                        <div>
+                          {elem.firstName} {elem.lastName}
+                        </div>
+                        <div>
+                          Tel : {elem.phone}
+                        </div>
+                        <div>Age : {elem.age}
+                        </div>
                       </div>
                     </div>
-                    <div className="divbtn">
-                      <button onClick={editProfile} value={elem.user_id} className="btn1">
-                        edit profile
-                      </button>
-                      <button onClick={popup} value={elem.user_id} className="btn1">
-                        deleted profile
-                      </button>
+                    <div className="styleButtonProfile5">
+                      <Button className="ButtonProfileUser1" variant="outline-dark" onClick={editProfile} value={elem.user_id}>
+                        Edit 
+                      </Button>
+                      <Button className="ButtonProfileUser2" variant="outline-dark" onClick={popup} value={elem.user_id}>
+                        Delete
+                      </Button>
                     </div>
                   </div>
-
-                  <div className="post">
-                    <h1 id="h1">my post</h1>
-                    <h1 id="h1"></h1>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      ) : (
+          <div style={{color: "white"}}>
+            <div className="nameLabelDeleteProfileUser1">Delete profile</div>
+            {message && <div className="messageDeleteProfile1"> {message} </div>}
+            {state.profile.map((elem, i) => (
+              <form
+              key={i}
+              onSubmit={(e) => {
+                e.preventDefault();
+                deleteProfilea(elem);
+              }}
+              >
+               
+                  <button className="ButtonDeleteProfileUser1" variant="outline-dark">Delete</button>
+              </form>
+            ))}
+            {state.profile.map((elem, i) => (
+              <form
+              key={i}
+              onSubmit={(e) => {
+                e.preventDefault();
+                cancel(elem);
+              }}
+              >
+                  <button className="ButtonDeleteProfileUser12" variant="outline-dark">Cancel</button>
+              </form>
+            ))}
+          </div>
+      )}
+      </div>
+      <div className="myPostInUserProfileDev">
+                    <div className="nameLabelPostFavUser1">My Favourite Posts</div>
+                    <div className="scrollUserProfile1">
                     {state.favorite &&
                       state.favorite.map((elem, i) => (
-                        <div key={i}>
-                          <div className="postInfo">
-                            <p>post:{elem.post}</p>
-                            <img src={elem.photo} />
-                            <br />
-                            <button
-                              className="btn2"
+                        <div key={i} className="gridPostFavUserProfile">
+                          <div>
+                            <img src={elem.photo} className="imagePostFavUser1"/>
+                          </div>
+                          <div>
+                            <div className="textPostFavUserProfile12">{elem.post}</div>
+                            <Button
+                            variant="outline-dark"
+                            className="buttonDeletePostFavUser1"
                               onClick={() => {
-                                console.log("aaa");
                                 const postId = elem.post_id;
                                 const user = decode(state.token);
                                 const userId = user.userId;
@@ -228,54 +257,16 @@ const User = () => {
                                 dispatch(deleteFavorite(postId));
                                 setState1(!state);
                               }}
-                            >
-                              delete post
-                            </button>
+                              >
+                              Remove
+                            </Button>
                           </div>
                         </div>
                       ))}
+                      </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      ) : (
-        <div className="popupb1">
-          <div className="popup">
-            <h1>Delete profile</h1>
-            {message && <div className="msg"> {message} </div>}
-            {state.profile.map((elem, i) => (
-              <form
-                key={i}
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  deleteProfilea(elem);
-                }}
-              >
-                <br />
-                <div className="flot1">
-                  <button className="btnDel">deleted Profile</button>
-                </div>
-              </form>
-            ))}
-            {state.profile.map((elem, i) => (
-              <form
-                key={i}
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  cancel(elem);
-                }}
-              >
-                <div className="flot2">
-                  <button className="btnCan">cancel</button>
-                  <br />
-                </div>
-              </form>
-            ))}
-          </div>
-        </div>
-      )}
+      </div>
+      </div>
     </>
   );
 };

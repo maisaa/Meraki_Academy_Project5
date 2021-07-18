@@ -112,12 +112,7 @@ const Navigation = () => {
                   </div>
                 )}
                 {user && user.roleId === 2 ? (
-                  <div> 
-                  <NavDropdown.Item>
-                    <Link to="/user" style={{color: "black"}}>About us</Link>
-                  </NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  </div>
+                  <div></div>
                 ) : (
                   <div>
                     <NavDropdown.Divider />
