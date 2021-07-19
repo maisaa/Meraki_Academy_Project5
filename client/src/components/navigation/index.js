@@ -100,7 +100,7 @@ const Navigation = () => {
             <Nav.Link>
               {!state.token ? (
                 <Link to="/login" style={{ color: "black" }}>
-                  Login
+                  Login 1
                 </Link>
               ) : (
                 ""
@@ -159,7 +159,7 @@ const Navigation = () => {
               style={{ width: "20rem" }}
             />
             <Button className="styleButton" onClick={searchFun} variant="outline-dark">
-              Search
+              Search 
             </Button>
           </Form>
         </Navbar.Collapse>
